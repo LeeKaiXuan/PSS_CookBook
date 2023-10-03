@@ -1,42 +1,35 @@
-site_name: My Docs
+site_name: PSS CookBook
 theme:
   name: material
-  palette:
-    # Palette toggle for light mode
-    - scheme: default
-      primary: black
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-
-    # Palette toggle for dark mode
-    - scheme: slate
-      primary: black
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-
-  font:
-    text: Roboto
-    code: Roboto Mono
-
-  language: en 
-
-  icon:
-    logo: material/library
 
   features:
-    - navigation.instant
-    - navigation.tracking
-    - navigation.expand
-    - navigation.indexes
-    - toc.follow
-    - navigation.top
+    - content.code.annotate 
+    - content.code.copy
+    - content.tabs.link
+
+extra:
+  status:
+    New: New
+    Stable: Stable
+    WIP: Work-In-Progress
 
 markdown_extensions:
+  - abbr
+  - admonition
   - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tilde
