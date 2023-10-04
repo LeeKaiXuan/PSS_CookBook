@@ -43,8 +43,9 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.snippets:
+      check_paths: True
       auto_append:
-        - includes/abbreviations.md
+        - 'docs/includes/abbreviations.md'
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
@@ -57,12 +58,14 @@ plugins:
   - search
 
 nav:
-  - Home:
-    - index.md
+  - Home: 'index.md'
   - Operator:
     - Operator/index.md
-    - Primary Expressions: Operator/Expressions.md
+    - Primary Expressions: 'Operator/Expressions.md'
   - Array:
     - Array/index.md
     - Operators: Array/Operators.md
     - Methods: Array/Methods.md
+
+not_in_nav:
+  includes/
