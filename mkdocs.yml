@@ -2,10 +2,19 @@ site_name: PSS CookBook
 site_description: Usage for PSS Language
 site_author: Luther Lee
 copyright: Copyright &copy; 2023 - 2023 Luther Lee
+repo_url: https://github.com/LeeKaiXuan/PSS_CookBook
+edit_uri: blob/main/docs/
+repo_name: LeeKaiXuan/PSS_CookBook
+
 theme:
   name: material
 
+  icon:
+    repo: fontawesome/brands/github
+    view: material/eye
+
   features:
+    - content.action.view
     - content.code.annotate 
     - content.code.copy
     - content.tabs.link
