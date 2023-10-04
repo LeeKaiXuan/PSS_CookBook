@@ -1,11 +1,9 @@
 ---
-title: 8.8.2.1 Array operators
-description: Operators are defined for arrays.
-status: Stable
+title: Array Operators
+description: 8.8.2.1 Array operators
 ---
 
-
-# 8.8.2.1 Array operators
+# Array Operators
 ## Index operator `[]`: {#array_operators_index}
 === "Template"
     ```sv linenums="1"

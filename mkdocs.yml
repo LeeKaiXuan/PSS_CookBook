@@ -1,4 +1,7 @@
 site_name: PSS CookBook
+site_description: Usage for PSS Language
+site_author: Luther Lee
+copyright: Copyright &copy; 2023 - 2023 Luther Lee
 theme:
   name: material
 
@@ -6,6 +9,17 @@ theme:
     - content.code.annotate 
     - content.code.copy
     - content.tabs.link
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
 
 extra:
   status:
@@ -35,3 +49,20 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tilde
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  - search
+
+nav:
+  - Home:
+    - index.md
+  - Operator:
+    - Operator/index.md
+    - Primary Expressions: Operator/Expressions.md
+  - Array:
+    - Array/index.md
+    - Operators: Array/Operators.md
+    - Methods: Array/Methods.md

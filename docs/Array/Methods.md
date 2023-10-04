@@ -1,11 +1,9 @@
 ---
-title: 8.8.2.2 Arrays methods
-description: Methods are defined for arrays.
-status: Stable
+title: Array Methods
+description: 8.8.2.2 Array methods
 ---
 
-
-# 8.8.2.2 Array methods
+# Array Methods
 Methods that do not modify contents (e.g., `size()`, `sum()`, `to_list()`, `to_set()`) may be used in **activity**, **constraint**, and **covergroup**. <br>
 ## function int `size()`: {#array_methods_to_size}
 === "Template"

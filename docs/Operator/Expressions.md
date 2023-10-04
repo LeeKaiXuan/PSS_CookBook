@@ -1,11 +1,11 @@
 ---
-title: 9.6 Primary expressions
-description: Bit-selects, part-selects, and indexing operations.
-status: New
+title: Primary Expressions
+description: 9.6 Primary expressions
 ---
 
-# 9.6.1 Bit-selects and part-selects
-## Bit-selects {#primary_expressions_bit-selects}
+# Primary Expressions
+## 9.6.1 Bit-selects and part-selects
+### Bit-selects {#primary_expressions_bit-selects}
 Get a bit of variable:
 ```sv linenums="1"
 bit [4] nibbleVal = 4'b0011;
@@ -44,7 +44,7 @@ nibbleVal[2] |= nibbleVal[1];   ///<  nibbleVal: 0b0011 -> 0b0111
     3. **index** shall be any integer greater than zero.
 
 
-## Part-selects {#primary_expressions_part-selects}
+### Part-selects {#primary_expressions_part-selects}
 Get 2 bits of variable:
 ```sv linenums="1"
 bit [4] nibbleVal = 4'b0011;
@@ -79,7 +79,7 @@ nibbleVal[3:2] |= nibbleVal[1:0];   ///<  nibbleVal: 0b0011 -> 0b1111
     2. MSB/LSB of **range** must be inbound of bit-width.
     3. MSB/LSB of **range** shall be any integer greater than zero.
 
-# 9.6.2 Selecting an element from a collection (indexing) {#primary_expressions_indexing}
+## 9.6.2 Selecting an element from a collection (indexing) {#primary_expressions_indexing}
 Get an element of collection (e.g., array, list, map):
 ```sv linenums="1"
 array<bit [4], 2>      nibbleArray = {       4'b1100, 4'b0110};
@@ -134,7 +134,7 @@ nibbleMap["ONE"] |= nibbleMap["TWO"];  ///<  nibbleMap["ONE"]: 0b1100 -> 0b1110
 
 ---
 
-# Usage
+## Usage
 
 ???+ Example "Access bit of an array"
 

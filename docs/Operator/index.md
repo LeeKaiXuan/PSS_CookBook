@@ -1,10 +1,10 @@
 ---
-title: 9.4 Expression operators
-description: Expression operators.
-status: WIP
+title: Expression Operators
+description: 9.4 Expression operators
 ---
 
-# Expression operators and data types
+# Expression Operators
+## Expression operators and data types
 
 | Operator token            | Operator name                         | Operator data types                   | Result data type              |
 | :------------------------ | :------------------------------------ | :-----------------------------------: | :---------------------------: |
@@ -25,7 +25,7 @@ status: WIP
 | `[expression]`            | Bit-select operators                  | Numeric                               | Numeric                       |
 | `[expression:expression]` | Part-select operator                  | Numeric                               | Numeric                       |
 
-# 9.4.1 Operator precedence and associativity
+## 9.4.1 Operator precedence and associativity
 
 | Operator                          | Associativity | Precesence    |
 | :-------------------------------- | :-----------: | :-----------: |
