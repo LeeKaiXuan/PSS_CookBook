@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+---
+title: Home
+description: PSS CookBook
+---
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# Portable Test and Stimulus Standard (PSS) CookBook
 
-## Commands
+In this document, we summarize the LRM of PSS, and give you extra examples and tips.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Reference
+LRM: [PSS 2.0 Language Reference Manual](https://www.accellera.org/images/downloads/standards/Portable_Test_Stimulus_Standard_v20.pdf)
+AndesTech PSS Generator: [PSSGen](https://github.com/andestech/pss-gen)
