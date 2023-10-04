@@ -4,7 +4,7 @@ description: 9.6 Primary expressions
 ---
 
 # Primary Expressions
-## 9.6.1 Bit-selects and part-selects
+## Bit-selects and part-selects
 ### Bit-selects {#primary_expressions_bit-selects}
 Get a bit of variable:
 ```sv linenums="1"
@@ -79,7 +79,7 @@ nibbleVal[3:2] |= nibbleVal[1:0];   ///<  nibbleVal: 0b0011 -> 0b1111
     2. MSB/LSB of **range** must be inbound of bit-width.
     3. MSB/LSB of **range** shall be any integer greater than zero.
 
-## 9.6.2 Selecting an element from a collection (indexing) {#primary_expressions_indexing}
+## Selecting an element from a collection (indexing) {#primary_expressions_indexing}
 Get an element of collection (e.g., array, list, map):
 ```sv linenums="1"
 array<bit [4], 2>      nibbleArray = {       4'b1100, 4'b0110};

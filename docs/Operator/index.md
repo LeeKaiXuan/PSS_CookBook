@@ -25,7 +25,7 @@ description: 9.4 Expression operators
 | `[expression]`            | Bit-select operators                  | Numeric                               | Numeric                       |
 | `[expression:expression]` | Part-select operator                  | Numeric                               | Numeric                       |
 
-## 9.4.1 Operator precedence and associativity
+## Operator precedence and associativity
 
 | Operator                          | Associativity | Precesence    |
 | :-------------------------------- | :-----------: | :-----------: |
