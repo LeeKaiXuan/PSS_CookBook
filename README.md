@@ -1,7 +1,7 @@
-# PSS_CookBook
+## PSS_CookBook
 Documentation for introducing the usage of PSS language.
 
-# Setup (Local Builder)
+## Setup (Local Builder)
 If you need to generate the website locally, please install MkDocs first. (Reference: https://squidfunk.github.io/mkdocs-material/getting-started/)<br>
 I recommend using docker if you develop on Microsoft Windows (e.g., win10/win11).
 
@@ -23,13 +23,10 @@ docker build -t squidfunk/mkdocs-material .
 ```
 7. The older docker image can be deleted.
 
-# Previewing on Docker
+## Previewing on Docker
 Run a PowerShell inside the local repo with following command:
 ```bash
 docker run --rm -it -p 8000:8000 -v .:/docs squidfunk/mkdocs-material
 ```
-Once local MkDocs' server is ready, run another PowerShell with following command:
-```bash
-docker run --rm -it -v .:/docs squidfunk/mkdocs-material build
-```
-After the site is built, you can preview it on ```http://localhost:8000/```
+Once the local MkDocs' server is ready, you can preview it on [```http://localhost:8000/```](http://localhost:8000/).<br>
+The server will auto-build the website every time any files under [docs/](docs) are updated.
