@@ -6,7 +6,7 @@ If you need to generate the website locally, please install MkDocs first. (Refer
 I recommend using docker if you develop on Microsoft Windows (e.g., win10/win11).
 
 Steps of setup docker:
-1. Download and install [Docker Desktop](https://www.docker.com/).
+1. Download and install [Docker Desktop](https://www.docker.com/products/docker-desktop/).
 2. In Docker Desktop, search `squidfunk/mkdocs-material` on the top console then pull it.
 3. Clone this repo to a local directory.
 4. Go to the directory, and create a text file named `Dockerfile` without any extension.
