@@ -68,6 +68,9 @@ plugins:
 
 nav:
   - Home: 'index.md'
+  - Data Types:
+    - DataTypes/index.md
+    - Numeric Types: 'DataTypes/NumericTypes.md'
   - Operator:
     - Operator/index.md
     - Primary Expressions: 'Operator/Expressions.md'
