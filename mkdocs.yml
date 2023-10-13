@@ -78,6 +78,10 @@ nav:
     - Array/index.md
     - Operators: Array/Operators.md
     - Methods: Array/Methods.md
+  - List:
+    - List/index.md
+    - Operators: List/Operators.md
+    - Methods: List/Methods.md
 
 not_in_nav:
   includes/
