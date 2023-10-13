@@ -73,7 +73,7 @@ nav:
   - Home: 'index.md'
   - Data Types:
     - DataTypes/index.md
-    - Numeric Types: 'DataTypes/NumericTypes.md'
+    - Integer Types: 'DataTypes/IntegerTypes.md'
   - Operator:
     - Operator/index.md
     - Primary Expressions: 'Operator/Expressions.md'

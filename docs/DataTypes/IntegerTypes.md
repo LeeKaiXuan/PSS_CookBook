@@ -1,18 +1,19 @@
 ---
-title: Numeric Types
-description: 8.2 Numeric types
+title: Integer Types
+description: PSSv2.1/7.2 Integer types
 ---
 
-# Numeric Types
-## Bit {#datatypes_numerictypes_bit}
-`bit` is a numeric data type with default properties: **unsigned**, **1-bit** width, **{0, 1}** domain.
+# Integer Types
 
-### Declare a bit:
+## Bit {#datatypes_integertypes_bit}
+`bit` is a integer data type with default properties: **unsigned**, **1-bit** width, **{0, 1}** domain.
+
+### Declare a bit
 ```sv linenums="1"
 bit singleBit;
 ```
 
-### Declare **8-bits** wide `bit` type:
+### Declare **8-bits** wide `bit` type
 Possible values specified by bit width are **{0..(2^width^-1)}**
 === "single bound"
     ```sv linenums="1"
@@ -28,7 +29,7 @@ Possible values specified by bit width are **{0..(2^width^-1)}**
 
 !!! warning "**dual bounds** may be removed in future version"
 
-### Declared with specified value domain:
+### Declared with specified value domain
 Values of variable are within intersection of possible values by width and value domain.
 ```sv linenums="1"
 bit [8] in [0, 1, 5]             singleByte;    //  value domain: {0, 1, 5}
@@ -53,15 +54,15 @@ bit [8] in [5, ..2, 6..8, 254..] singleByte;    //  value domain: {0, 1, 2, 5, 6
         }
         ```
 
-## Integer {#datatypes_numerictypes_integer}
-`int` is a numeric data type with default properties: **signed**, **32-bits** width, **{-2^31^..(2^31^-1)}** domain.
+## Integer {#datatypes_integertypes_integer}
+`int` is a integer data type with default properties: **signed**, **32-bits** width, **{-2^31^..(2^31^-1)}** domain.
 
 ### Declare an integer:
 ```sv linenums="1"
 int int32;
 ```
 
-### Declare **8-bits** wide `int` type:
+### Declare **8-bits** wide `int` type
 Possible values specified by bit width are **{-2^width-1^..(2^width-1^-1)}**
 === "single bound"
     ```sv linenums="1"
@@ -77,7 +78,7 @@ Possible values specified by bit width are **{-2^width-1^..(2^width-1^-1)}**
 
 !!! warning "**dual bounds** may be removed in future version"
 
-### Declared with specified value domain:
+### Declared with specified value domain
 Values of variable are within intersection of possible values by width and value domain.
 ```sv linenums="1"
 int [8] in [0, 1, 5]                  int8; //  value domain: {0, 1, 5}
