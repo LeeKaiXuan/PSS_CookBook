@@ -1,25 +1,26 @@
 ---
 title: Array
-description: 8.8.2 Arrays
+description: PSSv2.1/7.9.2 Arrays
 ---
 
 # Array
+
 ## Declarations
 Array has 2 types of declare syntaxes: `Template`, `Square`.
 === "Template"
     ```sv linenums="1"
-    array<int    , 3> intArray   ;  ///<  declare integer array with 3 elements
-    array<bit [8], 3> byteArray  ;  ///<  declare byte array with 3 elements
-    array<string , 3> stringArray;  ///<  declare string array with 3 elements
-    array<array<int, 3>, 2> nestedArray;    ///<  declare nested array with 3x2 integer elements
+    array<int    , 3> intArray   ;  //  declare integer array with 3 elements
+    array<bit [8], 3> byteArray  ;  //  declare byte array with 3 elements
+    array<string , 3> stringArray;  //  declare string array with 3 elements
+    array<array<int, 3>, 2> nestedArray;    //  declare nested array with 3x2 integer elements
     ```
 
 === "Square"
     ```sv linenums="1" hl_lines="4"
-    int     intArray    [3];        ///<  declare integer array with 3 elements
-    bit [8] byteArray   [3];        ///<  declare byte array with 3 elements
-    string  stringArray [3];        ///<  declare string array with 3 elements
-    ///< (1)!
+    int     intArray    [3];        //  declare integer array with 3 elements
+    bit [8] byteArray   [3];        //  declare byte array with 3 elements
+    string  stringArray [3];        //  declare string array with 3 elements
+    // (1)!
     ```
 
     1. `square` not support for declare nested array
@@ -27,12 +28,12 @@ Array has 2 types of declare syntaxes: `Template`, `Square`.
 Declare array by `rand` keyword:
 === "Template"
     ```sv linenums="1"
-    rand array<int, 3> intArray;    ///<  declare integer array with 3 random elements
+    rand array<int, 3> intArray;    //  declare integer array with 3 random elements
     ```
 
 === "Square"
     ```sv linenums="1"
-    rand int intArray [3];          ///<  declare integer array with 3 random elements
+    rand int intArray [3];          //  declare integer array with 3 random elements
     ```
 
 ## Array Operators

@@ -1,36 +1,37 @@
 ---
 title: Array Methods
-description: 8.8.2.2 Array methods
+description: PSSv2.1/7.9.2.2 Array methods
 ---
 
 # Array Methods
-Methods that do not modify contents (e.g., `size()`, `sum()`, `to_list()`, `to_set()`) may be used in **activity**, **constraint**, and **covergroup**. <br>
-## function int `size()`: {#array_methods_to_size}
+Methods that do not modify contents (e.g., `size()`, `sum()`, `to_list()`, `to_set()`) can be used within **activity**, **constraint**, or **covergroup**. <br>
+
+## function int `size()` {#array_methods_size}
 === "Template"
     ```sv linenums="1"
     array<int, 2> intArray;
-    int intVal = intArray.size();  ///<  intVal: 0 -> 2
+    int intVal = intArray.size();  //  intVal: 0 -> 2
     ```
 
 === "Square"
     ```sv linenums="1"
     int intArray [2];
-    int intVal = intArray.size();  ///<  intVal: 0 -> 2
+    int intVal = intArray.size();  //  intVal: 0 -> 2
     ```
 
 ???+ note
 
     Considered as a **constant** expression.
 
-## function int `sum()`: {#array_methods_sum}
+## function int `sum()` {#array_methods_sum}
 === "Template"
     ```sv linenums="1"
     array<int    , 2> intArray    = {  1   ,  2    };
     array<bit [2], 2> bitArray    = { 2'b01, 2'b10 };
     array<string , 2> stringArray = { "1"  , "2"   };
-    int intVal_0 = intArray.sum()   ;  ///<  intVal_0: 0 -> 3
-    int intVal_1 = bitArray.sum()   ;  ///<  intVal_1: 0 -> 3
-    int intVal_2 = stringArray.sum();  ///<  ILLEGAL (1)
+    int intVal_0 = intArray.sum()   ;  //  intVal_0: 0 -> 3
+    int intVal_1 = bitArray.sum()   ;  //  intVal_1: 0 -> 3
+    int intVal_2 = stringArray.sum();  //  ILLEGAL (1)
     ```
 
     1. `string` can't be calculated
@@ -40,9 +41,9 @@ Methods that do not modify contents (e.g., `size()`, `sum()`, `to_list()`, `to_s
     int     intArray    [2] = {  1   ,  2    };
     bit [2] bitArray    [2] = { 2'b01, 2'b10 };
     string  stringArray [2] = { "1"  , "2"   };
-    int intVal_0 = intArray.sum()   ;  ///<  intVal_0: 0 -> 3
-    int intVal_1 = bitArray.sum()   ;  ///<  intVal_1: 0 -> 3
-    int intVal_2 = stringArray.sum();  ///<  ILLEGAL (1)
+    int intVal_0 = intArray.sum()   ;  //  intVal_0: 0 -> 3
+    int intVal_1 = bitArray.sum()   ;  //  intVal_1: 0 -> 3
+    int intVal_2 = stringArray.sum();  //  ILLEGAL (1)
     ```
 
     1. `string` can't be calculated
@@ -52,12 +53,13 @@ Methods that do not modify contents (e.g., `size()`, `sum()`, `to_list()`, `to_s
     Only can used on numeric data type (`int` or `bit`).
 
 ???+ tip "Usage: use `sum()` to constrain a random array"
+
     === "Template"
         ```sv linenums="1"
         rand array<int, 2> intArray;
         constraint {
             intArray.sum() == 3;
-            intArray[0] == 2;  ///<  intArray: {?, ?} -> {2, 1}
+            intArray[0] == 2;   //  intArray: {0, 0} -> {2, 1}
         }
         ```
 
@@ -66,40 +68,40 @@ Methods that do not modify contents (e.g., `size()`, `sum()`, `to_list()`, `to_s
         rand int intArray [2];
         constraint {
             intArray.sum() == 3;
-            intArray[0] == 2;  ///<  intArray: {?, ?} -> {2, 1}
+            intArray[0] == 2;   //  intArray: {0, 0} -> {2, 1}
         }
         ```
 
-## function list&lt;data_type&gt; `to_list()`: {#array_methods_to_list}
+## function list&lt;data_type&gt; `to_list()` {#array_methods_to_list}
 === "Template"
     ```sv linenums="1"
     array<int   , 3> intArray    = {  2 ,  1 ,  2  };
     array<string, 3> stringArray = { "2", "1", "2" };
-    list<int   > intList    = intArray.to_list()   ;  ///<  intList: {} -> {2, 1, 2}
-    list<string> stringList = stringArray.to_list();  ///<  stringList: {} -> {"2", "1", "2"};
+    list<int   > intList    = intArray.to_list()   ;    //  intList: {} -> {2, 1, 2}
+    list<string> stringList = stringArray.to_list();    //  stringList: {} -> {"2", "1", "2"};
     ```
 
 === "Square"
     ```sv linenums="1"
     int    intArray    [3] = {  2 ,  1 ,  2  };
     string stringArray [3] = { "2", "1", "2" };
-    list<int   > intList    = intArray.to_list()   ;  ///<  intList: {} -> {2, 1, 2}
-    list<string> stringList = stringArray.to_list();  ///<  stringList: {} -> {"2", "1", "2"};
+    list<int   > intList    = intArray.to_list()   ;    //  intList: {} -> {2, 1, 2}
+    list<string> stringList = stringArray.to_list();    //  stringList: {} -> {"2", "1", "2"};
     ```
 
-## function set&lt;data_type&gt; `to_set()`: {#array_methods_to_set}
+## function set&lt;data_type&gt; `to_set()` {#array_methods_to_set}
 === "Template"
     ```sv linenums="1"
     array<int   , 3> intArray    = {  2 ,  1 ,  2  };
     array<string, 3> stringArray = { "2", "1", "2" };
-    set<int   > intSet    = intArray.to_set()   ;  ///<  intSet: {} -> {2, 1}
-    set<string> stringSet = stringArray.to_set();  ///<  stringSet: {} -> {"2", "1"}
+    set<int   > intSet    = intArray.to_set()   ;       //  intSet: {} -> {2, 1}
+    set<string> stringSet = stringArray.to_set();       //  stringSet: {} -> {"2", "1"}
     ```
 
 === "Square"
     ```sv linenums="1"
     int    intArray    [3] = {  2 ,  1 ,  2  };
     string stringArray [3] = { "2", "1", "2" };
-    set<int   > intSet    = intArray.to_set()   ;  ///<  intSet: {} -> {2, 1}
-    set<string> stringSet = stringArray.to_set();  ///<  stringSet: {} -> {"2", "1"}
+    set<int   > intSet    = intArray.to_set()   ;       //  intSet: {} -> {2, 1}
+    set<string> stringSet = stringArray.to_set();       //  stringSet: {} -> {"2", "1"}
     ```
