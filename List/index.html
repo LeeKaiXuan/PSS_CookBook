@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="9.4 Expression operators">
+        <meta name="description" content="PSSv2.1/7.9.3 Lists">
       
       
         <meta name="author" content="Luther Lee">
       
       
       
-        <link rel="prev" href="../DataTypes/IntegerTypes/">
+        <link rel="prev" href="../Array/Methods/">
       
       
-        <link rel="next" href="Expressions/">
+        <link rel="next" href="Operators/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Expression Operators - PSS CookBook</title>
+        <title>List - PSS CookBook</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#expression-operators" class="md-skip">
+        <a href="#list" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Expression Operators
+              List
             
           </span>
         </div>
@@ -327,8 +327,6 @@
       
   
   
-    
-  
   
     
     
@@ -343,17 +341,19 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../Operator/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -364,13 +364,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Operator
@@ -385,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Expressions/" class="md-nav__link">
+      <a href="../Operator/Expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -515,6 +515,8 @@
       
   
   
+    
+  
   
     
     
@@ -531,19 +533,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../List/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -554,13 +554,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             List
@@ -575,7 +575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../List/Operators/" class="md-nav__link">
+      <a href="Operators/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -595,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../List/Methods/" class="md-nav__link">
+      <a href="Methods/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -643,15 +643,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#expression-operators-and-data-types" class="md-nav__link">
-    Expression operators and data types
+  <a href="#declarations" class="md-nav__link">
+    Declarations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#operator-precedence-and-associativity" class="md-nav__link">
-    Operator precedence and associativity
+  <a href="#declare-list-by-rand-keyword" class="md-nav__link">
+    Declare list by rand keyword:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-operators" class="md-nav__link">
+    List Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-methods" class="md-nav__link">
+    List Methods
   </a>
   
 </li>
@@ -675,207 +689,140 @@
     
       
     
-    <a href="https://github.com/LeeKaiXuan/PSS_CookBook/raw/main/docs/Operator/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/LeeKaiXuan/PSS_CookBook/raw/main/docs/List/index.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
     </a>
   
 
 
-<h1 id="expression-operators">Expression Operators</h1>
-<h2 id="expression-operators-and-data-types">Expression operators and data types</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Operator token</th>
-<th style="text-align: left;">Operator name</th>
-<th style="text-align: center;">Operator data types</th>
-<th style="text-align: center;">Result data type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>?:</code></td>
-<td style="text-align: left;">Conditional operator</td>
-<td style="text-align: center;">Any plain-data type or reference type</td>
-<td style="text-align: center;">Same as operands</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>-</code></td>
-<td style="text-align: left;">Unary arithmetic negation operator</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Same as operand</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>~</code></td>
-<td style="text-align: left;">Unary bitwise negation operator</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Same as operand</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>!</code></td>
-<td style="text-align: left;">Unary Boolean negation operator</td>
-<td style="text-align: center;">Boolean</td>
-<td style="text-align: center;">Boolean</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&amp; | ^</code></td>
-<td style="text-align: left;">Unary bitwise reduction operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">1-bit</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>+ - * / % **</code></td>
-<td style="text-align: left;">Binary arithmetic operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">1-bit</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&amp; | ^</code></td>
-<td style="text-align: left;">Binary bitwise operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">1-bit</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&gt;&gt; &lt;&lt;</code></td>
-<td style="text-align: left;">Binary shift operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Same as left operand</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&amp;&amp; ||</code></td>
-<td style="text-align: left;">Binary Boolean logical operators</td>
-<td style="text-align: center;">Boolean</td>
-<td style="text-align: center;">Same as operands</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&lt; &lt;= &gt; &gt;=</code></td>
-<td style="text-align: left;">Binary relational operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Boolean</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>== !=</code></td>
-<td style="text-align: left;">Binary logical equality operators</td>
-<td style="text-align: center;">Any plain-data type or reference type</td>
-<td style="text-align: center;">Boolean</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>cast</code></td>
-<td style="text-align: left;">Data type conversion operator</td>
-<td style="text-align: center;">Numeric, Boolean, enum</td>
-<td style="text-align: center;">Casting type</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>in</code></td>
-<td style="text-align: left;">Binary set membership operator</td>
-<td style="text-align: center;">Any plain-data type</td>
-<td style="text-align: center;">Boolean</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[expression]</code></td>
-<td style="text-align: left;">Index operator</td>
-<td style="text-align: center;">Array, list, map</td>
-<td style="text-align: center;">Same as element of collection</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[expression]</code></td>
-<td style="text-align: left;">Bit-select operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Numeric</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[expression:expression]</code></td>
-<td style="text-align: left;">Part-select operator</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Numeric</td>
-</tr>
-</tbody>
-</table>
-<h2 id="operator-precedence-and-associativity">Operator precedence and associativity</h2>
+<h1 id="list">List</h1>
+<h2 id="declarations">Declarations</h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">     </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">   </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare an integer list</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a byte list</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">bool</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">boolList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a bool list</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a string list</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">eSTR2NUM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">enumList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare an enum list (1)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">sSTR2NUM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">structList</span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a struct list (2)</span>
+</span></code></pre></div></td></tr></table></div>
+<ol>
+<li>
+<p>Assume defined enum type before
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">enum</span><span class="w"> </span><span class="n">eSTR2NUM</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="n">ZERO</span><span class="p">,</span><span class="w"> </span><span class="n">ONE</span><span class="p">,</span><span class="w"> </span><span class="n">TWO</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div></p>
+</li>
+<li>
+<p>Assume defined struct type before
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">struct</span><span class="w"> </span><span class="n">sSTR2NUM</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">stringVal</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div></p>
+</li>
+</ol>
+<h2 id="declare-list-by-rand-keyword">Declare list by <code>rand</code> keyword:</h2>
+<p><a href="#" md-button="md-button" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">rand</span><span class="w"> </span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">   </span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">rand</span><span class="w"> </span><span class="n">list</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteList</span><span class="w">  </span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">rand</span><span class="w"> </span><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h2 id="list-operators">List Operators</h2>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Operator</th>
-<th style="text-align: center;">Associativity</th>
-<th style="text-align: center;">Precesence</th>
+<th style="text-align: left;">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>()</code> <code>[]</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">1 (Highest)</td>
+<td style="text-align: left;"><a href="Operators/#list_operators_index" title="Index operator []"><code>[]</code></a></td>
+<td style="text-align: left;">Used to access a specific element of a list.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>cast</code></td>
-<td style="text-align: center;">Right</td>
-<td style="text-align: center;">2</td>
+<td style="text-align: left;"><a href="Operators/#list_operators_assignment" title="Assignment operator ="><code>=</code></a></td>
+<td style="text-align: left;">Creates a copy of the list-type expression on the RHS and assigns it to the list on the LHS.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>-</code> <code>!</code> <code>~</code> <code>&amp;</code> <code>|</code> <code>^</code> (unary)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">2</td>
+<td style="text-align: left;"><a href="Operators/#list_operators_equality" title="Equality operator =="><code>==</code></a></td>
+<td style="text-align: left;">Evaluates to <em>true</em> if all elements with corresponding indexes are equal.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>**</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">3</td>
+<td style="text-align: left;"><a href="Operators/#list_operators_inequality" title="Inequality operator !="><code>!=</code></a></td>
+<td style="text-align: left;">Evaluates to <em>true</em> if not all elements with corresponding indexes are equal.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>*</code> <code>/</code> <code>%</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">4</td>
+<td style="text-align: left;"><a href="Operators/#list_operators_in" title="Set membership operator in"><code>in</code></a></td>
+<td style="text-align: left;">It evaluates to <em>true</em> if the element specified on the left of the operator exists in the <strong>list</strong> collection on the right of the operator.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>+</code> <code>-</code> (binary)</td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: left;"><a href="Operators/#list_operators_foreach" title="foreach statement"><code>foreach</code></a></td>
+<td style="text-align: left;">The foreach statement can be applied to a list to iterate over the list elements.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list-methods">List Methods</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="Methods/#list_methods_size" title="function int size()">int <code>size()</code></a></td>
+<td style="text-align: left;">Returns the number of elements in the list.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>&lt;&lt;</code> <code>&gt;&gt;</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">6</td>
+<td style="text-align: left;"><a href="Methods/#list_methods_clear" title="function void clear()"><code>clear()</code></a></td>
+<td style="text-align: left;">Removes all elements.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code> <code>in</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">7</td>
+<td style="text-align: left;"><a href="Methods/#list_methods_delete" title="function &lt;data_type&gt; delete(index)">&lt;data_type&gt; <code>delete(index)</code></a></td>
+<td style="text-align: left;">Move out element at the specified index.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>==</code> <code>!=</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">8</td>
+<td style="text-align: left;"><a href="Methods/#list_methods_insert" title="function insert(index, element)"><code>insert(index, element)</code></a></td>
+<td style="text-align: left;">Add element at the specified index.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>&amp;</code> (binary)</td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">9</td>
+<td style="text-align: left;"><a href="Methods/#list_methods_pop_front" title="function &lt;data_type&gt; pop_front()">&lt;data_type&gt; <code>pop_front()</code></a></td>
+<td style="text-align: left;">Move out first element. Same as <code>delete(0)</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>^</code> (binary)</td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">10</td>
+<td style="text-align: left;"><a href="Methods/#list_methods_push_front" title="function void push_front(element)"><code>push_front(element)</code></a></td>
+<td style="text-align: left;">Add element at beginning of list. Same as <code>insert(0, element)</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>|</code> (binary)</td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">11</td>
+<td style="text-align: left;"><a href="Methods/#list_methods_pop_back" title="function &lt;data_type&gt; pop_back()">&lt;data_type&gt; <code>pop_back()</code></a></td>
+<td style="text-align: left;">Move out last element. Same as <code>delete(size()-1)</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>&amp;&amp;</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">12</td>
+<td style="text-align: left;"><a href="Methods/#list_methods_push_back" title="function void push_back(element)"><code>push_back(element)</code></a></td>
+<td style="text-align: left;">Add element at end of list. Same as <code>insert(size(), element)</code>.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>||</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">13</td>
+<td style="text-align: left;"><a href="Methods/#list_methods_to_set" title="function set&lt;data_type&gt; to_set()">set&lt;data_type&gt; <code>to_set()</code></a></td>
+<td style="text-align: left;">Convert list to unordered set.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>?:</code> (conditional operator)</td>
-<td style="text-align: center;">Right</td>
-<td style="text-align: center;">14 (Lowest)</td>
+<td style="text-align: left;"><a href="Methods/#list_methods_shuffle" title="function void shuffle()"><code>shuffle()</code></a><br><a href="" md-button="md-button" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a></td>
+<td style="text-align: left;">Randomize orders of elements.</td>
 </tr>
 </tbody>
 </table>
@@ -885,11 +832,11 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-04T10:10:43+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-13T09:38:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-13</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-04T08:56:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-04</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-13T09:38:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-13</span>
       
     
   </small>
@@ -923,7 +870,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../DataTypes/IntegerTypes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Integer Types">
+          <a href="../Array/Methods/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Methods">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -933,20 +880,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Integer Types
+                Methods
               </div>
             </div>
           </a>
         
         
           
-          <a href="Expressions/" class="md-footer__link md-footer__link--next" aria-label="Next: Primary Expressions">
+          <a href="Operators/" class="md-footer__link md-footer__link--next" aria-label="Next: Operators">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Primary Expressions
+                Operators
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -6,12 +6,14 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Usage for PSS Language">
+        <meta name="description" content="PSSv2.1/7.9.3.2 List methods">
       
       
         <meta name="author" content="Luther Lee">
       
       
+      
+        <link rel="prev" href="../Operators/">
       
       
       
@@ -20,7 +22,7 @@
     
     
       
-        <title>Abbreviations - PSS CookBook</title>
+        <title>List Methods - PSS CookBook</title>
       
     
     
@@ -66,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#list-methods" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Abbreviations
+              List Methods
             
           </span>
         </div>
@@ -506,6 +513,8 @@
       
   
   
+    
+  
   
     
     
@@ -522,19 +531,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../List/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -551,7 +558,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             List
@@ -566,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../List/Operators/" class="md-nav__link">
+      <a href="../Operators/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -584,9 +591,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../List/Methods/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Methods
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -595,6 +622,96 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_size" class="md-nav__link">
+    function int size()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_clear" class="md-nav__link">
+    function void clear()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_delete" class="md-nav__link">
+    function &lt;data_type&gt; delete(index)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_insert" class="md-nav__link">
+    function void insert(index, element)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_pop_front" class="md-nav__link">
+    function &lt;data_type&gt; pop_front()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_push_front" class="md-nav__link">
+    function void push_front(element)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_pop_back" class="md-nav__link">
+    function &lt;data_type&gt; pop_back()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_push_back" class="md-nav__link">
+    function void push_back(element)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_to_set" class="md-nav__link">
+    function set&lt;data_type&gt; to_set()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_shuffle" class="md-nav__link">
+    function void shuffle()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -624,6 +741,86 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_size" class="md-nav__link">
+    function int size()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_clear" class="md-nav__link">
+    function void clear()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_delete" class="md-nav__link">
+    function &lt;data_type&gt; delete(index)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_insert" class="md-nav__link">
+    function void insert(index, element)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_pop_front" class="md-nav__link">
+    function &lt;data_type&gt; pop_front()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_push_front" class="md-nav__link">
+    function void push_front(element)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_pop_back" class="md-nav__link">
+    function &lt;data_type&gt; pop_back()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_push_back" class="md-nav__link">
+    function void push_back(element)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_to_set" class="md-nav__link">
+    function set&lt;data_type&gt; to_set()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_methods_shuffle" class="md-nav__link">
+    function void shuffle()
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -642,27 +839,76 @@
     
       
     
-    <a href="https://github.com/LeeKaiXuan/PSS_CookBook/raw/main/docs/includes/abbreviations.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/LeeKaiXuan/PSS_CookBook/raw/main/docs/List/Methods.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
     </a>
   
 
 
-  <h1>Abbreviations</h1>
-
-
+<h1 id="list-methods">List Methods</h1>
+<h2 id="list_methods_size">function int <code>size()</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w">        </span><span class="c1">//  intVal: 0 -&gt; 3</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="list_methods_clear">function void <code>clear()</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w">                    </span><span class="c1">//  intList: {1, 2, 3} -&gt; {}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="list_methods_delete">function &lt;data_type&gt; <code>delete(index)</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">     </span><span class="c1">//  intVal: 0 -&gt; 2; intList: {1, 2, 3} -&gt; {1, 3}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="list_methods_insert">function void <code>insert(index, element)</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w">               </span><span class="c1">//  intList: {1, 2, 3} -&gt; {1, 6, 2, 3}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="list_methods_pop_front">function &lt;data_type&gt; <code>pop_front()</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span><span class="w">   </span><span class="c1">//  intVal: 0 -&gt; 1; intList: {1, 2, 3} -&gt; {2, 3}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="list_methods_push_front">function void <code>push_front(element)</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w">              </span><span class="c1">//  intList: {1, 2, 3} -&gt; {4, 1, 2, 3}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="list_methods_pop_back">function &lt;data_type&gt; <code>pop_back()</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span><span class="w">    </span><span class="c1">//  intVal: 0 -&gt; 3; intList: {1, 2, 3} -&gt; {1, 2}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="list_methods_push_back">function void <code>push_back(element)</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w">               </span><span class="c1">//  intList: {1, 2, 3} -&gt; {1, 2, 3, 4}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="list_methods_to_set">function set&lt;data_type&gt; <code>to_set()</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">to_set</span><span class="p">();</span><span class="w"> </span><span class="c1">//  intSet: {} -&gt; {1, 2}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="list_methods_shuffle">function void <code>shuffle()</code></h2>
+<p><a href="" md-button="md-button" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">shuffle</span><span class="p">();</span><span class="w">                  </span><span class="c1">//  intList: {1, 2} -&gt; {1, 2} or {2, 1}</span>
+</span></code></pre></div></td></tr></table></div></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-04T08:56:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-13T09:38:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-13</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-04T08:56:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-04</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-13T09:38:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-13</span>
       
     
   </small>
@@ -691,6 +937,28 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Operators/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Operators">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Operators
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

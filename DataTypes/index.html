@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="9.4 Expression operators">
+        <meta name="description" content="PSSv2.1/7 Data types">
       
       
         <meta name="author" content="Luther Lee">
       
       
       
-        <link rel="prev" href="../DataTypes/IntegerTypes/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="Expressions/">
+        <link rel="next" href="IntegerTypes/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Expression Operators - PSS CookBook</title>
+        <title>Data Types - PSS CookBook</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#expression-operators" class="md-skip">
+        <a href="#data-types" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Expression Operators
+              Data Types
             
           </span>
         </div>
@@ -244,6 +244,8 @@
       
   
   
+    
+  
   
     
     
@@ -258,19 +260,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../DataTypes/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -281,13 +281,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Data Types
@@ -302,7 +302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../DataTypes/IntegerTypes/" class="md-nav__link">
+      <a href="IntegerTypes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -327,8 +327,6 @@
       
   
   
-    
-  
   
     
     
@@ -343,17 +341,19 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../Operator/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -364,13 +364,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Operator
@@ -385,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Expressions/" class="md-nav__link">
+      <a href="../Operator/Expressions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -643,15 +643,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#expression-operators-and-data-types" class="md-nav__link">
-    Expression operators and data types
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operator-precedence-and-associativity" class="md-nav__link">
-    Operator precedence and associativity
+  <a href="#integer-types" class="md-nav__link">
+    Integer Types
   </a>
   
 </li>
@@ -675,207 +668,37 @@
     
       
     
-    <a href="https://github.com/LeeKaiXuan/PSS_CookBook/raw/main/docs/Operator/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/LeeKaiXuan/PSS_CookBook/raw/main/docs/DataTypes/index.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
     </a>
   
 
 
-<h1 id="expression-operators">Expression Operators</h1>
-<h2 id="expression-operators-and-data-types">Expression operators and data types</h2>
+<h1 id="data-types">Data Types</h1>
+<h2 id="integer-types">Integer Types</h2>
+<p><abbr title="Portable Test and Stimulus Standard">PSS</abbr> supports 2 numeric types:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Operator token</th>
-<th style="text-align: left;">Operator name</th>
-<th style="text-align: center;">Operator data types</th>
-<th style="text-align: center;">Result data type</th>
+<th style="text-align: center;">Data Type</th>
+<th style="text-align: center;">Default Width</th>
+<th style="text-align: center;">Default Domain</th>
+<th style="text-align: center;">Signed/Unsigned</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>?:</code></td>
-<td style="text-align: left;">Conditional operator</td>
-<td style="text-align: center;">Any plain-data type or reference type</td>
-<td style="text-align: center;">Same as operands</td>
+<td style="text-align: center;"><a href="IntegerTypes/#datatypes_integertypes_bit" title="bit"><code>bit</code></a></td>
+<td style="text-align: center;">32 bits</td>
+<td style="text-align: center;">-2<sup>31</sup>..(2^31-1)</td>
+<td style="text-align: center;">Signed</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>-</code></td>
-<td style="text-align: left;">Unary arithmetic negation operator</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Same as operand</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>~</code></td>
-<td style="text-align: left;">Unary bitwise negation operator</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Same as operand</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>!</code></td>
-<td style="text-align: left;">Unary Boolean negation operator</td>
-<td style="text-align: center;">Boolean</td>
-<td style="text-align: center;">Boolean</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&amp; | ^</code></td>
-<td style="text-align: left;">Unary bitwise reduction operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">1-bit</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>+ - * / % **</code></td>
-<td style="text-align: left;">Binary arithmetic operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">1-bit</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&amp; | ^</code></td>
-<td style="text-align: left;">Binary bitwise operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">1-bit</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&gt;&gt; &lt;&lt;</code></td>
-<td style="text-align: left;">Binary shift operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Same as left operand</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&amp;&amp; ||</code></td>
-<td style="text-align: left;">Binary Boolean logical operators</td>
-<td style="text-align: center;">Boolean</td>
-<td style="text-align: center;">Same as operands</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&lt; &lt;= &gt; &gt;=</code></td>
-<td style="text-align: left;">Binary relational operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Boolean</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>== !=</code></td>
-<td style="text-align: left;">Binary logical equality operators</td>
-<td style="text-align: center;">Any plain-data type or reference type</td>
-<td style="text-align: center;">Boolean</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>cast</code></td>
-<td style="text-align: left;">Data type conversion operator</td>
-<td style="text-align: center;">Numeric, Boolean, enum</td>
-<td style="text-align: center;">Casting type</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>in</code></td>
-<td style="text-align: left;">Binary set membership operator</td>
-<td style="text-align: center;">Any plain-data type</td>
-<td style="text-align: center;">Boolean</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[expression]</code></td>
-<td style="text-align: left;">Index operator</td>
-<td style="text-align: center;">Array, list, map</td>
-<td style="text-align: center;">Same as element of collection</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[expression]</code></td>
-<td style="text-align: left;">Bit-select operators</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Numeric</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>[expression:expression]</code></td>
-<td style="text-align: left;">Part-select operator</td>
-<td style="text-align: center;">Numeric</td>
-<td style="text-align: center;">Numeric</td>
-</tr>
-</tbody>
-</table>
-<h2 id="operator-precedence-and-associativity">Operator precedence and associativity</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Operator</th>
-<th style="text-align: center;">Associativity</th>
-<th style="text-align: center;">Precesence</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>()</code> <code>[]</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">1 (Highest)</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>cast</code></td>
-<td style="text-align: center;">Right</td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>-</code> <code>!</code> <code>~</code> <code>&amp;</code> <code>|</code> <code>^</code> (unary)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">2</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>**</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">3</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>*</code> <code>/</code> <code>%</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">4</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>+</code> <code>-</code> (binary)</td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">5</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&lt;&lt;</code> <code>&gt;&gt;</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">6</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code> <code>in</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">7</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>==</code> <code>!=</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">8</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&amp;</code> (binary)</td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">9</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>^</code> (binary)</td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">10</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>|</code> (binary)</td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">11</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>&amp;&amp;</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">12</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>||</code></td>
-<td style="text-align: center;">Left</td>
-<td style="text-align: center;">13</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>?:</code> (conditional operator)</td>
-<td style="text-align: center;">Right</td>
-<td style="text-align: center;">14 (Lowest)</td>
+<td style="text-align: center;"><a href="IntegerTypes/#datatypes_integertypes_integer" title="integer"><code>int</code></a></td>
+<td style="text-align: center;">1 bit</td>
+<td style="text-align: center;">0..1</td>
+<td style="text-align: center;">Unsigned</td>
 </tr>
 </tbody>
 </table>
@@ -885,11 +708,11 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-04T10:10:43+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-13T10:24:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-13</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-04T08:56:19+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-04</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-11T05:14:51+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-11</span>
       
     
   </small>
@@ -923,7 +746,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../DataTypes/IntegerTypes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Integer Types">
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -933,20 +756,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Integer Types
+                Home
               </div>
             </div>
           </a>
         
         
           
-          <a href="Expressions/" class="md-footer__link md-footer__link--next" aria-label="Next: Primary Expressions">
+          <a href="IntegerTypes/" class="md-footer__link md-footer__link--next" aria-label="Next: Integer Types">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Primary Expressions
+                Integer Types
               </div>
             </div>
             <div class="md-footer__button md-icon">
