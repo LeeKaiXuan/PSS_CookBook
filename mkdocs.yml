@@ -76,6 +76,7 @@ nav:
     - Integer Types: 'DataTypes/IntegerTypes.md'
   - Operator:
     - Operator/index.md
+    - Binary Bitwise: 'Operator/BinaryBitwise.md'
     - Primary Expressions: 'Operator/Expressions.md'
   - Array:
     - Array/index.md
