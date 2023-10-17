@@ -22,7 +22,7 @@ description: PSSv2.1/7. Data types
 | :------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`array`](../Array/index.md#array)    | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`                                                                                    |
 | [`list`](../List/index.md#list)       | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")   |
-| `map`                                 |                                                                                                                                                       |
+| [`map`](../Map/index.md#map)          |                                                                                                                                                       |
 | `set`                                 |                                                                                                                                                       |
 | `struct`                              | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`                                                                                    |
 

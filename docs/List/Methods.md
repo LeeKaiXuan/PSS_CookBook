@@ -60,7 +60,7 @@ set<int> intSet = intList.to_set(); //  intSet: {} -> {1, 2}
 ```
 
 ## function void `shuffle()` {#list_methods_shuffle}
-[:material-engine-outline: v2.1]("LRM minimum version"){ md-button }
+[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")
 ```sv linenums="1"
 list<int> intList = {1, 2};
 intList.shuffle();                  //  intList: {1, 2} -> {1, 2} or {2, 1}

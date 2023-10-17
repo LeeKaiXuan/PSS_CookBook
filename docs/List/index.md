@@ -31,7 +31,7 @@ struct sSTR2NUM {
 ```
 
 ## Declare list by `rand` keyword:
-[:material-engine-outline: v2.1](# "LRM minimum version"){ md-button }
+[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")
 ```sv linenums="1"
 rand list<int    > intList   ;
 rand list<bit [8]> byteList  ;
@@ -49,15 +49,15 @@ rand list<string > stringList;
 | [`foreach`](Operators.md#list_operators_foreach "`foreach` statement")    | The foreach statement can be applied to a list to iterate over the list elements.                                                             |
 
 ## List Methods
-| Method                                                                                                                                                | Description                                                       |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
-| [int `size()`](Methods.md#list_methods_size "function int `size()`")                                                                                  | Returns the number of elements in the list.                       |
-| [`clear()`](Methods.md#list_methods_clear "function void `clear()`")                                                                                  | Removes all elements.                                             |
-| [&lt;data_type&gt; `delete(index)`](Methods.md#list_methods_delete "function &lt;data_type&gt; `delete(index)`")                                      | Move out element at the specified index.                          |
-| [`insert(index, element)`](Methods.md#list_methods_insert "function `insert(index, element)`")                                                        | Add element at the specified index.                               |
-| [&lt;data_type&gt; `pop_front()`](Methods.md#list_methods_pop_front "function &lt;data_type&gt; `pop_front()`")                                       | Move out first element. Same as `delete(0)`.                      |
-| [`push_front(element)`](Methods.md#list_methods_push_front "function void `push_front(element)`")                                                     | Add element at beginning of list. Same as `insert(0, element)`.   |
-| [&lt;data_type&gt; `pop_back()`](Methods.md#list_methods_pop_back "function &lt;data_type&gt; `pop_back()`")                                          | Move out last element. Same as `delete(size()-1)`.                |
-| [`push_back(element)`](Methods.md#list_methods_push_back "function void `push_back(element)`")                                                        | Add element at end of list. Same as `insert(size(), element)`.    |
-| [set&lt;data_type&gt; `to_set()`](Methods.md#list_methods_to_set "function set&lt;data_type&gt; `to_set()`")                                          | Convert list to unordered set.                                    |
-| [`shuffle()`](Methods.md#list_methods_shuffle "function void `shuffle()`")<br>[:material-engine-outline: v2.1]("LRM minimum version"){ md-button }    | Randomize orders of elements.                                     |
+| Method                                                                                                                                                        | Description                                                       |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------- |
+| [int `size()`](Methods.md#list_methods_size "function int `size()`")                                                                                          | Returns the number of elements in the list.                       |
+| [`clear()`](Methods.md#list_methods_clear "function void `clear()`")                                                                                          | Removes all elements.                                             |
+| [&lt;data_type&gt; `delete(index)`](Methods.md#list_methods_delete "function &lt;data_type&gt; `delete(index)`")                                              | Move out element at the specified index.                          |
+| [`insert(index, element)`](Methods.md#list_methods_insert "function `insert(index, element)`")                                                                | Add element at the specified index.                               |
+| [&lt;data_type&gt; `pop_front()`](Methods.md#list_methods_pop_front "function &lt;data_type&gt; `pop_front()`")                                               | Move out first element. Same as `delete(0)`.                      |
+| [`push_front(element)`](Methods.md#list_methods_push_front "function void `push_front(element)`")                                                             | Add element at beginning of list. Same as `insert(0, element)`.   |
+| [&lt;data_type&gt; `pop_back()`](Methods.md#list_methods_pop_back "function &lt;data_type&gt; `pop_back()`")                                                  | Move out last element. Same as `delete(size()-1)`.                |
+| [`push_back(element)`](Methods.md#list_methods_push_back "function void `push_back(element)`")                                                                | Add element at end of list. Same as `insert(size(), element)`.    |
+| [set&lt;data_type&gt; `to_set()`](Methods.md#list_methods_to_set "function set&lt;data_type&gt; `to_set()`")                                                  | Convert list to unordered set.                                    |
+| [`shuffle()`](Methods.md#list_methods_shuffle "function void `shuffle()`")<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")   | Randomize orders of elements.                                     |
