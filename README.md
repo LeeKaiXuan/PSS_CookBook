@@ -1,4 +1,4 @@
-## PSS_CookBook
+## PSS_Cookbook
 Documentation for introducing the usage of PSS language.
 
 ## Setup (Local Builder)
