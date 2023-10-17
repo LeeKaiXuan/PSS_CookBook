@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="PSSv2.1/7.9.3 Lists">
+        <meta name="description" content="PSSv2.1/7.9.4. Maps">
       
       
         <meta name="author" content="Luther Lee">
       
       
       
-        <link rel="prev" href="../Array/Methods/">
+        <link rel="prev" href="../List/Methods/">
       
       
-        <link rel="next" href="Operators/">
+        <link rel="next" href="../Traversal/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>List - PSS Cookbook</title>
+        <title>Map - PSS Cookbook</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#list" class="md-skip">
+        <a href="#map" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              List
+              Map
             
           </span>
         </div>
@@ -537,8 +537,6 @@
       
   
   
-    
-  
   
     
     
@@ -555,17 +553,19 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../List/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -576,13 +576,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_5" id="__nav_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             List
@@ -597,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Operators/" class="md-nav__link">
+      <a href="../List/Operators/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -617,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Methods/" class="md-nav__link">
+      <a href="../List/Methods/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -642,6 +642,8 @@
       
   
   
+    
+  
   
     
     
@@ -654,19 +656,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../Map/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -678,7 +678,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Map
@@ -777,6 +777,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#declarations" class="md-nav__link">
     Declarations
   </a>
@@ -784,22 +791,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#declare-list-by-rand-keyword" class="md-nav__link">
-    Declare list by rand keyword:
+  <a href="#map-operators" class="md-nav__link">
+    Map Operators
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#list-operators" class="md-nav__link">
-    List Operators
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#list-methods" class="md-nav__link">
-    List Methods
+  <a href="#map-methods" class="md-nav__link">
+    Map Methods
   </a>
   
 </li>
@@ -823,26 +823,31 @@
     
       
     
-    <a href="https://github.com/LeeKaiXuan/PSS_Cookbook/raw/main/docs/List/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/LeeKaiXuan/PSS_Cookbook/raw/main/docs/Map/index.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
     </a>
   
 
 
-<h1 id="list">List</h1>
+<h1 id="map">Map</h1>
+<h2 id="properties">Properties</h2>
+<ul>
+<li>Unordered.</li>
+<li>Non-randomizable.</li>
+<li>Elements can be added or removed within <code>exec</code> blocks.</li>
+<li><em>Key</em> and <em>element</em> can be any <a href="../DataTypes/#datatypes_scalar" title="e.g., bit, int, bool, enum, string, float32, float64, chandle"><em>scalar</em></a> or <a href="../DataTypes/#datatypes_aggregate" title="e.g., array, list, map, set, struct"><em>aggregate</em></a> of scalars.</li>
+<li><em>Key</em>s must be unique.</li>
+</ul>
 <h2 id="declarations">Declarations</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Without Initialization Assignment</label><label for="__tabbed_1_2">With Initialization Assignment</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">     </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">   </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare an integer list</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a byte list</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">bool</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">boolList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a bool list</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a string list</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">eSTR2NUM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">enumList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare an enum list (1)</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">sSTR2NUM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">structList</span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a struct list (2)</span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">nibble2int</span><span class="w"> </span><span class="p">;</span><span class="w">   </span><span class="c1">//  nibble2int : {}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">bool</span><span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">int2bool</span><span class="w">   </span><span class="p">;</span><span class="w">   </span><span class="c1">//  int2bool   : {}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">map</span><span class="o">&lt;</span><span class="n">bool</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bool2string</span><span class="p">;</span><span class="w">   </span><span class="c1">//  bool2string: {}</span>
 </span></code></pre></div></td></tr></table></div>
 <ol>
 <li>
@@ -866,15 +871,40 @@
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 </ol>
-<h2 id="declare-list-by-rand-keyword">Declare list by <code>rand</code> keyword:</h2>
-<p><a href="../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a>
+</div>
+<div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">rand</span><span class="w"> </span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">   </span><span class="p">;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">rand</span><span class="w"> </span><span class="n">list</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteList</span><span class="w">  </span><span class="p">;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">rand</span><span class="w"> </span><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">nibble2int</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mb">4&#39;b1110</span><span class="o">:</span><span class="mi">3</span><span class="w">      </span><span class="p">,</span><span class="w"> </span><span class="mb">4&#39;b0110</span><span class="o">:</span><span class="mi">2</span><span class="w">     </span><span class="p">};</span><span class="w">   </span><span class="c1">//  nibble2int : {} -&gt; {4&#39;b1110:3, 4&#39;b0110:2}</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="n">bool</span><span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">int2bool</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">      </span><span class="mi">4</span><span class="o">:</span><span class="n">true</span><span class="w">   </span><span class="p">,</span><span class="w">       </span><span class="mi">5</span><span class="o">:</span><span class="n">false</span><span class="w"> </span><span class="p">};</span><span class="w">   </span><span class="c1">//  int2bool   : {} -&gt; {4:true        , 5:false       }</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">map</span><span class="o">&lt;</span><span class="n">bool</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bool2string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="nl">false:</span><span class="s">&quot;FALSE&quot;</span><span class="p">,</span><span class="w">    </span><span class="nl">true:</span><span class="s">&quot;TRUE&quot;</span><span class="p">};</span><span class="w">   </span><span class="c1">//  bool2string: {} -&gt; {false:&quot;FALSE&quot; , true:&quot;TRUE&quot;   }</span>
+</span></code></pre></div></td></tr></table></div>
+<ol>
+<li>
+<p>Assume defined enum type before
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">enum</span><span class="w"> </span><span class="n">eSTR2NUM</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="n">ZERO</span><span class="p">,</span><span class="w"> </span><span class="n">ONE</span><span class="p">,</span><span class="w"> </span><span class="n">TWO</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="p">};</span>
 </span></code></pre></div></td></tr></table></div></p>
-<h2 id="list-operators">List Operators</h2>
+</li>
+<li>
+<p>Assume defined struct type before
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">struct</span><span class="w"> </span><span class="n">sSTR2NUM</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">stringVal</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="p">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<h2 id="map-operators">Map Operators</h2>
 <table>
 <thead>
 <tr>
@@ -884,32 +914,28 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a href="Operators/#list_operators_index" title="Index operator []"><code>[]</code></a></td>
-<td style="text-align: left;">Used to access a specific element of a list.</td>
+<td style="text-align: left;"><a href="Operators.md#map_operators_index" title="Index operator []"><code>[]</code></a></td>
+<td style="text-align: left;">Used to access a specific element of a map.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="Operators/#list_operators_assignment" title="Assignment operator ="><code>=</code></a></td>
-<td style="text-align: left;">Creates a copy of the list-type expression on the RHS and assigns it to the list on the LHS.</td>
+<td style="text-align: left;"><a href="Operators.md#map_operators_assignment" title="Assignment operator ="><code>=</code></a></td>
+<td style="text-align: left;">Creates a copy of the map-type expression on the RHS and assigns it to the map on the LHS.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="Operators/#list_operators_equality" title="Equality operator =="><code>==</code></a></td>
-<td style="text-align: left;">Evaluates to <em>true</em> if all elements with corresponding indexes are equal.</td>
+<td style="text-align: left;"><a href="Operators.md#map_operators_equality" title="Equality operator =="><code>==</code></a></td>
+<td style="text-align: left;">Evaluates to <em>true</em> if all elements with corresponding keys are equal.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="Operators/#list_operators_inequality" title="Inequality operator !="><code>!=</code></a></td>
-<td style="text-align: left;">Evaluates to <em>true</em> if not all elements with corresponding indexes are equal.</td>
+<td style="text-align: left;"><a href="Operators.md#map_operators_inequality" title="Inequality operator !="><code>!=</code></a></td>
+<td style="text-align: left;">Evaluates to <em>true</em> if not all elements with corresponding keys are equal.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="Operators/#list_operators_in" title="Set membership operator in"><code>in</code></a></td>
-<td style="text-align: left;">It evaluates to <em>true</em> if the element specified on the left of the operator exists in the <strong>list</strong> collection on the right of the operator.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="Operators/#list_operators_foreach" title="foreach statement"><code>foreach</code></a></td>
-<td style="text-align: left;">The foreach statement can be applied to a list to iterate over the list elements.</td>
+<td style="text-align: left;"><a href="Operators.md#map_operators_foreach" title="foreach statement"><code>foreach</code></a></td>
+<td style="text-align: left;">The foreach statement can be applied to a map to iterate over the map elements.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="list-methods">List Methods</h2>
+<h2 id="map-methods">Map Methods</h2>
 <table>
 <thead>
 <tr>
@@ -919,44 +945,28 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><a href="Methods/#list_methods_size" title="function int size()">int <code>size()</code></a></td>
-<td style="text-align: left;">Returns the number of elements in the list.</td>
+<td style="text-align: left;"><a href="Methods.md#map_methods_size" title="function int size()">int <code>size()</code></a></td>
+<td style="text-align: left;">Returns the number of elements in the map.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="Methods/#list_methods_clear" title="function void clear()"><code>clear()</code></a></td>
+<td style="text-align: left;"><a href="Methods.md#map_methods_clear" title="function void clear()"><code>clear()</code></a></td>
 <td style="text-align: left;">Removes all elements.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="Methods/#list_methods_delete" title="function &lt;data_type&gt; delete(index)">&lt;data_type&gt; <code>delete(index)</code></a></td>
-<td style="text-align: left;">Move out element at the specified index.</td>
+<td style="text-align: left;"><a href="Methods.md#map_methods_delete" title="function &lt;data_type&gt; delete(key)">&lt;data_type&gt; <code>delete(key)</code></a></td>
+<td style="text-align: left;">Move out element with the specified key.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="Methods/#list_methods_insert" title="function insert(index, element)"><code>insert(index, element)</code></a></td>
-<td style="text-align: left;">Add element at the specified index.</td>
+<td style="text-align: left;"><a href="Methods.md#map_methods_insert" title="function insert(key, element)"><code>insert(key, element)</code></a></td>
+<td style="text-align: left;">Add or replace element with the specified key.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="Methods/#list_methods_pop_front" title="function &lt;data_type&gt; pop_front()">&lt;data_type&gt; <code>pop_front()</code></a></td>
-<td style="text-align: left;">Move out first element. Same as <code>delete(0)</code>.</td>
+<td style="text-align: left;"><a href="Methods.md#map_methods_keys" title="function set&lt;data_type&gt; keys()">set&lt;data_type&gt; <code>keys()</code></a></td>
+<td style="text-align: left;">Returns all keys in a <code>set</code>-type.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="Methods/#list_methods_push_front" title="function void push_front(element)"><code>push_front(element)</code></a></td>
-<td style="text-align: left;">Add element at beginning of list. Same as <code>insert(0, element)</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="Methods/#list_methods_pop_back" title="function &lt;data_type&gt; pop_back()">&lt;data_type&gt; <code>pop_back()</code></a></td>
-<td style="text-align: left;">Move out last element. Same as <code>delete(size()-1)</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="Methods/#list_methods_push_back" title="function void push_back(element)"><code>push_back(element)</code></a></td>
-<td style="text-align: left;">Add element at end of list. Same as <code>insert(size(), element)</code>.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="Methods/#list_methods_to_set" title="function set&lt;data_type&gt; to_set()">set&lt;data_type&gt; <code>to_set()</code></a></td>
-<td style="text-align: left;">Return all elements to a <code>set</code>-type.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><a href="Methods/#list_methods_shuffle" title="function void shuffle()"><code>shuffle()</code></a><br><a href="../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a></td>
-<td style="text-align: left;">Randomize orders of elements.</td>
+<td style="text-align: left;"><a href="Methods.md#map_methods_keys" title="function list&lt;data_type&gt; values()">list&lt;data_type&gt; <code>values()</code></a></td>
+<td style="text-align: left;">Returns all elements in a <a href="../List/#list"><code>list</code></a>-type.</td>
 </tr>
 </tbody>
 </table>
@@ -966,11 +976,11 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-17T10:32:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-17</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-17T10:32:45+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-17</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-13T09:38:02+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-13</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-17T10:32:45+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-17</span>
       
     
   </small>
@@ -1004,7 +1014,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../Array/Methods/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Methods">
+          <a href="../List/Methods/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Methods">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1021,13 +1031,13 @@
         
         
           
-          <a href="Operators/" class="md-footer__link md-footer__link--next" aria-label="Next: Operators">
+          <a href="../Traversal/" class="md-footer__link md-footer__link--next" aria-label="Next: Traversal">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Operators
+                Traversal
               </div>
             </div>
             <div class="md-footer__button md-icon">

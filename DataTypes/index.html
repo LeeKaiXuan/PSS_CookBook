@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="PSSv2.1/7 Data types">
+        <meta name="description" content="PSSv2.1/7. Data types">
       
       
         <meta name="author" content="Luther Lee">
@@ -666,6 +666,62 @@
           
           
           <div class="md-nav__link md-nav__container">
+            <a href="../Map/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Map
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Map
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
             <a href="../Traversal/" class="md-nav__link ">
               
   
@@ -678,8 +734,8 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Traversal
           </label>
@@ -721,8 +777,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#integer-types" class="md-nav__link">
-    Integer Types
+  <a href="#datatypes_scalar" class="md-nav__link">
+    Scalar Type
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datatypes_aggregate" class="md-nav__link">
+    Aggregate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datatypes_non_aggregate" class="md-nav__link">
+    Non-aggregate
   </a>
   
 </li>
@@ -754,39 +824,99 @@
 
 
 <h1 id="data-types">Data Types</h1>
-<h2 id="integer-types">Integer Types</h2>
-<p><abbr title="Portable Test and Stimulus Standard">PSS</abbr> supports 2 numeric types:</p>
+<h2 id="datatypes_scalar"><em>Scalar</em> Type</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Data Type</th>
-<th style="text-align: center;">Default Width</th>
-<th style="text-align: center;">Default Domain</th>
-<th style="text-align: center;">Signed/Unsigned</th>
+<th style="text-align: left;">Scalar Type</th>
+<th style="text-align: center;">Randomizable</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><a href="IntegerTypes/#datatypes_integertypes_bit" title="bit"><code>bit</code></a></td>
-<td style="text-align: center;">32 bits</td>
-<td style="text-align: center;">-2<sup>31</sup>..(2^31-1)</td>
-<td style="text-align: center;">Signed</td>
+<td style="text-align: left;"><a href="IntegerTypes/#datatypes_integertypes_bit" title="bit"><code>bit</code></a></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /></td>
 </tr>
 <tr>
-<td style="text-align: center;"><a href="IntegerTypes/#datatypes_integertypes_integer" title="integer"><code>int</code></a></td>
-<td style="text-align: center;">1 bit</td>
-<td style="text-align: center;">0..1</td>
-<td style="text-align: center;">Unsigned</td>
+<td style="text-align: left;"><a href="IntegerTypes/#datatypes_integertypes_integer" title="integer"><code>int</code></a></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>enum</code></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: center;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>float32</code><br><a href="../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>float64</code><br><a href="../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>chandle</code></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
+<h2 id="datatypes_aggregate"><em>Aggregate</em></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Aggregate Type</th>
+<th style="text-align: left;">Randomizable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="../Array/#array"><code>array</code></a></td>
+<td style="text-align: left;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /> Only for <code>bit</code>, <code>int</code>, <code>bool</code>, <code>enum</code>, <code>string</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="../List/#list"><code>list</code></a></td>
+<td style="text-align: left;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /> Only for <code>bit</code>, <code>int</code>, <code>bool</code>, <code>enum</code>, <code>string</code><br><a href="../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="../Map/#map"><code>map</code></a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>set</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>struct</code></td>
+<td style="text-align: left;"><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" title=":white_check_mark:" /> Only for <code>bit</code>, <code>int</code>, <code>bool</code>, <code>enum</code>, <code>string</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title"><em>Aggregate</em> may be nested.</p>
+</div>
+<h2 id="datatypes_non_aggregate"><em>Non-aggregate</em></h2>
+<ul>
+<li><code>component</code></li>
+<li><code>action</code></li>
+<li><code>buffer</code></li>
+<li><code>stream</code></li>
+<li><code>state</code></li>
+<li><code>resource</code></li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-13T10:24:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-17T10:11:37+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-17</span>
       
         <br>
         Created:
