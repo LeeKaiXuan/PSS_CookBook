@@ -51,5 +51,5 @@ Declare array by `rand` keyword:
 | :-------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
 | [int `size()`](Methods.md#array_methods_size "function int `size()`")                                                 | Returns the number of elements in the arrays.                     |
 | [int `sum()`](Methods.md#array_methods_sum "function int `sum()`")                                                    | Returns the sum of all elements currently stored in the array.    |
-| [list&lt;data_type&gt; `to_list()`](Methods.md#array_methods_to_list "function list&lt;data_type&gt; `to_list()`")    | Returns a **list** containing the elements of the array.          |
-| [set&lt;data_type&gt; `to_set()`:](Methods.md#array_methods_to_set "function set&lt;data_type&gt; `to_set()`")        | Returns a **set** containing the elements of the array.           |
+| [list&lt;data_type&gt; `to_list()`](Methods.md#array_methods_to_list "function list&lt;data_type&gt; `to_list()`")    | Returns all elements in a [`list`](../List/index.md#list)-type.   |
+| [set&lt;data_type&gt; `to_set()`:](Methods.md#array_methods_to_set "function set&lt;data_type&gt; `to_set()`")        | Returns all elements in a `set`-type.                             |
