@@ -1,14 +1,37 @@
 ---
 title: Data Types
-description: PSSv2.1/7 Data types
+description: PSSv2.1/7. Data types
 ---
 
 # Data Types
 
-## Integer Types
-PSS supports 2 numeric types:
+## *Scalar* Type {#datatypes_scalar}
+| Scalar Type                                                                                   | Randomizable          |
+| :-------------------------------------------------------------------------------------------- | :-------------------: |
+| [`bit`](IntegerTypes.md#datatypes_integertypes_bit "bit")                                     | :white_check_mark:    |
+| [`int`](IntegerTypes.md#datatypes_integertypes_integer "integer")                             | :white_check_mark:    |
+| `bool`                                                                                        | :white_check_mark:    |
+| `enum`                                                                                        | :white_check_mark:    |
+| `string`                                                                                      | :white_check_mark:    |
+| `float32`<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")    |                       |
+| `float64`<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")    |                       |
+| `chandle`                                                                                     |                       |
 
-| Data Type                                                             | Default Width | Default Domain    | Signed/Unsigned   |
-| :-------------------------------------------------------------------: | :-----------: | :---------------: | :---------------: |
-| [`bit`](IntegerTypes.md#datatypes_integertypes_bit "bit")             | 32 bits       | -2^31^..(2^31-1)  | Signed            |
-| [`int`](IntegerTypes.md#datatypes_integertypes_integer "integer")     | 1 bit         | 0..1              | Unsigned          |
+## *Aggregate* {#datatypes_aggregate}
+| Aggregate Type                        | Randomizable                                                                                                                                          |
+| :------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`array`](../Array/index.md#array)    | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`                                                                                    |
+| [`list`](../List/index.md#list)       | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")   |
+| `map`                                 |                                                                                                                                                       |
+| `set`                                 |                                                                                                                                                       |
+| `struct`                              | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`                                                                                    |
+
+!!! Note "*Aggregate* may be nested."
+
+## *Non-aggregate* {#datatypes_non_aggregate}
+- `component`
+- `action`
+- `buffer`
+- `stream`
+- `state`
+- `resource`

@@ -3,7 +3,7 @@ title: List
 description: PSSv2.1/7.9.3 Lists
 ---
 
-# List
+# List {#list}
 
 ## Declarations
 ```sv linenums="1"

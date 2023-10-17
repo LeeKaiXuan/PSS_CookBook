@@ -3,7 +3,7 @@ title: Array
 description: PSSv2.1/7.9.2 Arrays
 ---
 
-# Array
+# Array {#array}
 
 ## Declarations
 Array has 2 types of declare syntaxes: `Template`, `Square`.
