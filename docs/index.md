@@ -1,9 +1,9 @@
 ---
 title: Home
-description: PSS CookBook
+description: PSS Cookbook
 ---
 
-# Portable Test and Stimulus Standard (PSS) CookBook
+# Portable Test and Stimulus Standard (PSS) Cookbook
 
 In this document, we summarize the LRM of PSS, and give you extra examples and tips.
 

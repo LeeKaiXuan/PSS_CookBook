@@ -1,10 +1,10 @@
-site_name: PSS CookBook
+site_name: PSS Cookbook
 site_description: Usage for PSS Language
 site_author: Luther Lee
-copyright: Copyright &copy; 2023 - 2023 Luther Lee
-repo_url: https://github.com/LeeKaiXuan/PSS_CookBook
+copyright: Copyright &copy; 2023 Luther Lee
+repo_url: https://github.com/LeeKaiXuan/PSS_Cookbook
 edit_uri: blob/main/docs/
-repo_name: LeeKaiXuan/PSS_CookBook
+repo_name: LeeKaiXuan/PSS_Cookbook
 
 theme:
   name: material
