@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="PSSv2.1/7.2 Integer types">
+        <meta name="description" content="PSSv2.1/7.9.4.2 Map methods">
       
       
         <meta name="author" content="Luther Lee">
       
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../Operators/">
       
       
-        <link rel="next" href="../../Operator/">
+        <link rel="next" href="../../Traversal/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Integer Types - PSS Cookbook</title>
+        <title>Map Methods - PSS Cookbook</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#integer-types" class="md-skip">
+        <a href="#map-methods" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Integer Types
+              Map Methods
             
           </span>
         </div>
@@ -244,8 +244,6 @@
       
   
   
-    
-  
   
     
     
@@ -260,17 +258,19 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../DataTypes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -287,7 +287,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Data Types
@@ -300,29 +300,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Integer Types
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../DataTypes/IntegerTypes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -331,94 +311,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#datatypes_integertypes_bit" class="md-nav__link">
-    Bit
-  </a>
-  
-    <nav class="md-nav" aria-label="Bit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#declare-a-bit" class="md-nav__link">
-    Declare a bit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#declare-8-bits-wide-bit-type" class="md-nav__link">
-    Declare 8-bits wide bit type
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#declared-with-specified-value-domain" class="md-nav__link">
-    Declared with specified value domain
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#datatypes_integertypes_integer" class="md-nav__link">
-    Integer
-  </a>
-  
-    <nav class="md-nav" aria-label="Integer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#declare-an-integer" class="md-nav__link">
-    Declare an integer:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#declare-8-bits-wide-int-type" class="md-nav__link">
-    Declare 8-bits wide int type
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#declared-with-specified-value-domain_1" class="md-nav__link">
-    Declared with specified value domain
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -750,6 +642,8 @@
       
   
   
+    
+  
   
     
     
@@ -766,19 +660,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Map/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -795,7 +687,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Map
@@ -810,7 +702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Map/Operators/" class="md-nav__link">
+      <a href="../Operators/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -828,9 +720,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../Map/Methods/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Methods
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -839,6 +751,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#map_methods_size" class="md-nav__link">
+    function int size()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map_methods_clear" class="md-nav__link">
+    function void clear()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map_methods_delete" class="md-nav__link">
+    function &lt;data_type&gt; delete(data_type key)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map_methods_insert" class="md-nav__link">
+    function void insert(data_type key, data_type element)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map_methods_keys" class="md-nav__link">
+    function set&lt;data_type&gt; keys()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map_methods_values" class="md-nav__link">
+    function list&lt;data_type&gt; values()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -934,70 +908,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#datatypes_integertypes_bit" class="md-nav__link">
-    Bit
+  <a href="#map_methods_size" class="md-nav__link">
+    function int size()
   </a>
-  
-    <nav class="md-nav" aria-label="Bit">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#declare-a-bit" class="md-nav__link">
-    Declare a bit
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#declare-8-bits-wide-bit-type" class="md-nav__link">
-    Declare 8-bits wide bit type
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#declared-with-specified-value-domain" class="md-nav__link">
-    Declared with specified value domain
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#datatypes_integertypes_integer" class="md-nav__link">
-    Integer
-  </a>
-  
-    <nav class="md-nav" aria-label="Integer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#declare-an-integer" class="md-nav__link">
-    Declare an integer:
+  <a href="#map_methods_clear" class="md-nav__link">
+    function void clear()
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#declare-8-bits-wide-int-type" class="md-nav__link">
-    Declare 8-bits wide int type
+      
+        <li class="md-nav__item">
+  <a href="#map_methods_delete" class="md-nav__link">
+    function &lt;data_type&gt; delete(data_type key)
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#declared-with-specified-value-domain_1" class="md-nav__link">
-    Declared with specified value domain
+      
+        <li class="md-nav__item">
+  <a href="#map_methods_insert" class="md-nav__link">
+    function void insert(data_type key, data_type element)
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#map_methods_keys" class="md-nav__link">
+    function set&lt;data_type&gt; keys()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map_methods_values" class="md-nav__link">
+    function list&lt;data_type&gt; values()
+  </a>
   
 </li>
       
@@ -1020,143 +968,74 @@
     
       
     
-    <a href="https://github.com/LeeKaiXuan/PSS_Cookbook/raw/main/docs/DataTypes/IntegerTypes.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/LeeKaiXuan/PSS_Cookbook/raw/main/docs/Map/Methods.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5 5 5 0 0 1 5-5 5 5 0 0 1 5 5 5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5Z"/></svg>
     </a>
   
 
 
-<h1 id="integer-types">Integer Types</h1>
-<h2 id="datatypes_integertypes_bit">Bit</h2>
-<p><code>bit</code> is a integer data type with default properties: <strong>unsigned</strong>, <strong>1-bit</strong> width, <strong>{0, 1}</strong> domain.</p>
-<h3 id="declare-a-bit">Declare a bit</h3>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">bit</span><span class="w"> </span><span class="n">singleBit</span><span class="p">;</span>
+<h1 id="map-methods">Map Methods</h1>
+<h2 id="map_methods_size">function int <code>size()</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">string2int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">};</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string2int</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="c1">//  intVal: 0 -&gt; 2</span>
 </span></code></pre></div></td></tr></table></div>
-<h3 id="declare-8-bits-wide-bit-type">Declare <strong>8-bits</strong> wide <code>bit</code> type</h3>
-<p>Possible values specified by bit width are <strong>{0..(2<sup>width</sup>-1)}</strong></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">single bound</label><label for="__tabbed_1_2">dual bound</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">singleByte</span><span class="p">;</span><span class="w">     </span><span class="c1">//  possible values: {0..127};</span>
+<h2 id="map_methods_clear">function void <code>clear()</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">string2int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">};</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">string2int</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"> </span><span class="c1">//  string2int: {&quot;1&quot;:1, &quot;2&quot;:2} -&gt; {}</span>
 </span></code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="o">:</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="n">singleByte</span><span class="p">;</span><span class="w">   </span><span class="c1">//  possible values: {0..127};</span>
+<h2 id="map_methods_delete">function &lt;data_type&gt; <code>delete(data_type key)</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">string2int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">};</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">map</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">//  string2int: {&quot;1&quot;:1, &quot;2&quot;:2} -&gt; {&quot;2&quot;:2}</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">map</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">&quot;3&quot;</span><span class="p">);</span><span class="w">    </span><span class="c1">//  ILLEGAL (1)</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="admonition note">
-<p class="admonition-title">lower bound must be <code>0</code></p>
-</div>
-</div>
-</div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title"><strong>dual bounds</strong> may be removed in future version</p>
-</div>
-<h3 id="declared-with-specified-value-domain">Declared with specified value domain</h3>
-<p>Values of variable are within intersection of possible values by width and value domain.
+<ol>
+<li>Key "3" not exist.</li>
+</ol>
+<h2 id="map_methods_insert">function void <code>insert(data_type key, data_type element)</code></h2>
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">             </span><span class="n">singleByte</span><span class="p">;</span><span class="w">    </span><span class="c1">//  value domain: {0, 1, 5}</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[.</span><span class="mf">.2</span><span class="p">]</span><span class="w">                 </span><span class="n">singleByte</span><span class="p">;</span><span class="w">    </span><span class="c1">//  value domain: {0, 1, 2}</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mf">6..8</span><span class="p">]</span><span class="w">                </span><span class="n">singleByte</span><span class="p">;</span><span class="w">    </span><span class="c1">//  value domain: {6, 7, 8}</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mf">254.</span><span class="p">.]</span><span class="w">               </span><span class="n">singleByte</span><span class="p">;</span><span class="w">    </span><span class="c1">//  value domain: {254, 255}</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="mf">.2</span><span class="p">,</span><span class="w"> </span><span class="mf">6..8</span><span class="p">,</span><span class="w"> </span><span class="mf">254.</span><span class="p">.]</span><span class="w"> </span><span class="n">singleByte</span><span class="p">;</span><span class="w">    </span><span class="c1">//  value domain: {0, 1, 2, 5, 6, 7, 8, 254, 255}</span>
-</span></code></pre></div></td></tr></table></div></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Specify value domain is useful for random variable. Following examples are equalize:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">value domain within declaration</label><label for="__tabbed_2_2">value domain within <code>constraint</code></label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">rand</span><span class="w"> </span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="mf">.2</span><span class="p">,</span><span class="w"> </span><span class="mf">6..8</span><span class="p">,</span><span class="w"> </span><span class="mf">253.</span><span class="p">.]</span><span class="w"> </span><span class="n">singleByte</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">string2int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">};</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">string2int</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="p">);</span><span class="w">    </span><span class="c1">//  string2int: {&quot;1&quot;:1, &quot;2&quot;:2} -&gt; {&quot;1&quot;:0, &quot;2&quot;:2}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">string2int</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;3&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="p">);</span><span class="w">    </span><span class="c1">//  string2int: {&quot;1&quot;:0, &quot;2&quot;:2} -&gt; {&quot;1&quot;:0, &quot;2&quot;:2, &quot;3&quot;:3}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">string2int</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;4&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">4.0</span><span class="p">);</span><span class="w">    </span><span class="c1">//  ILLEGAL (1)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">string2int</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">5</span><span class="w">  </span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="w">  </span><span class="p">);</span><span class="w">    </span><span class="c1">//  ILLEGAL (2)</span>
 </span></code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
+<ol>
+<li>Data type of <em>element</em> is not same.</li>
+<li>Data type of <em>key</em> is not same.</li>
+</ol>
+<h2 id="map_methods_keys">function set&lt;data_type&gt; <code>keys()</code></h2>
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">string2int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2.5&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">};</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string2int</span><span class="p">.</span><span class="n">keys</span><span class="p">();</span><span class="w">  </span><span class="c1">//  stringSet: {} -&gt; {&quot;1&quot;, &quot;2&quot;, &quot;2.5&quot;}</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="map_methods_values">function list&lt;data_type&gt; <code>values()</code></h2>
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">rand</span><span class="w"> </span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">singleByte</span><span class="p">;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">constraint</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="n">singleByte</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="mf">.2</span><span class="p">,</span><span class="w"> </span><span class="mf">6..8</span><span class="p">,</span><span class="w"> </span><span class="mf">253.</span><span class="p">.];</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">map</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">string2int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2.5&quot;</span><span class="o">:</span><span class="mi">2</span><span class="p">};</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string2int</span><span class="p">.</span><span class="n">values</span><span class="p">();</span><span class="w">    </span><span class="c1">//  intList: {} -&gt; {1, 2, 2}</span>
 </span></code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</div>
-<h2 id="datatypes_integertypes_integer">Integer</h2>
-<p><code>int</code> is a integer data type with default properties: <strong>signed</strong>, <strong>32-bits</strong> width, <strong>{-2<sup>31</sup>..(2<sup>31</sup>-1)}</strong> domain.</p>
-<h3 id="declare-an-integer">Declare an integer:</h3>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">int32</span><span class="p">;</span>
-</span></code></pre></div></td></tr></table></div>
-<h3 id="declare-8-bits-wide-int-type">Declare <strong>8-bits</strong> wide <code>int</code> type</h3>
-<p>Possible values specified by bit width are <strong>{-2<sup>width-1</sup>..(2<sup>width-1</sup>-1)}</strong></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">single bound</label><label for="__tabbed_3_2">dual bound</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">int8</span><span class="p">;</span><span class="w">       </span><span class="c1">//  possible values: {-128..127}</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="o">:</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="n">int8</span><span class="p">;</span><span class="w">     </span><span class="c1">//  possible values: {-128..127}</span>
-</span></code></pre></div></td></tr></table></div>
-<div class="admonition note">
-<p class="admonition-title">lower bound must be <code>0</code></p>
-</div>
-</div>
-</div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title"><strong>dual bounds</strong> may be removed in future version</p>
-</div>
-<h3 id="declared-with-specified-value-domain_1">Declared with specified value domain</h3>
-<p>Values of variable are within intersection of possible values by width and value domain.
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w">                  </span><span class="n">int8</span><span class="p">;</span><span class="w"> </span><span class="c1">//  value domain: {0, 1, 5}</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[..(</span><span class="o">-</span><span class="mi">127</span><span class="p">)]</span><span class="w">                 </span><span class="n">int8</span><span class="p">;</span><span class="w"> </span><span class="c1">//  value domain: {-128, -127}</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mf">6..8</span><span class="p">]</span><span class="w">                     </span><span class="n">int8</span><span class="p">;</span><span class="w"> </span><span class="c1">//  value domain: {6, 7, 8}</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mf">126.</span><span class="p">.]</span><span class="w">                    </span><span class="n">int8</span><span class="p">;</span><span class="w"> </span><span class="c1">//  value domain: {126, 127}</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="p">..(</span><span class="o">-</span><span class="mi">127</span><span class="p">),</span><span class="w"> </span><span class="mf">6..8</span><span class="p">,</span><span class="w"> </span><span class="mf">253.</span><span class="p">.]</span><span class="w"> </span><span class="n">int8</span><span class="p">;</span><span class="w"> </span><span class="c1">//  value domain: {-128, -127, 5, 6, 7, 8, 126, 127}</span>
-</span></code></pre></div></td></tr></table></div></p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Specify value domain is useful for random variable. Following examples are equalize:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">value domain within declaration</label><label for="__tabbed_4_2">value domain within <code>constraint</code></label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="k">rand</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="p">..(</span><span class="o">-</span><span class="mi">127</span><span class="p">),</span><span class="w"> </span><span class="mf">6..8</span><span class="p">,</span><span class="w"> </span><span class="mf">253.</span><span class="p">.]</span><span class="w"> </span><span class="n">int8</span><span class="p">;</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
-<span class="normal"><a href="#__codelineno-11-2">2</a></span>
-<span class="normal"><a href="#__codelineno-11-3">3</a></span>
-<span class="normal"><a href="#__codelineno-11-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">rand</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">int8</span><span class="p">;</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="k">constraint</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">    </span><span class="n">int8</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="p">..(</span><span class="o">-</span><span class="mi">127</span><span class="p">),</span><span class="w"> </span><span class="mf">6..8</span><span class="p">,</span><span class="w"> </span><span class="mf">253.</span><span class="p">.];</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-13T10:24:52+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-13</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-18T05:46:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-18</span>
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-11T05:14:51+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-11</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-18T05:46:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-18</span>
       
     
   </small>
@@ -1190,7 +1069,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Types">
+          <a href="../Operators/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Operators">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1200,20 +1079,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Data Types
+                Operators
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../Operator/" class="md-footer__link md-footer__link--next" aria-label="Next: Operators and Expressions">
+          <a href="../../Traversal/" class="md-footer__link md-footer__link--next" aria-label="Next: Traversal">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Operators and Expressions
+                Traversal
               </div>
             </div>
             <div class="md-footer__button md-icon">
