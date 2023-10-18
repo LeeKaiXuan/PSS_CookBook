@@ -15,9 +15,12 @@ description: PSSv2.1/7.9.4. Maps
 ## Declarations
 === "Without Initialization Assignment"
     ```sv linenums="1"
-    map<bit [4], int   > nibble2int ;   //  nibble2int : {}
-    map<int    , bool  > int2bool   ;   //  int2bool   : {}
-    map<bool   , string> bool2string;   //  bool2string: {}
+    map<bit [4] , int    > nibble2int  ;    //  nibble2int  : {}
+    map<int     , bool   > int2bool    ;    //  int2bool    : {}
+    map<bool    , string > bool2string ;    //  bool2string : {}
+    map<string  , float32> string2float;    //  string2float: {}
+    map<float32 , int    > float2int   ;    //  float2int   : {}
+    map<eSTR2NUM, int    > enum2int    ;    //  enum2int    : {} (1)
     ```
 
     1. Assume defined enum type before
@@ -26,35 +29,21 @@ description: PSSv2.1/7.9.4. Maps
         ZERO, ONE, TWO
     };
     ```
-
-    2. Assume defined struct type before
-    ```sv linenums="1"
-    struct sSTR2NUM {
-        string stringVal;
-        int intVal;
-    };
-    ```
-
 
 === "With Initialization Assignment"
     ```sv linenums="1"
-    map<bit [4], int   > nibble2int  = {4'b1110:3      , 4'b0110:2     };   //  nibble2int : {} -> {4'b1110:3, 4'b0110:2}
-    map<int    , bool  > int2bool    = {      4:true   ,       5:false };   //  int2bool   : {} -> {4:true        , 5:false       }
-    map<bool   , string> bool2string = {  false:"FALSE",    true:"TRUE"};   //  bool2string: {} -> {false:"FALSE" , true:"TRUE"   }
+    map<bit [4] , int    > nibble2int   = {4'b1110:3      , 4'b0110:2     };
+    map<int     , bool   > int2bool     = {      4:true   ,       5:false };
+    map<bool    , string > bool2string  = {  false:"FALSE",    true:"TRUE"};
+    map<string  , float32> string2float = {  "2.1":2.1    ,   "2.2":2.2   };
+    map<float32 , int    > float2int    = {    2.4:2      ,     2.6:3     };
+    map<eSTR2NUM, int    > enum2int     = {    ONE:1      ,     TWO:2     }; // (1)!
     ```
 
     1. Assume defined enum type before
     ```sv linenums="1"
     enum eSTR2NUM {
         ZERO, ONE, TWO
-    };
-    ```
-
-    2. Assume defined struct type before
-    ```sv linenums="1"
-    struct sSTR2NUM {
-        string stringVal;
-        int intVal;
     };
     ```
 
@@ -76,4 +65,4 @@ description: PSSv2.1/7.9.4. Maps
 | [&lt;data_type&gt; `delete(key)`](Methods.md#map_methods_delete "function &lt;data_type&gt; `delete(key)`")   | Move out element with the specified key.                          |
 | [`insert(key, element)`](Methods.md#map_methods_insert "function `insert(key, element)`")                     | Add or replace element with the specified key.                    |
 | [set&lt;data_type&gt; `keys()`](Methods.md#map_methods_keys "function set&lt;data_type&gt; `keys()`")         | Returns all keys in a `set`-type.                                 |
-| [list&lt;data_type&gt; `values()`](Methods.md#map_methods_keys "function list&lt;data_type&gt; `values()`")   | Returns all elements in a [`list`](../List/index.md#list)-type.   |
+| [list&lt;data_type&gt; `values()`](Methods.md#map_methods_values "function list&lt;data_type&gt; `values()`")   | Returns all elements in a [`list`](../List/index.md#list)-type.   |

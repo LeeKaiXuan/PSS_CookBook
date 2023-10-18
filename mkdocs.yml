@@ -88,6 +88,8 @@ nav:
     - Methods: List/Methods.md
   - Map:
     - Map/index.md
+    - Operators: Map/Operators.md
+    - Methods: Map/Methods.md
   - Traversal:
     - Traversal/index.md
 
