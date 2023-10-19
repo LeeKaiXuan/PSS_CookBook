@@ -18,13 +18,13 @@ description: PSSv2.1/7. Data types
 | `chandle`                                                                                     |                       |
 
 ## *Aggregate* {#datatypes_aggregate}
-| Aggregate Type                        | Randomizable                                                                                                                                          |
-| :------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`array`](../Array/index.md#array)    | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`                                                                                    |
-| [`list`](../List/index.md#list)       | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")   |
-| [`map`](../Map/index.md#map)          |                                                                                                                                                       |
-| `set`                                 |                                                                                                                                                       |
-| `struct`                              | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`                                                                                    |
+| Aggregate Type                            | Randomizable                                                                                                                                          |
+| :---------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`array`](../Collections/Arrays.md#array) | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`                                                                                    |
+| [`list`](../Collections/Lists.md#list)    | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")   |
+| [`map`](../Collections/Maps.md#map)       |                                                                                                                                                       |
+| [`set`](../Collections/Sets.md#set)       |                                                                                                                                                       |
+| `struct`                                  | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`                                                                                    |
 
 !!! Note "*Aggregate* may be nested."
 

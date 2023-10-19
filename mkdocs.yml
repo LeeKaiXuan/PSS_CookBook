@@ -78,14 +78,11 @@ nav:
     - Operator/index.md
     - Binary Bitwise: 'Operator/BinaryBitwise.md'
     - Primary Expressions: 'Operator/Expressions.md'
-  - Array:
-    - Array/index.md
-  - List:
-    - List/index.md
-  - Map:
-    - Map/index.md
-  - Set:
-    - Set/index.md
+  - Collections:
+    - Array: 'Collections/Arrays.md'
+    - List: 'Collections/Lists.md'
+    - Map: 'Collections/Maps.md'
+    - Set: 'Collections/Sets.md'
   - Traversal:
     - Traversal/index.md
 

@@ -48,28 +48,28 @@ description: PSSv2.1/7.9.4 Maps
     ```
 
 ## Map Operators
-| Operator                                                      | Description                                                                                   |
-| :------------------------------------------------------------ | :-------------------------------------------------------------------------------------------- |
-| [`[]`](index.md#map_index "Index operator `[]`")              | Used to access a specific element of a map.                                                   |
-| [`=`](index.md#map_assignment "Assignment operator `=`")      | Creates a copy of the `map`-type expression on the RHS and assigns it to the map on the LHS.  |
-| [`==`](index.md#map_equality "Equality operator `==`")        | Evaluates to *true* if all elements with corresponding keys are equal.                        |
-| [`!=`](index.md#map_inequality "Inequality operator `!=`")    | Evaluates to *true* if not all elements with corresponding keys are equal.                    |
-| [`foreach`](index.md#map_foreach "`foreach` statement")       | The foreach statement can be applied to a map to iterate over the map elements.               |
+| Operator                                              | Description                                                                                   |
+| :---------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
+| [`[]`](Maps.md#index "Index operator `[]`")           | Used to access a specific element of a map.                                                   |
+| [`=`](Maps.md#assignment "Assignment operator `=`")   | Creates a copy of the `map`-type expression on the RHS and assigns it to the map on the LHS.  |
+| [`==`](Maps.md#equality "Equality operator `==`")     | Evaluates to *true* if all elements with corresponding keys are equal.                        |
+| [`!=`](Maps.md#inequality "Inequality operator `!=`") | Evaluates to *true* if not all elements with corresponding keys are equal.                    |
+| [`foreach`](Maps.md#foreach "`foreach` statement")    | The foreach statement can be applied to a map to iterate over the map elements.               |
 
 
 ## Map Methods
-| Method                                                                                                | Description                                                       |
-| :---------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
-| [int `size()`](index.md#map_size "function int `size()`")                                             | Returns the number of elements in the map.                        |
-| [`clear()`](index.md#map_clear "function void `clear()`")                                             | Removes all elements.                                             |
-| [&lt;data_type&gt; `delete(key)`](index.md#map_delete "function &lt;data_type&gt; `delete(key)`")     | Moves out element with the specified key.                         |
-| [`insert(key, element)`](index.md#map_insert "function void `insert(key, element)`")                  | Adds or replace element with the specified key.                   |
-| [set&lt;data_type&gt; `keys()`](index.md#map_keys "function set&lt;data_type&gt; `keys()`")           | Returns all keys in a [`set`](../Set/index.md#set)-type.          |
-| [list&lt;data_type&gt; `values()`](index.md#map_values "function list&lt;data_type&gt; `values()`")   | Returns all elements in a [`list`](../List/index.md#list)-type.   |
+| Method                                                                                            | Description                                               |
+| :------------------------------------------------------------------------------------------------ | :-------------------------------------------------------- |
+| [int `size()`](Maps.md#size "function int `size()`")                                              | Returns the number of elements in the map.                |
+| [`clear()`](Maps.md#clear "function void `clear()`")                                              | Removes all elements.                                     |
+| [&lt;data_type&gt; `delete(key)`](Maps.md#delete "function &lt;data_type&gt; `delete(key)`")      | Moves out element with the specified key.                 |
+| [`insert(key, element)`](Maps.md#insert "function void `insert(key, element)`")                   | Adds or replace element with the specified key.           |
+| [set&lt;data_type&gt; `keys()`](Maps.md#keys "function set&lt;data_type&gt; `keys()`")            | Returns all keys in a [`set`](Sets.md#set)-type.          |
+| [list&lt;data_type&gt; `values()`](Maps.md#values "function list&lt;data_type&gt; `values()`")    | Returns all elements in a [`list`](Lists.md#list)-type.   |
 
 ---
 
-## Index operator `[]` {#map_index}
+## Index operator `[]` {#index}
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
 int intVal = string2int["2"];   //  intVal: 0 -> 2;
@@ -78,14 +78,14 @@ int intVal = string2int["3"];   //  ILLEGAL (1)
 
 1. Key `"3"` not exist.
 
-## Assignment operator `=` {#map_assignment}
+## Assignment operator `=` {#assignment}
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
 string2int["1"] = 0;    //  string2int: {"1":1, "2":2} -> {"1":0, "2":2}
 string2int["3"] = 3;    //  string2int: {"1":0, "2":2} -> {"1":0, "2":2, "3":3}
 ```
 
-## Equality operator `==` {#map_equality}
+## Equality operator `==` {#equality}
 ```sv linenums="1"
 map<string, int   > map_0 = {"1":1  , "2":2  };
 map<string, int   > map_1 = {"1":0  , "2":2  };
@@ -110,7 +110,7 @@ if (map_0 == map_5) bitVal_5 = 1;   //  bitVal_5: 0 -> 0 (6)
 5. Inequalize **size**.
 6. Inequalize **keys**, **elements**.
 
-## Inequality operator `==` {#map_inequality}
+## Inequality operator `==` {#inequality}
 ```sv linenums="1"
 map<string, int   > map_0 = {"1":1  , "2":2  };
 map<string, int   > map_1 = {"1":0  , "2":2  };
@@ -135,7 +135,7 @@ if (map_0 != map_5) bitVal_5 = 1;   //  bitVal_5: 0 -> 1 (6)
 5. Inequalize **size**.
 6. Inequalize **keys**, **elements**.
 
-## `foreach` statement {#map_foreach}
+## `foreach` statement {#foreach}
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
 
@@ -150,19 +150,19 @@ foreach (string2int[i]) {
 
 ---
 
-## function int `size()` {#map_size}
+## function int `size()` {#size}
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
 int intVal = string2int.size(); //  intVal: 0 -> 2
 ```
 
-## function void `clear()` {#map_clear}
+## function void `clear()` {#clear}
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
 string2int.clear(); //  string2int: {"1":1, "2":2} -> {}
 ```
 
-## function &lt;data_type&gt; `delete(data_type key)` {#map_delete}
+## function &lt;data_type&gt; `delete(data_type key)` {#delete}
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
 map.delete("1");    //  string2int: {"1":1, "2":2} -> {"2":2}
@@ -171,7 +171,7 @@ map.delete("3");    //  ILLEGAL (1)
 
 1. Key `"3"` not exist.
 
-## function void `insert(data_type key, data_type element)` {#map_insert}
+## function void `insert(data_type key, data_type element)` {#insert}
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
 string2int.insert("1", 0  );    //  string2int: {"1":1, "2":2} -> {"1":0, "2":2}
@@ -183,14 +183,14 @@ string2int.insert(5  , 5  );    //  ILLEGAL (2)
 1. Data type of *element* is not same.
 2. Data type of *key* is not same.
 
-## function set&lt;data_type&gt; `keys()` {#map_keys}
+## function set&lt;data_type&gt; `keys()` {#keys}
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2, "2.5":2};
 
 set<string> stringSet = string2int.keys();  //  stringSet: {} -> {"1", "2", "2.5"}
 ```
 
-## function list&lt;data_type&gt; `values()` {#map_values}
+## function list&lt;data_type&gt; `values()` {#values}
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2, "2.5":2};
 

@@ -37,26 +37,26 @@ Declare array by `rand` keyword:
     ```
 
 ## Array Operators
-| Operator                                                      | Description                                                                                                                               |
-| :------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------- |
-| [`[]`](index.md#array_index "Index operator `[]`")            | Used to access a specific element of an array.                                                                                            |
-| [`=`](index.md#array_assignment "Assignment operator `=`")    | Creates a copy of the `array`-type expression on the RHS and assigns it to the array on the LHS.                                          |
-| [`==`](index.md#array_equality "Equality operator `==`")      | Evaluates to *true* if all elements with corresponding indexes are equal.                                                                 |
-| [`!=`](index.md#array_inequality "Inequality operator `!=`")  | Evaluates to *true* if not all elements with corresponding indexes are equal.                                                             |
-| [`in`](index.md#array_in "Set membership operator `in`")      | It evaluates to *true* if the element specified on the left of the operator exists in the array collection on the right of the operator.  |
-| [`foreach`](index.md#array_foreach "`foreach` statement")     | The foreach statement can be applied to an array to iterate over the array elements.                                                      |
+| Operator                                                  | Description                                                                                                                               |
+| :-------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
+| [`[]`](Arrays.md#index "Index operator `[]`")             | Used to access a specific element of an array.                                                                                            |
+| [`=`](Arrays.md#assignment "Assignment operator `=`")     | Creates a copy of the `array`-type expression on the RHS and assigns it to the array on the LHS.                                          |
+| [`==`](Arrays.md#equality "Equality operator `==`")       | Evaluates to *true* if all elements with corresponding indexes are equal.                                                                 |
+| [`!=`](Arrays.md#inequality "Inequality operator `!=`")   | Evaluates to *true* if not all elements with corresponding indexes are equal.                                                             |
+| [`in`](Arrays.md#in "Set membership operator `in`")       | It evaluates to *true* if the element specified on the left of the operator exists in the array collection on the right of the operator.  |
+| [`foreach`](Arrays.md#foreach "`foreach` statement")      | The foreach statement can be applied to an array to iterate over the array elements.                                                      |
 
 ## Array Methods
-| Method                                                                                                    | Description                                                       |
-| :-------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
-| [int `size()`](index.md#array_size "function int `size()`")                                               | Returns the number of elements in the arrays.                     |
-| [int `sum()`](index.md#array_sum "function int `sum()`")                                                  | Returns the sum of all elements currently stored in the array.    |
-| [list&lt;data_type&gt; `to_list()`](index.md#array_to_list "function list&lt;data_type&gt; `to_list()`")  | Returns all elements in a [`list`](../List/index.md#list)-type.   |
-| [set&lt;data_type&gt; `to_set()`:](index.md#array_to_set "function set&lt;data_type&gt; `to_set()`")      | Returns all elements in a [`set`](../Set/index.md#set)-type.      |
+| Method                                                                                                | Description                                                       |
+| :---------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
+| [int `size()`](Arrays.md#size "function int `size()`")                                                | Returns the number of elements in the arrays.                     |
+| [int `sum()`](Arrays.md#sum "function int `sum()`")                                                   | Returns the sum of all elements currently stored in the array.    |
+| [list&lt;data_type&gt; `to_list()`](Arrays.md#to_list "function list&lt;data_type&gt; `to_list()`")   | Returns all elements in a [`list`](Lists.md#list)-type.           |
+| [set&lt;data_type&gt; `to_set()`:](Arrays.md#to_set "function set&lt;data_type&gt; `to_set()`")       | Returns all elements in a [`set`](Sets.md#set)-type.              |
 
 ---
 
-## Index operator `[]` {#array_index}
+## Index operator `[]` {#index}
 === "Template"
     ```sv linenums="1"
     array<int, 3> intArray = {1, 2, 3};
@@ -73,7 +73,7 @@ Declare array by `rand` keyword:
 
     Operator that do not modify contents can be used within **activity**, **constraint**, or **covergroup**.
 
-## Assignment operator `=` {#array_assignment}
+## Assignment operator `=` {#assignment}
 === "Template"
     ```sv linenums="1"
     array<int, 3> intArray = {1, 2, 3};
@@ -90,7 +90,7 @@ Declare array by `rand` keyword:
 
     Operator that do not modify contents can be used within **exec block** or **native functions**.
 
-## Equality operator `==` {#array_equality}
+## Equality operator `==` {#equality}
 === "Template"
     ```sv linenums="1"
     array<int   , 2> intArray_0  = {  1 ,  2      };
@@ -127,7 +127,7 @@ Declare array by `rand` keyword:
 
     Operator that do not modify contents can be used within **activity**, **constraint**, or **covergroup**.
 
-## Inequality operator `!=` {#array_inequality}
+## Inequality operator `!=` {#inequality}
 === "Template"
     ```sv linenums="1"
     array<int   , 2> intArray_0  = {  1 ,  2      };
@@ -164,7 +164,7 @@ Declare array by `rand` keyword:
 
     Operator that do not modify contents can be used within **activity**, **constraint**, or **covergroup**.
 
-## Set membership operator `in` {#array_in}
+## Set membership operator `in` {#in}
 === "Template"
     ```sv linenums="1"
     array<int, 3> intArray = {1, 2, 3};
@@ -187,7 +187,7 @@ Declare array by `rand` keyword:
 
     Operator that do not modify contents can be used within **activity**, **constraint**, or **covergroup**.
 
-## `foreach` statement {#array_foreach}
+## `foreach` statement {#foreach}
 === "Template"
     ```sv linenums="1"
     array<int, 3> intArray = {1, 2, 3};
@@ -212,7 +212,7 @@ Declare array by `rand` keyword:
 
 ---
 
-## function int `size()` {#array_size}
+## function int `size()` {#size}
 === "Template"
     ```sv linenums="1"
     array<int, 2> intArray;
@@ -229,7 +229,7 @@ Declare array by `rand` keyword:
 
     Considered as a **constant** expression.
 
-## function int `sum()` {#array_sum}
+## function int `sum()` {#sum}
 === "Template"
     ```sv linenums="1"
     array<int    , 2> intArray    = {  1   ,  2    };
@@ -278,7 +278,7 @@ Declare array by `rand` keyword:
         }
         ```
 
-## function list&lt;data_type&gt; `to_list()` {#array_to_list}
+## function list&lt;data_type&gt; `to_list()` {#to_list}
 === "Template"
     ```sv linenums="1"
     array<int   , 3> intArray    = {  2 ,  1 ,  2  };
@@ -295,7 +295,7 @@ Declare array by `rand` keyword:
     list<string> stringList = stringArray.to_list();    //  stringList: {} -> {"2", "1", "2"};
     ```
 
-## function set&lt;data_type&gt; `to_set()` {#array_to_set}
+## function set&lt;data_type&gt; `to_set()` {#to_set}
 === "Template"
     ```sv linenums="1"
     array<int   , 3> intArray    = {  2 ,  1 ,  2  };
