@@ -80,8 +80,6 @@ nav:
     - Primary Expressions: 'Operator/Expressions.md'
   - Array:
     - Array/index.md
-    - Operators: Array/Operators.md
-    - Methods: Array/Methods.md
   - List:
     - List/index.md
     - Operators: List/Operators.md
