@@ -1,9 +1,9 @@
 ---
 title: Map
-description: PSSv2.1/7.9.4. Maps
+description: PSSv2.1/7.9.4 Maps
 ---
 
-# Map
+# Map {#map}
 
 ## Properties
 - Unordered.
@@ -48,21 +48,151 @@ description: PSSv2.1/7.9.4. Maps
     ```
 
 ## Map Operators
-| Operator                                                                  | Description                                                                                   |
-| :------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------- |
-| [`[]`](Operators.md#map_operators_index "Index operator `[]`")            | Used to access a specific element of a map.                                                   |
-| [`=`](Operators.md#map_operators_assignment "Assignment operator `=`")    | Creates a copy of the map-type expression on the RHS and assigns it to the map on the LHS.    |
-| [`==`](Operators.md#map_operators_equality "Equality operator `==`")      | Evaluates to *true* if all elements with corresponding keys are equal.                        |
-| [`!=`](Operators.md#map_operators_inequality "Inequality operator `!=`")  | Evaluates to *true* if not all elements with corresponding keys are equal.                    |
-| [`foreach`](Operators.md#map_operators_foreach "`foreach` statement")     | The foreach statement can be applied to a map to iterate over the map elements.               |
+| Operator                                                      | Description                                                                                   |
+| :------------------------------------------------------------ | :-------------------------------------------------------------------------------------------- |
+| [`[]`](index.md#map_index "Index operator `[]`")              | Used to access a specific element of a map.                                                   |
+| [`=`](index.md#map_assignment "Assignment operator `=`")      | Creates a copy of the `map`-type expression on the RHS and assigns it to the map on the LHS.  |
+| [`==`](index.md#map_equality "Equality operator `==`")        | Evaluates to *true* if all elements with corresponding keys are equal.                        |
+| [`!=`](index.md#map_inequality "Inequality operator `!=`")    | Evaluates to *true* if not all elements with corresponding keys are equal.                    |
+| [`foreach`](index.md#map_foreach "`foreach` statement")       | The foreach statement can be applied to a map to iterate over the map elements.               |
 
 
 ## Map Methods
-| Method                                                                                                        | Description                                                       |
-| :------------------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------- |
-| [int `size()`](Methods.md#map_methods_size "function int `size()`")                                           | Returns the number of elements in the map.                        |
-| [`clear()`](Methods.md#map_methods_clear "function void `clear()`")                                           | Removes all elements.                                             |
-| [&lt;data_type&gt; `delete(key)`](Methods.md#map_methods_delete "function &lt;data_type&gt; `delete(key)`")   | Move out element with the specified key.                          |
-| [`insert(key, element)`](Methods.md#map_methods_insert "function `insert(key, element)`")                     | Add or replace element with the specified key.                    |
-| [set&lt;data_type&gt; `keys()`](Methods.md#map_methods_keys "function set&lt;data_type&gt; `keys()`")         | Returns all keys in a `set`-type.                                 |
-| [list&lt;data_type&gt; `values()`](Methods.md#map_methods_values "function list&lt;data_type&gt; `values()`")   | Returns all elements in a [`list`](../List/index.md#list)-type.   |
+| Method                                                                                                | Description                                                       |
+| :---------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------- |
+| [int `size()`](index.md#map_size "function int `size()`")                                             | Returns the number of elements in the map.                        |
+| [`clear()`](index.md#map_clear "function void `clear()`")                                             | Removes all elements.                                             |
+| [&lt;data_type&gt; `delete(key)`](index.md#map_delete "function &lt;data_type&gt; `delete(key)`")     | Moves out element with the specified key.                         |
+| [`insert(key, element)`](index.md#map_insert "function void `insert(key, element)`")                  | Adds or replace element with the specified key.                   |
+| [set&lt;data_type&gt; `keys()`](index.md#map_keys "function set&lt;data_type&gt; `keys()`")           | Returns all keys in a [`set`](../Set/index.md#set)-type.          |
+| [list&lt;data_type&gt; `values()`](index.md#map_values "function list&lt;data_type&gt; `values()`")   | Returns all elements in a [`list`](../List/index.md#list)-type.   |
+
+---
+
+## Index operator `[]` {#map_index}
+```sv linenums="1"
+map<string, int> string2int = {"1":1, "2":2};
+int intVal = string2int["2"];   //  intVal: 0 -> 2;
+int intVal = string2int["3"];   //  ILLEGAL (1)
+```
+
+1. Key `"3"` not exist.
+
+## Assignment operator `=` {#map_assignment}
+```sv linenums="1"
+map<string, int> string2int = {"1":1, "2":2};
+string2int["1"] = 0;    //  string2int: {"1":1, "2":2} -> {"1":0, "2":2}
+string2int["3"] = 3;    //  string2int: {"1":0, "2":2} -> {"1":0, "2":2, "3":3}
+```
+
+## Equality operator `==` {#map_equality}
+```sv linenums="1"
+map<string, int   > map_0 = {"1":1  , "2":2  };
+map<string, int   > map_1 = {"1":0  , "2":2  };
+map<string, int   > map_2 = {"0":1  , "2":2  };
+map<string, int   > map_3 = {"2":2  , "1":1  };
+map<string, int   > map_4 = {"1":1           };
+map<int   , string> map_5 = {  1:"1",   2:"2"};
+
+bit bitVal_0, bitVal_1, bitVal_2, bitVal_3, bitVal_4, bitVal_5;
+if (map_0 == map_0) bitVal_0 = 1;   //  bitVal_0: 0 -> 1 (1)
+if (map_0 == map_1) bitVal_1 = 1;   //  bitVal_1: 0 -> 0 (2)
+if (map_0 == map_2) bitVal_2 = 1;   //  bitVal_2: 0 -> 0 (3)
+if (map_0 == map_3) bitVal_3 = 1;   //  bitVal_3: 0 -> 1 (4)
+if (map_0 == map_4) bitVal_4 = 1;   //  bitVal_4: 0 -> 0 (5)
+if (map_0 == map_5) bitVal_5 = 1;   //  bitVal_5: 0 -> 0 (6)
+```
+
+1. Equalize **size**, **keys**, **elements**.
+2. Inequalize **element**.
+3. Inequalize **key**.
+4. Equalize **size**, **keys**, **elements**.
+5. Inequalize **size**.
+6. Inequalize **keys**, **elements**.
+
+## Inequality operator `==` {#map_inequality}
+```sv linenums="1"
+map<string, int   > map_0 = {"1":1  , "2":2  };
+map<string, int   > map_1 = {"1":0  , "2":2  };
+map<string, int   > map_2 = {"0":1  , "2":2  };
+map<string, int   > map_3 = {"2":2  , "1":1  };
+map<string, int   > map_4 = {"1":1           };
+map<int   , string> map_5 = {  1:"1",   2:"2"};
+
+bit bitVal_0, bitVal_1, bitVal_2, bitVal_3, bitVal_4, bitVal_5;
+if (map_0 != map_0) bitVal_0 = 1;   //  bitVal_0: 0 -> 0 (1)
+if (map_0 != map_1) bitVal_1 = 1;   //  bitVal_1: 0 -> 1 (2)
+if (map_0 != map_2) bitVal_2 = 1;   //  bitVal_2: 0 -> 1 (3)
+if (map_0 != map_3) bitVal_3 = 1;   //  bitVal_3: 0 -> 0 (4)
+if (map_0 != map_4) bitVal_4 = 1;   //  bitVal_4: 0 -> 1 (5)
+if (map_0 != map_5) bitVal_5 = 1;   //  bitVal_5: 0 -> 1 (6)
+```
+
+1. Equalize **size**, **keys**, **elements**.
+2. Inequalize **element**.
+3. Inequalize **key**.
+4. Equalize **size**, **keys**, **elements**.
+5. Inequalize **size**.
+6. Inequalize **keys**, **elements**.
+
+## `foreach` statement {#map_foreach}
+```sv linenums="1"
+map<string, int> string2int = {"1":1, "2":2};
+
+foreach (string2int[i]) {
+    string2int[i] = string2int[i] + 1;  //  string2int: {"1":1, "2":2} -> {"1":2, "2":3}
+}
+```
+
+???+ note
+
+    Operator can be used within **activity**, **constraint**, or **native exec code**.
+
+---
+
+## function int `size()` {#map_size}
+```sv linenums="1"
+map<string, int> string2int = {"1":1, "2":2};
+int intVal = string2int.size(); //  intVal: 0 -> 2
+```
+
+## function void `clear()` {#map_clear}
+```sv linenums="1"
+map<string, int> string2int = {"1":1, "2":2};
+string2int.clear(); //  string2int: {"1":1, "2":2} -> {}
+```
+
+## function &lt;data_type&gt; `delete(data_type key)` {#map_delete}
+```sv linenums="1"
+map<string, int> string2int = {"1":1, "2":2};
+map.delete("1");    //  string2int: {"1":1, "2":2} -> {"2":2}
+map.delete("3");    //  ILLEGAL (1)
+```
+
+1. Key `"3"` not exist.
+
+## function void `insert(data_type key, data_type element)` {#map_insert}
+```sv linenums="1"
+map<string, int> string2int = {"1":1, "2":2};
+string2int.insert("1", 0  );    //  string2int: {"1":1, "2":2} -> {"1":0, "2":2}
+string2int.insert("3", 3  );    //  string2int: {"1":0, "2":2} -> {"1":0, "2":2, "3":3}
+string2int.insert("4", 4.0);    //  ILLEGAL (1)
+string2int.insert(5  , 5  );    //  ILLEGAL (2)
+```
+
+1. Data type of *element* is not same.
+2. Data type of *key* is not same.
+
+## function set&lt;data_type&gt; `keys()` {#map_keys}
+```sv linenums="1"
+map<string, int> string2int = {"1":1, "2":2, "2.5":2};
+
+set<string> stringSet = string2int.keys();  //  stringSet: {} -> {"1", "2", "2.5"}
+```
+
+## function list&lt;data_type&gt; `values()` {#map_values}
+```sv linenums="1"
+map<string, int> string2int = {"1":1, "2":2, "2.5":2};
+
+list<int> intList = string2int.values();    //  intList: {} -> {1, 2, 2}
+```

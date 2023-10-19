@@ -84,8 +84,6 @@ nav:
     - List/index.md
   - Map:
     - Map/index.md
-    - Operators: Map/Operators.md
-    - Methods: Map/Methods.md
   - Set:
     - Set/index.md
     - Operators: Set/Operators.md
