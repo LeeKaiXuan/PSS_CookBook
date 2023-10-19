@@ -90,6 +90,10 @@ nav:
     - Map/index.md
     - Operators: Map/Operators.md
     - Methods: Map/Methods.md
+  - Set:
+    - Set/index.md
+    - Operators: Set/Operators.md
+    - Methods: Set/Methods.md
   - Traversal:
     - Traversal/index.md
 
