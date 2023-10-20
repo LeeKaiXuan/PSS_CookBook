@@ -528,8 +528,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#declarations" class="md-nav__link">
     Declarations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declare-array-by-rand-keyword" class="md-nav__link">
+    Declare array by rand keyword
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialization-assignment" class="md-nav__link">
+    Initialization Assignment
   </a>
   
 </li>
@@ -598,8 +619,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sum" class="md-nav__link">
+  <a href="#sum_int" class="md-nav__link">
     function int sum()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sum_float" class="md-nav__link">
+    function float64 sum()
   </a>
   
 </li>
@@ -777,8 +805,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#declarations" class="md-nav__link">
     Declarations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declare-array-by-rand-keyword" class="md-nav__link">
+    Declare array by rand keyword
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialization-assignment" class="md-nav__link">
+    Initialization Assignment
   </a>
   
 </li>
@@ -847,8 +896,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sum" class="md-nav__link">
+  <a href="#sum_int" class="md-nav__link">
     function int sum()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sum_float" class="md-nav__link">
+    function float64 sum()
   </a>
   
 </li>
@@ -894,36 +950,67 @@
 
 
 <h1 id="array">Array</h1>
+<h2 id="properties">Properties</h2>
+<ul>
+<li>Ordered by <em>index</em>.</li>
+<li>Randomizable when its <em>data_type</em> is randomizable (e.g., randomizable <a href="../../DataTypes/#datatypes_scalar" title="e.g., bit, int, bool, enum, string"><em>scalar</em></a> or <a href="../../DataTypes/#datatypes_aggregate" title="e.g., array, list, struct"><em>aggregate</em></a> of randomizable scalar).</li>
+<li><em>Element</em> and <em>data_type</em> can be any <a href="../../DataTypes/#datatypes_scalar" title="e.g., bit, int, bool, enum, string, float32, float64, chandle"><em>scalar</em></a> or <a href="../../DataTypes/#datatypes_aggregate" title="e.g., array, list, map, set, struct"><em>aggregate</em></a> of scalar.</li>
+<li><em>Index</em> must be positive integer.</li>
+<li><em>Size</em> must be non-zero integer.</li>
+<li>Can be nested by any collection types (e.g., <code>array</code>, <code>list</code>, <code>map</code> or <code>set</code>).</li>
+</ul>
 <h2 id="declarations">Declarations</h2>
-<p>Array has 2 declaration formats: <code>Template</code>, <code>Square</code>.</p>
+<p>Array has 2 declaration formats:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Syntax</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Template</code></td>
+<td style="text-align: left;">array&lt;<em>data_type</em>, <em>size</em>&gt; <em>identifier</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Square</code></td>
+<td style="text-align: left;"><em>data_type</em> <em>identifier</em> [<em>size</em>]</td>
+</tr>
+</tbody>
+</table>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Template</label><label for="__tabbed_1_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w">   </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare integer array with 3 elements</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">],</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteArray</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare byte array with 3 elements</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare string array with 3 elements</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">array</span><span class="o">&lt;</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nestedArray</span><span class="p">;</span><span class="w">    </span><span class="c1">//  declare nested array with 3x2 integer elements</span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w">   </span><span class="p">;</span><span class="w">          </span><span class="c1">//  intArray   : {   0,    0,    0}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">],</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteArray</span><span class="w">  </span><span class="p">;</span><span class="w">          </span><span class="c1">//  byteArray  : {8&#39;b0, 8&#39;b0, 8&#39;b0}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="p">;</span><span class="w">          </span><span class="c1">//  stringArray: {  &quot;&quot;,   &quot;&quot;,   &quot;&quot;}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">array</span><span class="o">&lt;</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nestedArray</span><span class="p">;</span><span class="w">    </span><span class="c1">//  nestedArray: {{0, 0, 0}, {0, 0, 0}}</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">int</span><span class="w">     </span><span class="n">intArray</span><span class="w">    </span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w">        </span><span class="c1">//  declare integer array with 3 elements</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">byteArray</span><span class="w">   </span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w">        </span><span class="c1">//  declare byte array with 3 elements</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kt">string</span><span class="w">  </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w">        </span><span class="c1">//  declare string array with 3 elements</span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kt">int</span><span class="w">     </span><span class="n">intArray</span><span class="w">    </span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w">                </span><span class="c1">//  intArray   : {   0,    0,    0}</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">byteArray</span><span class="w">   </span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w">                </span><span class="c1">//  byteArray  : {8&#39;b0, 8&#39;b0, 8&#39;b0}</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kt">string</span><span class="w">  </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w">                </span><span class="c1">//  stringArray: {  &quot;&quot;,   &quot;&quot;,   &quot;&quot;}</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="hll"><span class="c1">// (1)!</span>
 </span></span></code></pre></div></td></tr></table></div>
 <ol>
-<li><code>square</code> format <strong>not</strong> support for declare nested array</li>
+<li><code>square</code> format <strong>NOT</strong> support for declare nested array</li>
 </ol>
 </div>
 </div>
 </div>
-<p>Declare array by <code>rand</code> keyword:</p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Array is a <strong>fixed-size</strong> collection, which's <em>size</em> <strong>must</strong> be assigned by a non-zero integer, and cannot be changed after declared.</p>
+</details>
+<h2 id="declare-array-by-rand-keyword">Declare array by <code>rand</code> keyword</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Template</label><label for="__tabbed_2_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -933,6 +1020,35 @@
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">rand</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">];</span><span class="w">          </span><span class="c1">//  declare integer array with 3 random elements</span>
 </span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h2 id="initialization-assignment">Initialization Assignment</h2>
+<p>Array can be assigned at declaration; otherwise, each elements will be initialized to default initial value.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Template</label><label for="__tabbed_3_2">Square</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="mi">2</span><span class="p">};</span><span class="w">         </span><span class="c1">//  intArray   : {    1,     2}</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">],</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteArray</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mb">8&#39;b01</span><span class="p">,</span><span class="w"> </span><span class="mb">8&#39;b10</span><span class="p">};</span><span class="w">         </span><span class="c1">//  byteArray  : {8&#39;b01, 8&#39;b10}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w">   </span><span class="s">&quot;B&quot;</span><span class="p">};</span><span class="w">         </span><span class="c1">//  stringArray: {  &quot;A&quot;,   &quot;B&quot;}</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">array</span><span class="o">&lt;</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">nestedArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">}};</span><span class="w"> </span><span class="c1">//  nestedArray: {{1, 2}, {3, 4}}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kt">int</span><span class="w">     </span><span class="n">intArray</span><span class="w">    </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="mi">2</span><span class="p">};</span><span class="w">               </span><span class="c1">//  intArray   : {    1,     2}</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="n">byteArray</span><span class="w">   </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mb">8&#39;b01</span><span class="p">,</span><span class="w"> </span><span class="mb">8&#39;b10</span><span class="p">};</span><span class="w">               </span><span class="c1">//  byteArray  : {8&#39;b01, 8&#39;b10}</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kt">string</span><span class="w">  </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="w">   </span><span class="s">&quot;B&quot;</span><span class="p">};</span><span class="w">               </span><span class="c1">//  stringArray: {  &quot;A&quot;,   &quot;B&quot;}</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="hll"><span class="c1">// (1)!</span>
+</span></span></code></pre></div></td></tr></table></div>
+<ol>
+<li><code>square</code> format <strong>NOT</strong> support for declare nested array</li>
+</ol>
 </div>
 </div>
 </div>
@@ -947,27 +1063,27 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><a href="./#index" title="Index operator []"><code>[]</code></a></td>
-<td style="text-align: left;">Used to access a specific element of an array.</td>
+<td style="text-align: left;">Used to access a specific <em>element</em> of an array by given <em>index</em>, which must be a positive integer.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#assignment" title="Assignment operator ="><code>=</code></a></td>
-<td style="text-align: left;">Creates a copy of the <code>array</code>-type expression on the RHS and assigns it to the array on the LHS.</td>
+<td style="text-align: left;">Creates a copy of the <code>array</code>-type expression on the <abbr title="Right Hand Site">RHS</abbr> and assigns it to the array on the <abbr title="Left Hand Site">LHS</abbr>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#equality" title="Equality operator =="><code>==</code></a></td>
-<td style="text-align: left;">Evaluates to <em>true</em> if all elements with corresponding indexes are equal.</td>
+<td style="text-align: left;">Evaluates to <strong>true</strong> if both <em>size</em>s are equal and all <em>element</em>s with corresponding <em>index</em>es are equal.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#inequality" title="Inequality operator !="><code>!=</code></a></td>
-<td style="text-align: left;">Evaluates to <em>true</em> if not all elements with corresponding indexes are equal.</td>
+<td style="text-align: left;">Evaluates to <strong>true</strong> whether both <em>size</em>s are not equal or if any <em>element</em> with corresponding <em>index</em> is not equal.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#in" title="Set membership operator in"><code>in</code></a></td>
-<td style="text-align: left;">It evaluates to <em>true</em> if the element specified on the left of the operator exists in the array collection on the right of the operator.</td>
+<td style="text-align: left;">Evaluates to <strong>true</strong> if <em>element</em> on <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> is exists in the array.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#foreach" title="foreach statement"><code>foreach</code></a></td>
-<td style="text-align: left;">The foreach statement can be applied to an array to iterate over the array elements.</td>
+<td style="text-align: left;">Iterates over the array's <em>element</em>s.</td>
 </tr>
 </tbody>
 </table>
@@ -982,121 +1098,77 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><a href="./#size" title="function int size()">int <code>size()</code></a></td>
-<td style="text-align: left;">Returns the number of elements in the arrays.</td>
+<td style="text-align: left;">Returns the number of <em>element</em>s in the array.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><a href="./#sum" title="function int sum()">int <code>sum()</code></a></td>
-<td style="text-align: left;">Returns the sum of all elements currently stored in the array.</td>
+<td style="text-align: left;"><a href="./#sum_int" title="function int sum()">int <code>sum()</code></a></td>
+<td style="text-align: left;">Returns the sum of all <em>element</em>s in the array, when <em>data_type</em> of <em>element</em> is <code>bit</code> or <code>int</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="./#sum_float" title="function float64 sum()">float64 <code>sum()</code></a><br><a href="../../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a></td>
+<td style="text-align: left;">Returns the sum of all <em>element</em>s in the array, when <em>data_type</em> of <em>element</em> is <code>float32</code> or <code>float64</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#to_list" title="function list&lt;data_type&gt; to_list()">list&lt;data_type&gt; <code>to_list()</code></a></td>
-<td style="text-align: left;">Returns all elements in a <a href="../Lists/#list"><code>list</code></a>-type.</td>
+<td style="text-align: left;">Returns all <em>element</em>s to a <code>list</code>-type.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#to_set" title="function set&lt;data_type&gt; to_set()">set&lt;data_type&gt; <code>to_set()</code>:</a></td>
-<td style="text-align: left;">Returns all elements in a <a href="../Sets/#set"><code>set</code></a>-type.</td>
+<td style="text-align: left;">Returns all <em>element</em>s to a <code>set</code>-type.</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="index">Index operator <code>[]</code></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Template</label><label for="__tabbed_3_2">Square</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w">   </span><span class="c1">//  intVal: 0 -&gt; 3</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w">   </span><span class="c1">//  intVal: 0 -&gt; 3</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>Operator that do not modify contents can be used within <strong>activity</strong>, <strong>constraint</strong>, or <strong>covergroup</strong>.</p>
-</details>
-<h2 id="assignment">Assignment operator <code>=</code></h2>
+<p>Used to access a specific <em>element</em> of an array by given <em>index</em>, which must be a positive integer.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Template</label><label for="__tabbed_4_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">intArray</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">            </span><span class="c1">//  intArray: {1, 2, 3} -&gt; {1, 2, 4}</span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w">   </span><span class="c1">//  intVal: 0 -&gt; 3</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">intArray</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">            </span><span class="c1">//  intArray: {1, 2, 3} -&gt; {1, 2, 4}</span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="w">   </span><span class="c1">//  intVal: 0 -&gt; 3</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>Operator that do not modify contents can be used within <strong>exec block</strong> or <strong>native functions</strong>.</p>
-</details>
-<h2 id="equality">Equality operator <code>==</code></h2>
+<h2 id="assignment">Assignment operator <code>=</code></h2>
+<p>Creates a copy of the <code>array</code>-type expression on the <abbr title="Right Hand Site">RHS</abbr> and assigns it to the array on the <abbr title="Left Hand Site">LHS</abbr>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Template</label><label for="__tabbed_5_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span>
-<span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span>
-<span class="normal"><a href="#__codelineno-8-6">6</a></span>
-<span class="normal"><a href="#__codelineno-8-7">7</a></span>
-<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray_0</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">      </span><span class="p">};</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray_1</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">     </span><span class="p">};</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intArray_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_0: 0 -&gt; 1 (1)</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intArray_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_1: 0 -&gt; 0 (2)</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">stringArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_2: 0 -&gt; 0 (3)</span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w">       </span><span class="c1">//  intArray: {1, 2, 3} -&gt; {3, 4, 5}</span>
 </span></code></pre></div></td></tr></table></div>
-<ol>
-<li>Equalize <strong>size</strong>, <strong>type</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>size</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>type</strong>.</li>
-</ol>
 </div>
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span>
-<span class="normal"><a href="#__codelineno-9-6">6</a></span>
-<span class="normal"><a href="#__codelineno-9-7">7</a></span>
-<span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kt">int</span><span class="w">    </span><span class="n">intArray_0</span><span class="w">  </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">      </span><span class="p">};</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="kt">int</span><span class="w">    </span><span class="n">intArray_1</span><span class="w">  </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kt">string</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">     </span><span class="p">};</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intArray_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_0: 0 -&gt; 1 (1)</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intArray_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_1: 0 -&gt; 0 (2)</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">stringArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_2: 0 -&gt; 0 (3)</span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span><span class="w">       </span><span class="c1">//  intArray: {1, 2, 3} -&gt; {3, 4, 5}</span>
 </span></code></pre></div></td></tr></table></div>
-<ol>
-<li>Equalize <strong>size</strong>, <strong>type</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>size</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>type</strong>.</li>
-</ol>
 </div>
 </div>
 </div>
 <details class="note" open="open">
 <summary>Note</summary>
-<p>Operator that do not modify contents can be used within <strong>activity</strong>, <strong>constraint</strong>, or <strong>covergroup</strong>.</p>
+<p>Operator that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
 </details>
-<h2 id="inequality">Inequality operator <code>!=</code></h2>
+<h2 id="equality">Equality operator <code>==</code></h2>
+<p>Evaluates to <strong>true</strong> if both <em>size</em>s are equal and all <em>element</em>s with corresponding <em>index</em>es are equal.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Template</label><label for="__tabbed_6_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1112,14 +1184,14 @@
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">     </span><span class="p">};</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intArray_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_0: 0 -&gt; 0 (1)</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intArray_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_1: 0 -&gt; 1 (3)</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_2: 0 -&gt; 1 (4)</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intArray_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_0: 0 -&gt; 1 (1)</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intArray_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_1: 0 -&gt; 0 (2)</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">stringArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  ILLEGAL (3)</span>
 </span></code></pre></div></td></tr></table></div>
 <ol>
-<li>Equalize <strong>size</strong>, <strong>type</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>size</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>type</strong>.</li>
+<li>Equalize <em>size</em> and all <em>element</em>s with corresponding <em>index</em>es.</li>
+<li>Inequalize <em>size</em>.</li>
+<li>Different <em>data_type</em> between arrays are incomparable.</li>
 </ol>
 </div>
 <div class="tabbed-block">
@@ -1135,23 +1207,24 @@
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="kt">string</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">     </span><span class="p">};</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a>
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intArray_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_0: 0 -&gt; 0 (1)</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intArray_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_1: 0 -&gt; 1 (2)</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_2: 0 -&gt; 1 (3)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intArray_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_0: 0 -&gt; 1 (1)</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intArray_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_1: 0 -&gt; 0 (2)</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">stringArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  ILLEGAL (3)</span>
 </span></code></pre></div></td></tr></table></div>
 <ol>
-<li>Equalize <strong>size</strong>, <strong>type</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>size</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>type</strong>.</li>
+<li>Equalize <em>size</em> and all <em>element</em>s with corresponding <em>index</em>es.</li>
+<li>Inequalize <em>size</em>.</li>
+<li>Different <em>data_type</em> between arrays are incomparable.</li>
 </ol>
 </div>
 </div>
 </div>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>Operator that do not modify contents can be used within <strong>activity</strong>, <strong>constraint</strong>, or <strong>covergroup</strong>.</p>
-</details>
-<h2 id="in">Set membership operator <code>in</code></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Different <em>data_type</em> of <em>element</em> of two arrays should <strong>NOT</strong> be compared.</p>
+</div>
+<h2 id="inequality">Inequality operator <code>!=</code></h2>
+<p>Evaluates to <strong>true</strong> whether both <em>size</em>s are not equal or if any <em>element</em> with corresponding <em>index</em> is not equal.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Template</label><label for="__tabbed_7_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1159,32 +1232,55 @@
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
 <span class="normal"><a href="#__codelineno-12-4">4</a></span>
-<span class="normal"><a href="#__codelineno-12-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">;</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">                </span><span class="c1">//  bitval_0: 0 -&gt; 1</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">                </span><span class="c1">//  bitVal_1: 0 -&gt; 0</span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span>
+<span class="normal"><a href="#__codelineno-12-7">7</a></span>
+<span class="normal"><a href="#__codelineno-12-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray_0</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">      </span><span class="p">};</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray_1</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">     </span><span class="p">};</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intArray_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_0: 0 -&gt; 0 (1)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intArray_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_1: 0 -&gt; 1 (2)</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  ILLEGAL (3)</span>
 </span></code></pre></div></td></tr></table></div>
+<ol>
+<li>Equalize <em>size</em> and all <em>element</em>s with corresponding <em>index</em>es.</li>
+<li>Inequalize <em>size</em>.</li>
+<li>Different <em>data_type</em> between arrays are incomparable.</li>
+</ol>
 </div>
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
 <span class="normal"><a href="#__codelineno-13-4">4</a></span>
-<span class="normal"><a href="#__codelineno-13-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">;</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">                </span><span class="c1">//  bitval_0: 0 -&gt; 1</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">                </span><span class="c1">//  bitVal_1: 0 -&gt; 0</span>
+<span class="normal"><a href="#__codelineno-13-5">5</a></span>
+<span class="normal"><a href="#__codelineno-13-6">6</a></span>
+<span class="normal"><a href="#__codelineno-13-7">7</a></span>
+<span class="normal"><a href="#__codelineno-13-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kt">int</span><span class="w">    </span><span class="n">intArray_0</span><span class="w">  </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">      </span><span class="p">};</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="kt">int</span><span class="w">    </span><span class="n">intArray_1</span><span class="w">  </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="kt">string</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">     </span><span class="p">};</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intArray_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_0: 0 -&gt; 0 (1)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intArray_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_1: 0 -&gt; 1 (2)</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intArray_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  ILLEGAL (3)</span>
 </span></code></pre></div></td></tr></table></div>
+<ol>
+<li>Equalize <em>size</em> and all <em>element</em>s with corresponding <em>index</em>es.</li>
+<li>Inequalize <em>size</em>.</li>
+<li>Different <em>data_type</em> between arrays are incomparable.</li>
+</ol>
 </div>
 </div>
 </div>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>Operator that do not modify contents can be used within <strong>activity</strong>, <strong>constraint</strong>, or <strong>covergroup</strong>.</p>
-</details>
-<h2 id="foreach"><code>foreach</code> statement</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Different <em>data_type</em> of <em>element</em> of two arrays should <strong>NOT</strong> be compared.</p>
+</div>
+<h2 id="in">Set membership operator <code>in</code></h2>
+<p>Evaluates to <strong>true</strong> if <em>element</em> on <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> is exists in the array.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Template</label><label for="__tabbed_8_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1192,45 +1288,94 @@
 <span class="normal"><a href="#__codelineno-14-2">2</a></span>
 <span class="normal"><a href="#__codelineno-14-3">3</a></span>
 <span class="normal"><a href="#__codelineno-14-4">4</a></span>
-<span class="normal"><a href="#__codelineno-14-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">intArray</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="n">intArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  intArray: {1, 2, 3} -&gt; {2, 3, 4}</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="p">}</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="n">in</span><span class="w"> </span><span class="n">intArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">              </span><span class="c1">//  bitval_0: 0 -&gt; 1</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="n">in</span><span class="w"> </span><span class="n">intArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">              </span><span class="c1">//  bitVal_1: 0 -&gt; 0</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">              </span><span class="c1">//  ILLEGAL (1)</span>
 </span></code></pre></div></td></tr></table></div>
+<ol>
+<li>Different <em>data_type</em> between <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> and the array's <em>element</em> on <abbr title="Right Hand Site">RHS</abbr> of <code>in</code>.</li>
+</ol>
 </div>
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">2</a></span>
 <span class="normal"><a href="#__codelineno-15-3">3</a></span>
 <span class="normal"><a href="#__codelineno-15-4">4</a></span>
-<span class="normal"><a href="#__codelineno-15-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">intArray</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="n">intArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  intArray: {1, 2, 3} -&gt; {2, 3, 4}</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="p">}</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="n">in</span><span class="w"> </span><span class="n">intArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">              </span><span class="c1">//  bitval_0: 0 -&gt; 1</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="n">in</span><span class="w"> </span><span class="n">intArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">              </span><span class="c1">//  bitVal_1: 0 -&gt; 0</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intArray</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">              </span><span class="c1">//  ILLEGAL (1)</span>
 </span></code></pre></div></td></tr></table></div>
+<ol>
+<li>Different <em>data_type</em> between <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> and the array's <em>element</em> on <abbr title="Right Hand Site">RHS</abbr> of <code>in</code>.</li>
+</ol>
 </div>
 </div>
 </div>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>Operator that do not modify contents can be used within <strong>activity</strong>, <strong>constraint</strong>, <strong>native exec code</strong> or <strong>covergroup</strong>.</p>
-</details>
-<hr />
-<h2 id="size">function int <code>size()</code></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em>Data_type</em> of <em>element</em> on <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> should be <strong>SAME</strong> as the array's <em>element</em> on <abbr title="Right Hand Site">RHS</abbr> of <code>in</code>.</p>
+</div>
+<h2 id="foreach"><code>foreach</code> statement</h2>
+<p>Iterates over the array's <em>element</em>s.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Template</label><label for="__tabbed_9_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
-<span class="normal"><a href="#__codelineno-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="p">;</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w">  </span><span class="c1">//  intVal: 0 -&gt; 2</span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">intArray</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">    </span><span class="n">intVal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">intArray</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">                      </span><span class="c1">//  intVal: 0 -&gt; 6</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
-<span class="normal"><a href="#__codelineno-17-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w">  </span><span class="c1">//  intVal: 0 -&gt; 2</span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">intArray</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="w">    </span><span class="n">intVal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">intArray</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">                      </span><span class="c1">//  intVal: 0 -&gt; 6</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="size">function int <code>size()</code></h2>
+<p>Returns the number of <em>element</em>s in the array.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Template</label><label for="__tabbed_10_2">Square</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="p">;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w">       </span><span class="c1">//  intVal: 0 -&gt; 2</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w">       </span><span class="c1">//  intVal: 0 -&gt; 2</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1239,51 +1384,8 @@
 <summary>Note</summary>
 <p>Considered as a <strong>constant</strong> expression.</p>
 </details>
-<h2 id="sum">function int <code>sum()</code></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Template</label><label for="__tabbed_10_2">Square</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
-<span class="normal"><a href="#__codelineno-18-2">2</a></span>
-<span class="normal"><a href="#__codelineno-18-3">3</a></span>
-<span class="normal"><a href="#__codelineno-18-4">4</a></span>
-<span class="normal"><a href="#__codelineno-18-5">5</a></span>
-<span class="normal"><a href="#__codelineno-18-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w">   </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">    </span><span class="p">};</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitArray</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mb">2&#39;b01</span><span class="p">,</span><span class="w"> </span><span class="mb">2&#39;b10</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="w">  </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">   </span><span class="p">};</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">  </span><span class="c1">//  intVal_0: 0 -&gt; 3</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">  </span><span class="c1">//  intVal_1: 0 -&gt; 3</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">sum</span><span class="p">();</span><span class="w">  </span><span class="c1">//  ILLEGAL (1)</span>
-</span></code></pre></div></td></tr></table></div>
-<ol>
-<li><code>string</code> can't be calculated</li>
-</ol>
-</div>
-<div class="tabbed-block">
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
-<span class="normal"><a href="#__codelineno-19-2">2</a></span>
-<span class="normal"><a href="#__codelineno-19-3">3</a></span>
-<span class="normal"><a href="#__codelineno-19-4">4</a></span>
-<span class="normal"><a href="#__codelineno-19-5">5</a></span>
-<span class="normal"><a href="#__codelineno-19-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="kt">int</span><span class="w">     </span><span class="n">intArray</span><span class="w">    </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w">   </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">    </span><span class="p">};</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="n">bitArray</span><span class="w">    </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mb">2&#39;b01</span><span class="p">,</span><span class="w"> </span><span class="mb">2&#39;b10</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="kt">string</span><span class="w">  </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="w">  </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">   </span><span class="p">};</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">  </span><span class="c1">//  intVal_0: 0 -&gt; 3</span>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">  </span><span class="c1">//  intVal_1: 0 -&gt; 3</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">sum</span><span class="p">();</span><span class="w">  </span><span class="c1">//  ILLEGAL (1)</span>
-</span></code></pre></div></td></tr></table></div>
-<ol>
-<li><code>string</code> can't be calculated</li>
-</ol>
-</div>
-</div>
-</div>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>Only can used on numeric data type (<code>int</code> or <code>bit</code>).</p>
-</details>
-<details class="tip" open="open">
-<summary>Usage: use <code>sum()</code> to constrain a random array</summary>
+<h2 id="sum_int">function int <code>sum()</code></h2>
+<p>Returns the sum of all <em>element</em>s in the array, when <em>data_type</em> of <em>element</em> is <code>bit</code> or <code>int</code>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Template</label><label for="__tabbed_11_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1291,74 +1393,185 @@
 <span class="normal"><a href="#__codelineno-20-2">2</a></span>
 <span class="normal"><a href="#__codelineno-20-3">3</a></span>
 <span class="normal"><a href="#__codelineno-20-4">4</a></span>
-<span class="normal"><a href="#__codelineno-20-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="k">rand</span><span class="w"> </span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="p">;</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="k">constraint</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">    </span><span class="n">intArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">    </span><span class="n">intArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">   </span><span class="c1">//  intArray: {0, 0} -&gt; {2, 1}</span>
-</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-20-5">5</a></span>
+<span class="normal"><a href="#__codelineno-20-6">6</a></span>
+<span class="normal"><a href="#__codelineno-20-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w">   </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">bitArray</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mb">2&#39;b01</span><span class="p">,</span><span class="w"> </span><span class="mb">2&#39;b10</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="w">  </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4"></a>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">   </span><span class="c1">//  intVal_0: 0 -&gt; 3</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">   </span><span class="c1">//  intVal_1: 0 -&gt; 3</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">sum</span><span class="p">();</span><span class="w">   </span><span class="c1">//  ILLEGAL (1)</span>
 </span></code></pre></div></td></tr></table></div>
+<ol>
+<li><code>string</code> can't be calculated</li>
+</ol>
 </div>
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
 <span class="normal"><a href="#__codelineno-21-2">2</a></span>
 <span class="normal"><a href="#__codelineno-21-3">3</a></span>
 <span class="normal"><a href="#__codelineno-21-4">4</a></span>
-<span class="normal"><a href="#__codelineno-21-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">rand</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="k">constraint</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">    </span><span class="n">intArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">    </span><span class="n">intArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">   </span><span class="c1">//  intArray: {0, 0} -&gt; {2, 1}</span>
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span>
+<span class="normal"><a href="#__codelineno-21-6">6</a></span>
+<span class="normal"><a href="#__codelineno-21-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="kt">int</span><span class="w">     </span><span class="n">intArray</span><span class="w">    </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">1</span><span class="w">   </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">    </span><span class="p">};</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="n">bitArray</span><span class="w">    </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mb">2&#39;b01</span><span class="p">,</span><span class="w"> </span><span class="mb">2&#39;b10</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="kt">string</span><span class="w">  </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="w">  </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">   </span><span class="p">};</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">   </span><span class="c1">//  intVal_0: 0 -&gt; 3</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">   </span><span class="c1">//  intVal_1: 0 -&gt; 3</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">sum</span><span class="p">();</span><span class="w">   </span><span class="c1">//  ILLEGAL (1)</span>
 </span></code></pre></div></td></tr></table></div>
+<ol>
+<li><code>string</code> can't be calculated</li>
+</ol>
 </div>
 </div>
 </div>
-</details>
-<h2 id="to_list">function list&lt;data_type&gt; <code>to_list()</code></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code>data-type</code> of <code>element</code> should be integer types (e.g., <code>int</code> or <code>bit</code>).</p>
+</div>
+<details class="tip" open="open">
+<summary>Usage: use <code>sum()</code> to constrain a random array</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Template</label><label for="__tabbed_12_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span>
 <span class="normal"><a href="#__codelineno-22-2">2</a></span>
 <span class="normal"><a href="#__codelineno-22-3">3</a></span>
-<span class="normal"><a href="#__codelineno-22-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="p">};</span>
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">to_list</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">    </span><span class="c1">//  intList: {} -&gt; {2, 1, 2}</span>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">to_list</span><span class="p">();</span><span class="w">    </span><span class="c1">//  stringList: {} -&gt; {&quot;2&quot;, &quot;1&quot;, &quot;2&quot;};</span>
+<span class="normal"><a href="#__codelineno-22-4">4</a></span>
+<span class="normal"><a href="#__codelineno-22-5">5</a></span>
+<span class="normal"><a href="#__codelineno-22-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="k">rand</span><span class="w"> </span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="p">;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="k">constraint</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">    </span><span class="n">intArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">    </span><span class="n">intArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">   </span><span class="c1">//  intArray: {0, 0} -&gt; {2, 1}</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
 <span class="normal"><a href="#__codelineno-23-2">2</a></span>
 <span class="normal"><a href="#__codelineno-23-3">3</a></span>
-<span class="normal"><a href="#__codelineno-23-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="kt">int</span><span class="w">    </span><span class="n">intArray</span><span class="w">    </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="p">};</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="kt">string</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">to_list</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">    </span><span class="c1">//  intList: {} -&gt; {2, 1, 2}</span>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">to_list</span><span class="p">();</span><span class="w">    </span><span class="c1">//  stringList: {} -&gt; {&quot;2&quot;, &quot;1&quot;, &quot;2&quot;};</span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span>
+<span class="normal"><a href="#__codelineno-23-5">5</a></span>
+<span class="normal"><a href="#__codelineno-23-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">rand</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">intArray</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="k">constraint</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">    </span><span class="n">intArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="w">    </span><span class="n">intArray</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">   </span><span class="c1">//  intArray: {0, 0} -&gt; {2, 1}</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
 </div>
-<h2 id="to_set">function set&lt;data_type&gt; <code>to_set()</code></h2>
+</details>
+<h2 id="sum_float">function float64 <code>sum()</code></h2>
+<p><a href="../../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a></p>
+<p>Returns the sum of all <em>element</em>s in the array, when <em>data_type</em> of <em>element</em> is <code>float32</code> or <code>float64</code>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Template</label><label for="__tabbed_13_2">Square</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
 <span class="normal"><a href="#__codelineno-24-2">2</a></span>
 <span class="normal"><a href="#__codelineno-24-3">3</a></span>
-<span class="normal"><a href="#__codelineno-24-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="p">};</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">to_set</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">       </span><span class="c1">//  intSet: {} -&gt; {2, 1}</span>
-</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">to_set</span><span class="p">();</span><span class="w">       </span><span class="c1">//  stringSet: {} -&gt; {&quot;2&quot;, &quot;1&quot;}</span>
+<span class="normal"><a href="#__codelineno-24-4">4</a></span>
+<span class="normal"><a href="#__codelineno-24-5">5</a></span>
+<span class="normal"><a href="#__codelineno-24-6">6</a></span>
+<span class="normal"><a href="#__codelineno-24-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="n">float32</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">float32Array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">};</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="n">flaot64</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">float64Array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">};</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">};</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="n">flaot64</span><span class="w"> </span><span class="n">fVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w"> </span><span class="c1">//  fVal_0: 0.0 -&gt; 3.0</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="n">flaot64</span><span class="w"> </span><span class="n">fVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w"> </span><span class="c1">//  fVal_1: 0.0 -&gt; 3.0</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="n">flaot64</span><span class="w"> </span><span class="n">fVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">sum</span><span class="p">();</span><span class="w"> </span><span class="c1">//  ILLEGAL (1)</span>
 </span></code></pre></div></td></tr></table></div>
+<ol>
+<li><code>string</code> can't be calculated</li>
+</ol>
 </div>
 <div class="tabbed-block">
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
 <span class="normal"><a href="#__codelineno-25-2">2</a></span>
 <span class="normal"><a href="#__codelineno-25-3">3</a></span>
-<span class="normal"><a href="#__codelineno-25-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="kt">int</span><span class="w">    </span><span class="n">intArray</span><span class="w">    </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="p">};</span>
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="kt">string</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">to_set</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">       </span><span class="c1">//  intSet: {} -&gt; {2, 1}</span>
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">to_set</span><span class="p">();</span><span class="w">       </span><span class="c1">//  stringSet: {} -&gt; {&quot;2&quot;, &quot;1&quot;}</span>
+<span class="normal"><a href="#__codelineno-25-4">4</a></span>
+<span class="normal"><a href="#__codelineno-25-5">5</a></span>
+<span class="normal"><a href="#__codelineno-25-6">6</a></span>
+<span class="normal"><a href="#__codelineno-25-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="n">float32</span><span class="w"> </span><span class="n">float32Array</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">};</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="n">flaot64</span><span class="w"> </span><span class="n">float64Array</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">};</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="kt">string</span><span class="w">  </span><span class="n">stringArray</span><span class="w">  </span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">};</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4"></a>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="n">flaot64</span><span class="w"> </span><span class="n">fVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w"> </span><span class="c1">//  fVal_0: 0.0 -&gt; 3.0</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="n">flaot64</span><span class="w"> </span><span class="n">fVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bitArray</span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w"> </span><span class="c1">//  fVal_1: 0.0 -&gt; 3.0</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="n">flaot64</span><span class="w"> </span><span class="n">fVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">sum</span><span class="p">();</span><span class="w"> </span><span class="c1">//  ILLEGAL (1)</span>
+</span></code></pre></div></td></tr></table></div>
+<ol>
+<li><code>string</code> can't be calculated</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code>data-type</code> of <code>element</code> should be floating-point types (e.g., <code>float32</code> or <code>float64</code>).</p>
+</div>
+<h2 id="to_list">function list&lt;data_type&gt; <code>to_list()</code></h2>
+<p>Returns all <em>element</em>s to a <code>list</code>-type.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Template</label><label for="__tabbed_14_2">Square</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
+<span class="normal"><a href="#__codelineno-26-2">2</a></span>
+<span class="normal"><a href="#__codelineno-26-3">3</a></span>
+<span class="normal"><a href="#__codelineno-26-4">4</a></span>
+<span class="normal"><a href="#__codelineno-26-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="p">};</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3"></a>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">to_list</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">    </span><span class="c1">//  intList: {} -&gt; {2, 1, 2}</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">to_list</span><span class="p">();</span><span class="w">    </span><span class="c1">//  stringList: {} -&gt; {&quot;2&quot;, &quot;1&quot;, &quot;2&quot;};</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
+<span class="normal"><a href="#__codelineno-27-2">2</a></span>
+<span class="normal"><a href="#__codelineno-27-3">3</a></span>
+<span class="normal"><a href="#__codelineno-27-4">4</a></span>
+<span class="normal"><a href="#__codelineno-27-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="kt">int</span><span class="w">    </span><span class="n">intArray</span><span class="w">    </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="p">};</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="kt">string</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3"></a>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">to_list</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">    </span><span class="c1">//  intList: {} -&gt; {2, 1, 2}</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">to_list</span><span class="p">();</span><span class="w">    </span><span class="c1">//  stringList: {} -&gt; {&quot;2&quot;, &quot;1&quot;, &quot;2&quot;};</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<h2 id="to_set">function set&lt;data_type&gt; <code>to_set()</code></h2>
+<p>Returns all <em>element</em>s to a <code>set</code>-type.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Template</label><label for="__tabbed_15_2">Square</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span>
+<span class="normal"><a href="#__codelineno-28-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intArray</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="p">};</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="n">array</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3"></a>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">to_set</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">       </span><span class="c1">//  intSet: {} -&gt; {2, 1}</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">to_set</span><span class="p">();</span><span class="w">       </span><span class="c1">//  stringSet: {} -&gt; {&quot;2&quot;, &quot;1&quot;}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span>
+<span class="normal"><a href="#__codelineno-29-2">2</a></span>
+<span class="normal"><a href="#__codelineno-29-3">3</a></span>
+<span class="normal"><a href="#__codelineno-29-4">4</a></span>
+<span class="normal"><a href="#__codelineno-29-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="kt">int</span><span class="w">    </span><span class="n">intArray</span><span class="w">    </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w">  </span><span class="p">};</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="kt">string</span><span class="w"> </span><span class="n">stringArray</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3"></a>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">intArray</span><span class="p">.</span><span class="n">to_set</span><span class="p">()</span><span class="w">   </span><span class="p">;</span><span class="w">       </span><span class="c1">//  intSet: {} -&gt; {2, 1}</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stringArray</span><span class="p">.</span><span class="n">to_set</span><span class="p">();</span><span class="w">       </span><span class="c1">//  stringSet: {} -&gt; {&quot;2&quot;, &quot;1&quot;}</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 </div>
@@ -1369,7 +1582,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-19T03:49:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-20T08:02:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-20</span>
       
         <br>
         Created:

@@ -602,6 +602,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#initialization-assignment" class="md-nav__link">
+    Initialization Assignment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-operators" class="md-nav__link">
     Set Operators
   </a>
@@ -798,6 +805,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#initialization-assignment" class="md-nav__link">
+    Initialization Assignment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-operators" class="md-nav__link">
     Set Operators
   </a>
@@ -913,12 +927,14 @@
 <li>Unordered.</li>
 <li>Non-randomizable.</li>
 <li><em>Element</em> can be any <a href="../../DataTypes/#datatypes_scalar" title="e.g., bit, int, bool, enum, string, float32, float64, chandle"><em>scalar</em></a> or <a href="../../DataTypes/#datatypes_aggregate" title="e.g., array, list, map, set, struct"><em>aggregate</em></a> of scalars.</li>
-<li><em>Element</em>s must be unique.</li>
+<li>Each <em>element</em> must be unique.</li>
+<li>Can be nested by any collection types (e.g., <code>array</code>, <code>list</code>, <code>map</code> or <code>set</code>).</li>
 </ul>
 <h2 id="declarations">Declarations</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Without Initialization Assignment</label><label for="__tabbed_1_2">With Initialization Assignment</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p>Set can be declared by following syntax:<br></p>
+<blockquote>
+<p>set&lt;<em>data_type</em>&gt; <em>identifier</em></p>
+</blockquote>
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
@@ -940,8 +956,8 @@
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="p">};</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ol>
-</div>
-<div class="tabbed-block">
+<h2 id="initialization-assignment">Initialization Assignment</h2>
+<p>Set can be assigned at declaration; otherwise, it will be initialized to empty aggregate literal (<code>{}</code>).
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
@@ -953,7 +969,7 @@
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">string</span><span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">    </span><span class="p">};</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">set</span><span class="o">&lt;</span><span class="n">float32</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">floatSet</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="w">    </span><span class="p">};</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">set</span><span class="o">&lt;</span><span class="n">eSTR2NUM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">enumSet</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="n">ONE</span><span class="p">,</span><span class="w"> </span><span class="n">TWO</span><span class="w">    </span><span class="p">};</span><span class="w">   </span><span class="c1">// (1)!</span>
-</span></code></pre></div></td></tr></table></div>
+</span></code></pre></div></td></tr></table></div></p>
 <ol>
 <li>Assume defined enum type before
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
@@ -963,9 +979,6 @@
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="p">};</span>
 </span></code></pre></div></td></tr></table></div></li>
 </ol>
-</div>
-</div>
-</div>
 <h2 id="set-operators">Set Operators</h2>
 <table>
 <thead>
@@ -977,23 +990,23 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><a href="./#assignment" title="Assignment operator ="><code>=</code></a></td>
-<td style="text-align: left;">Creates a copy of the set-type expression on the RHS and assigns it to the set on the LHS.</td>
+<td style="text-align: left;">Create a copy of the <code>set</code>-type expression on the <abbr title="Right Hand Site">RHS</abbr> and assigns it to the set on the <abbr title="Left Hand Site">LHS</abbr>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#equality" title="Equality operator =="><code>==</code></a></td>
-<td style="text-align: left;">Evaluates to <em>true</em> if all elements are equal.</td>
+<td style="text-align: left;">Evaluetes to <strong>true</strong> if both <em>size</em>s are equal and have exactly same <em>element</em>s.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#inequality" title="Inequality operator !="><code>!=</code></a></td>
-<td style="text-align: left;">Evaluates to <em>true</em> if not all elements are equal.</td>
+<td style="text-align: left;">Evaluetes to <strong>true</strong> whether both <em>size</em>s are not equal or do not have exactly same <em>element</em>s.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#in" title="Set membership operator in"><code>in</code></a></td>
-<td style="text-align: left;">It evaluates to <em>true</em> if the element specified on the left of the operator exists in the <strong>set</strong> collection on the right of the operator.</td>
+<td style="text-align: left;">Evaluetes to <strong>true</strong> if <em>element</em> on <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> is exists in the set.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#foreach" title="foreach statement"><code>foreach</code></a></td>
-<td style="text-align: left;">The foreach statement can be applied to a set to iterate over the set elements.</td>
+<td style="text-align: left;">Iterates over the set's <em>element</em>s.</td>
 </tr>
 </tbody>
 </table>
@@ -1008,28 +1021,30 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><a href="./#size" title="function int size()">int <code>size()</code></a></td>
-<td style="text-align: left;">Returns the number of elements in the set.</td>
+<td style="text-align: left;">Returns the number of <em>element</em>s in the set.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#clear" title="function void clear()"><code>clear()</code></a></td>
-<td style="text-align: left;">Removes all elements.</td>
+<td style="text-align: left;">Removes all <em>element</em>s from the set.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#delete" title="function void delete(data_type element)"><code>delete(data_type element)</code></a></td>
-<td style="text-align: left;">Removes the specified element.</td>
+<td style="text-align: left;">Remove the <em>element</em>s from the set.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#insert" title="function void insert(data_type element)"><code>insert(data_type element)</code></a></td>
-<td style="text-align: left;">Adds the specified element.</td>
+<td style="text-align: left;">Adds the <em>element</em> to the set.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#to_list" title="function list&lt;data_type&gt; to_list()">list&lt;data_type&gt; <code>to_list()</code></a></td>
-<td style="text-align: left;">Returns all elements in a <a href="../Lists/#list"><code>list</code></a>-type.</td>
+<td style="text-align: left;">Returns all <em>element</em>s to a <code>list</code>-type.</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="assignment">Assignment operator <code>=</code></h2>
+<p>Create a copy of the <code>set</code>-type expression on the <abbr title="Right Hand Site">RHS</abbr> and assigns it to the set on the <abbr title="Left Hand Site">LHS</abbr>.
+Same <em>element</em>s in the <abbr title="Right Hand Site">RHS</abbr> will be merged automatically and appear only once in the set.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
@@ -1037,11 +1052,16 @@
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">intSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span><span class="w">    </span><span class="c1">//  intSet: {}     -&gt; {1, 2}</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">intSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span><span class="w"> </span><span class="c1">//  intSet: {1, 2} -&gt; {3, 4} (1)</span>
-</span></code></pre></div></td></tr></table></div>
+</span></code></pre></div></td></tr></table></div></p>
 <ol>
 <li>Same element will appear only once.</li>
 </ol>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Operator that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
 <h2 id="equality">Equality operator <code>==</code></h2>
+<p>Evaluetes to <strong>true</strong> if both <em>size</em>s are equal and have exactly same <em>element</em>s.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -1060,15 +1080,20 @@
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">set_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">set_0</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//  bitVal_0: 0 -&gt; 1 (1)</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">set_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">set_1</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//  bitVal_1: 0 -&gt; 1 (2)</span>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">set_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">set_2</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//  bitVal_2: 0 -&gt; 0 (3)</span>
-</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">set_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">set_3</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//  bitVal_3: 0 -&gt; 0 (4)</span>
-</span></code></pre></div></td></tr></table></div>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">set_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">set_3</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//  ILLEGAL (4)</span>
+</span></code></pre></div></td></tr></table></div></p>
 <ol>
-<li>Equalize <strong>size</strong>, <strong>type</strong>, and all elements.</li>
-<li>Equalize <strong>size</strong>, <strong>type</strong>, and all elements in different order.</li>
-<li>Inequalize <strong>size</strong>.</li>
-<li>Inequalize <strong>type</strong>.</li>
+<li>Equalize <em>size</em> and all <em>element</em>s.</li>
+<li>Equalize <em>size</em> and all <em>element</em>s in different order.</li>
+<li>Inequalize <em>size</em>.</li>
+<li>Different <em>data_type</em> are incomparable.</li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Different <em>data_type</em> of two sets should <strong>NOT</strong> be compared.</p>
+</div>
 <h2 id="inequality">Inequality operator <code>!=</code></h2>
+<p>Evaluetes to <strong>true</strong> whether both <em>size</em>s are not equal or do not have exactly same <em>element</em>s.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -1088,14 +1113,19 @@
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">set_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">set_1</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//  bitVal_1: 0 -&gt; 0 (2)</span>
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">set_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">set_2</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//  bitVal_2: 0 -&gt; 1 (3)</span>
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">set_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">set_3</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">//  bitVal_3: 0 -&gt; 1 (4)</span>
-</span></code></pre></div></td></tr></table></div>
+</span></code></pre></div></td></tr></table></div></p>
 <ol>
-<li>Equalize <strong>size</strong>, <strong>type</strong>, and all elements.</li>
-<li>Equalize <strong>size</strong>, <strong>type</strong>, and all elements in different order.</li>
-<li>Inequalize <strong>size</strong>.</li>
-<li>Inequalize <strong>type</strong>.</li>
+<li>Equalize <em>size</em>, and all <em>element</em>s.</li>
+<li>Equalize <em>size</em>, and all <em>element</em>s in different order.</li>
+<li>Inequalize <em>size</em>.</li>
+<li>Different <em>data_type</em> are incomparable.</li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Different <em>data_type</em> of two sets should <strong>NOT</strong> be compared.</p>
+</div>
 <h2 id="in">Set membership operator <code>in</code></h2>
+<p>Evaluetes to <strong>true</strong> if <em>element</em> on <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> is exists in the set.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span>
@@ -1104,11 +1134,19 @@
 <span class="normal"><a href="#__codelineno-7-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w">   </span><span class="n">in</span><span class="w"> </span><span class="n">intSet</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_0: 0 -&gt; 1</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="w">   </span><span class="n">in</span><span class="w"> </span><span class="n">intSet</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_1: 0 -&gt; 0</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intSet</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_2: 0 -&gt; 0</span>
-</span></code></pre></div></td></tr></table></div>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="n">in</span><span class="w"> </span><span class="n">intSet</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_0: 0 -&gt; 1</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">3</span><span class="w">  </span><span class="n">in</span><span class="w"> </span><span class="n">intSet</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  bitVal_1: 0 -&gt; 0</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intSet</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">    </span><span class="c1">//  ILLEGAL (1)</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Different <em>data_type</em> between <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> and the set's <em>element</em> on <abbr title="Right Hand Site">RHS</abbr> of <code>in</code>.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em>Data_type</em> of <em>element</em> on <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> should be <strong>SAME</strong> as the set's <em>element</em> on <abbr title="Right Hand Site">RHS</abbr> of <code>in</code>.</p>
+</div>
 <h2 id="foreach"><code>foreach</code> statement</h2>
+<p>Iterates over the set's <em>element</em>s.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
@@ -1116,33 +1154,40 @@
 <span class="normal"><a href="#__codelineno-8-5">5</a></span>
 <span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="nl">i:</span><span class="n">intSet</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">   </span><span class="c1">//  sum: 0 -&gt; 3</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="n">intVal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">                    </span><span class="c1">//  intVal: 0 -&gt; 3</span>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div>
+</span></code></pre></div></td></tr></table></div></p>
 <details class="warning" open="open">
 <summary>Warning</summary>
-<p>For <code>set</code>-type, <em>index variable</em> of <code>foreach</code> statament should <strong>NOT</strong> be used to specify <code>set</code> elements.
+<p>For <code>set</code>-type, <em>index variable</em> of <code>foreach</code> statament should <strong>NOT</strong> be used to specify <code>set</code> <em>element</em>s.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">intSet</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{}</span><span class="w">  </span><span class="c1">//  ILLEGAL</span>
 </span></code></pre></div></td></tr></table></div></p>
 </details>
 <hr />
 <h2 id="size">function int <code>size()</code></h2>
+<p>Returns the number of <em>element</em>s in the set.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
 <span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intSet</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="c1">//  intVal: 0 -&gt; 2</span>
-</span></code></pre></div></td></tr></table></div>
+</span></code></pre></div></td></tr></table></div></p>
 <h2 id="clear">function void <code>clear()</code></h2>
+<p>Removes all <em>element</em>s from the set.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">intSet</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w"> </span><span class="c1">// intSet: {1, 2} -&gt; {}</span>
-</span></code></pre></div></td></tr></table></div>
+</span></code></pre></div></td></tr></table></div></p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
 <h2 id="delete">function void <code>delete(data_type element)</code></h2>
+<p>Removes the <em>element</em>s from the set.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
 <span class="normal"><a href="#__codelineno-12-3">3</a></span>
@@ -1152,12 +1197,25 @@
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">intSet</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">//  intSet: {1, 2} -&gt; {1}</span>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">intSet</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">//  ILLEGAL (1)</span>
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="n">intSet</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//  ILLEGAL (2)</span>
-</span></code></pre></div></td></tr></table></div>
+</span></code></pre></div></td></tr></table></div></p>
 <ol>
 <li>The <em>element</em> is not exist in the set.</li>
-<li>Data type of the <em>element</em> is not same as the set.</li>
+<li><em>Data-type</em> of the <em>element</em> is not same as the set.</li>
 </ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <em>element</em> need to deleted should exists in the set.</p>
+</div>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Different to <code>list</code>-type or <code>map</code>-type, <code>delete(data_type element)</code> of <code>set</code>-type will not return the <em>element</em>.</p>
+</details>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
 <h2 id="insert">function void <code>insert(data_type element)</code></h2>
+<p>Adds the <em>element</em> to the set.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
@@ -1167,24 +1225,29 @@
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">intSet</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">//  intSet: {1, 2}    -&gt; {1, 2, 3}</span>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="n">intSet</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c1">//  intSet: {1, 2, 3} -&gt; {1, 2, 3}</span>
 </span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="n">intSet</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="s">&quot;4&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">//  ILLEGAL (1)</span>
-</span></code></pre></div></td></tr></table></div>
+</span></code></pre></div></td></tr></table></div></p>
 <ol>
-<li>Data type of the <em>element</em> is not same as the set.</li>
+<li><em>Data-type</em> of the <em>element</em> is not same as the set.</li>
 </ol>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
 <h2 id="to_list">function list&lt;data_type&gt; <code>to_list()</code></h2>
+<p>Returns all <em>element</em>s to a <code>list</code>-type.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">2</a></span>
 <span class="normal"><a href="#__codelineno-14-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intSet</span><span class="p">.</span><span class="n">to_list</span><span class="p">();</span><span class="w">   </span><span class="c1">//  intList: {} -&gt; {1, 2}</span>
-</span></code></pre></div></td></tr></table></div>
+</span></code></pre></div></td></tr></table></div></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-19T03:49:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-20T08:02:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-20</span>
       
         <br>
         Created:

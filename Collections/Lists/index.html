@@ -548,6 +548,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#declarations" class="md-nav__link">
     Declarations
   </a>
@@ -556,7 +563,14 @@
       
         <li class="md-nav__item">
   <a href="#declare-list-by-rand-keyword" class="md-nav__link">
-    Declare list by rand keyword:
+    Declare list by rand keyword
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialization-assignment" class="md-nav__link">
+    Initialization Assignment
   </a>
   
 </li>
@@ -826,6 +840,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#declarations" class="md-nav__link">
     Declarations
   </a>
@@ -834,7 +855,14 @@
       
         <li class="md-nav__item">
   <a href="#declare-list-by-rand-keyword" class="md-nav__link">
-    Declare list by rand keyword:
+    Declare list by rand keyword
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#initialization-assignment" class="md-nav__link">
+    Initialization Assignment
   </a>
   
 </li>
@@ -992,18 +1020,30 @@
 
 
 <h1 id="list">List</h1>
+<h2 id="properties">Properties</h2>
+<ul>
+<li>Ordered by <em>index</em>.</li>
+<li>Randomizable when its <em>data_type</em> is randomizable (e.g., randomizable <a href="../../DataTypes/#datatypes_scalar" title="e.g., bit, int, bool, enum, string"><em>scalar</em></a> or <a href="../../DataTypes/#datatypes_aggregate" title="e.g., array, list, struct"><em>aggregate</em></a> of randomizable scalar).</li>
+<li><em>Element</em> and <em>data_type</em> can be any <a href="../../DataTypes/#datatypes_scalar" title="e.g., bit, int, bool, enum, string, float32, float64, chandle"><em>scalar</em></a> or <a href="../../DataTypes/#datatypes_aggregate" title="e.g., array, list, map, set, struct"><em>aggregate</em></a> of scalar.</li>
+<li><em>Index</em> must be positive integer.</li>
+<li>Can be nested by any collection types (e.g., <code>array</code>, <code>list</code>, <code>map</code> or <code>set</code>).</li>
+</ul>
 <h2 id="declarations">Declarations</h2>
+<p>List can be declared by following syntax:<br></p>
+<blockquote>
+<p>list&lt;<em>data_type</em>&gt; <em>identifier</em></p>
+</blockquote>
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">     </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">   </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare an integer list</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a byte list</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">bool</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">boolList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a bool list</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a string list</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">eSTR2NUM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">enumList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare an enum list (1)</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">sSTR2NUM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">structList</span><span class="p">;</span><span class="w">  </span><span class="c1">//  declare a struct list (2)</span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">     </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">   </span><span class="p">;</span><span class="w">  </span><span class="c1">//  intList   : {}</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  byteList  : {}</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">bool</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">boolList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  boolList  : {}</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="p">;</span><span class="w">  </span><span class="c1">//  stringList: {}</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">eSTR2NUM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">enumList</span><span class="w">  </span><span class="p">;</span><span class="w">  </span><span class="c1">//  enumList  : {} (1)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">sSTR2NUM</span><span class="o">&gt;</span><span class="w"> </span><span class="n">structList</span><span class="p">;</span><span class="w">  </span><span class="c1">//  structList: {} (2)</span>
 </span></code></pre></div></td></tr></table></div>
 <ol>
 <li>
@@ -1027,13 +1067,23 @@
 </span></code></pre></div></td></tr></table></div></p>
 </li>
 </ol>
-<h2 id="declare-list-by-rand-keyword">Declare list by <code>rand</code> keyword:</h2>
+<h2 id="declare-list-by-rand-keyword">Declare list by <code>rand</code> keyword</h2>
 <p><a href="../../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a>
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">rand</span><span class="w"> </span><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">   </span><span class="p">;</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">rand</span><span class="w"> </span><span class="n">list</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteList</span><span class="w">  </span><span class="p">;</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">rand</span><span class="w"> </span><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h2 id="initialization-assignment">Initialization Assignment</h2>
+<p>List can be assigned at declaration; otherwise, it will be initialized to empty aggregate literal (<code>{}</code>).
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">    </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="w">    </span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w">    </span><span class="p">};</span><span class="w">  </span><span class="c1">//  intList   : {1    , 2    }</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">bit</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">&gt;</span><span class="w"> </span><span class="n">byteList</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mb">8&#39;b01</span><span class="p">,</span><span class="w"> </span><span class="mb">8&#39;b10</span><span class="p">};</span><span class="w">  </span><span class="c1">//  byteList  : {8&#39;b01, 8&#39;b10}</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="n">bool</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">boolList</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">false</span><span class="p">,</span><span class="w"> </span><span class="n">true</span><span class="w"> </span><span class="p">};</span><span class="w">  </span><span class="c1">//  boolList  : {false, true }</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="w">  </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="w">  </span><span class="p">};</span><span class="w">  </span><span class="c1">//  stringList: {&quot;1&quot;  , &quot;2&quot;  }</span>
 </span></code></pre></div></td></tr></table></div></p>
 <h2 id="list-operators">List Operators</h2>
 <table>
@@ -1046,27 +1096,27 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><a href="./#index" title="Index operator []"><code>[]</code></a></td>
-<td style="text-align: left;">Used to access a specific element of a list.</td>
+<td style="text-align: left;">Used to access a specific <em>element</em> of a list by given <em>index</em>, which must be a positive integer.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#assignment" title="Assignment operator ="><code>=</code></a></td>
-<td style="text-align: left;">Creates a copy of the <code>list</code>-type expression on the RHS and assigns it to the list on the LHS.</td>
+<td style="text-align: left;">Create a copy of the <code>list</code>-type expression on the <abbr title="Right Hand Site">RHS</abbr> and assigns it to the list on the <abbr title="Left Hand Site">LHS</abbr>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#equality" title="Equality operator =="><code>==</code></a></td>
-<td style="text-align: left;">Evaluates to <em>true</em> if all elements with corresponding indexes are equal.</td>
+<td style="text-align: left;">Evaluates to <strong>true</strong> if both <em>size</em>s are equal and all <em>element</em>s with corresponding <em>index</em>es are equal.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#inequality" title="Inequality operator !="><code>!=</code></a></td>
-<td style="text-align: left;">Evaluates to <em>true</em> if not all elements with corresponding indexes are equal.</td>
+<td style="text-align: left;">Evaluates to <strong>true</strong> whether both <em>size</em>s are not equal or if any <em>element</em> with corresponding <em>index</em> is not equal.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#in" title="Set membership operator in"><code>in</code></a></td>
-<td style="text-align: left;">It evaluates to <em>true</em> if the element specified on the left of the operator exists in the list collection on the right of the operator.</td>
+<td style="text-align: left;">Evaluates to <strong>true</strong> if <em>element</em> on the <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> is exists in the list.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#foreach" title="foreach statement"><code>foreach</code></a></td>
-<td style="text-align: left;">The foreach statement can be applied to a list to iterate over the list elements.</td>
+<td style="text-align: left;">Iterates over the list's <em>element</em>s.</td>
 </tr>
 </tbody>
 </table>
@@ -1081,80 +1131,78 @@
 <tbody>
 <tr>
 <td style="text-align: left;"><a href="./#size" title="function int size()">int <code>size()</code></a></td>
-<td style="text-align: left;">Returns the number of elements in the list.</td>
+<td style="text-align: left;">Returns the number of <em>element</em>s in the list.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#clear" title="function void clear()"><code>clear()</code></a></td>
-<td style="text-align: left;">Removes all elements.</td>
+<td style="text-align: left;">Removes all <em>element</em>s from the list.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#delete" title="function &lt;data_type&gt; delete(intindex)">&lt;data_type&gt; <code>delete(int index)</code></a></td>
-<td style="text-align: left;">Moves out element at the specified index.</td>
+<td style="text-align: left;">Moves out the <em>element</em> at the specified <em>index</em>, which must be a positive integer.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#insert" title="function void insert(int index, data_type element)"><code>insert(int index, data_type element)</code></a></td>
-<td style="text-align: left;">Adds element at the specified index.</td>
+<td style="text-align: left;">Adds the <em>element</em> to the specified <em>index</em>, and all <em>element</em>s at and beyond the <em>index</em> are moved by one.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#pop_front" title="function &lt;data_type&gt; pop_front()">&lt;data_type&gt; <code>pop_front()</code></a></td>
-<td style="text-align: left;">Moves out first element. Same as <code>delete(0)</code>.</td>
+<td style="text-align: left;">Moves out the first <em>element</em> from the list. Same as <code>delete(0)</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#push_front" title="function void push_front(data_type element)"><code>push_front(data_type element)</code></a></td>
-<td style="text-align: left;">Adds element at beginning of list. Same as <code>insert(0, element)</code>.</td>
+<td style="text-align: left;">Adds the <em>element</em> to the beginning of the list. Same as <code>insert(0, element)</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#pop_back" title="function &lt;data_type&gt; pop_back()">&lt;data_type&gt; <code>pop_back()</code></a></td>
-<td style="text-align: left;">Moves out last element. Same as <code>delete(size()-1)</code>.</td>
+<td style="text-align: left;">Moves out the last <em>element</em> from the list. Same as <code>delete(size()-1)</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#push_back" title="function void push_back(data_type element)"><code>push_back(data_typeelement)</code></a></td>
-<td style="text-align: left;">Adds element at end of list. Same as <code>insert(size(), element)</code>.</td>
+<td style="text-align: left;">Adds the <em>element</em> to the end of the list. Same as <code>insert(size()-1, element)</code>.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#to_set" title="function set&lt;data_type&gt; to_set()">set&lt;data_type&gt; <code>to_set()</code></a></td>
-<td style="text-align: left;">Returns all elements to a <a href="../Sets/#set"><code>set</code></a>-type.</td>
+<td style="text-align: left;">Returns all <em>element</em>s to a <code>set</code>-type.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><a href="./#shuffle" title="function void shuffle()"><code>shuffle()</code></a><br><a href="../../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a></td>
-<td style="text-align: left;">Randomizes orders of elements.</td>
+<td style="text-align: left;">Randomizes orders of <em>element</em>s.</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="index">Index operator <code>[]</code></h2>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w">    </span><span class="c1">//  intVal: 0 -&gt; 2</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="assignment">Assignment operator <code>=</code></h2>
+<p>Used to access a specific <em>element</em> of a list by given <em>index</em>, which must be a positive integer.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">intList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w">             </span><span class="c1">//  intVal: {1, 2, 3} -&gt; {4, 2, 3}</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="equality">Equality operator <code>==</code></h2>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span><span class="w">    </span><span class="c1">//  intVal: 0 -&gt; 2</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">[</span><span class="mi">9</span><span class="p">];</span><span class="w">    </span><span class="c1">//  ILLEGAL (1)</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>The <em>index</em> is out of bounds.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em>Index</em> should smaller than <code>size()</code> of the list.</p>
+</div>
+<h2 id="assignment">Assignment operator <code>=</code></h2>
+<p>Create a copy of the <code>list</code>-type expression on the <abbr title="Right Hand Site">RHS</abbr> and assigns it to the list on the <abbr title="Left Hand Site">LHS</abbr>.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span>
-<span class="normal"><a href="#__codelineno-6-4">4</a></span>
-<span class="normal"><a href="#__codelineno-6-5">5</a></span>
-<span class="normal"><a href="#__codelineno-6-6">6</a></span>
-<span class="normal"><a href="#__codelineno-6-7">7</a></span>
-<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList_0</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="w">      </span><span class="p">};</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList_1</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">4</span><span class="w"> </span><span class="p">};</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">};</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intList_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  bitVal_0: 0 -&gt; 1; (1)</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intList_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  bitVal_1: 0 -&gt; 0; (2)</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">stringList</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  bitVal_2: 0 -&gt; 0; (3)</span>
-</span></code></pre></div></td></tr></table></div>
-<ol>
-<li>Equalize <strong>size</strong>, <strong>type</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>size</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>type</strong>.</li>
-</ol>
-<h2 id="inequality">Inequality operator <code>!=</code></h2>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">};</span><span class="w">        </span><span class="c1">//  intList: {1, 2, 3} -&gt; {2, 3, 4}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Operator that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
+<h2 id="equality">Equality operator <code>==</code></h2>
+<p>Evaluates to <strong>true</strong> if both <em>size</em>s are equal and all <em>element</em>s with corresponding <em>index</em>es are equal.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span>
@@ -1167,104 +1215,225 @@
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">};</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intList_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  bitVal_0: 0 -&gt; 0; (1)</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intList_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  bitVal_1: 0 -&gt; 1; (2)</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">stringList</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  bitVal_2: 0 -&gt; 1; (3)</span>
-</span></code></pre></div></td></tr></table></div>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intList_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  bitVal_0: 0 -&gt; 1; (1)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">intList_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  bitVal_1: 0 -&gt; 0; (2)</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">stringList</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  ILLEGAL (3)</span>
+</span></code></pre></div></td></tr></table></div></p>
 <ol>
-<li>Equalize <strong>size</strong>, <strong>type</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>size</strong>, <strong>context</strong>.</li>
-<li>Inequalize <strong>type</strong>.</li>
+<li>Equalize <em>size</em> and all <em>element</em>s with corresponding <em>index</em>es.</li>
+<li>Inequalize <em>size</em>.</li>
+<li>Different <em>data_type</em> are incomparable.</li>
 </ol>
-<h2 id="in">Set membership operator <code>in</code></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Different <em>data_type</em> of two lists should <strong>NOT</strong> be compared.</p>
+</div>
+<h2 id="inequality">Inequality operator <code>!=</code></h2>
+<p>Evaluates to <strong>true</strong> whether both <em>size</em>s are not equal or if any <em>element</em> with corresponding <em>index</em> is not equal.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
 <span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">;</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intList</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">            </span><span class="c1">//  bitVal_0: 0 -&gt; 1;</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intList</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">            </span><span class="c1">//  bitVal_1: 0 -&gt; 0;</span>
-</span></code></pre></div></td></tr></table></div>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>Operator that do not modify contents can be used within <strong>activity</strong>, <strong>constraint</strong>, or <strong>covergroup</strong>.</p>
-</details>
-<h2 id="foreach"><code>foreach</code> statement</h2>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList_0</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="w">      </span><span class="p">};</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList_1</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="p">,</span><span class="w">  </span><span class="mi">4</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">stringList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="p">};</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intList_0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  bitVal_0: 0 -&gt; 0 (1)</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">intList_1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  bitVal_1: 0 -&gt; 1 (2)</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intList_0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">stringList</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">//  ILLEGAL (3)</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Equalize <em>size</em> and all <em>element</em>s with corresponding <em>index</em>es.</li>
+<li>Inequalize <em>size</em>.</li>
+<li>Different <em>data_type</em> are incomparable.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Different <em>data_type</em> of two lists should <strong>NOT</strong> be compared.</p>
+</div>
+<h2 id="in">Set membership operator <code>in</code></h2>
+<p>Evaluates to <strong>true</strong> if <em>element</em> on the <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> is exists in the list.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
 <span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">intList</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="n">intList</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">            </span><span class="c1">//  intList: {1, 2, 3} -&gt; {2, 3, 4}</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div>
-<details class="note" open="open">
-<summary>Note</summary>
-<p>Operator can be used within <strong>activity</strong>, <strong>constraint</strong>, or <strong>native exec code</strong>.</p>
-</details>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kt">bit</span><span class="w"> </span><span class="n">bitVal_0</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_1</span><span class="p">,</span><span class="w"> </span><span class="n">bitVal_2</span><span class="p">;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">1</span><span class="w">  </span><span class="n">in</span><span class="w"> </span><span class="n">intList</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">           </span><span class="c1">//  bitVal_0: 0 -&gt; 1</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">0</span><span class="w">  </span><span class="n">in</span><span class="w"> </span><span class="n">intList</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">           </span><span class="c1">//  bitVal_1: 0 -&gt; 0</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">intList</span><span class="p">)</span><span class="w"> </span><span class="n">bitVal_2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">           </span><span class="c1">//  ILLEGAL (1)</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>Different <em>data_type</em> between <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> and the list's <em>element</em> on <abbr title="Right Hand Site">RHS</abbr> of <code>in</code>.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em>Data_type</em> of <em>element</em> on <abbr title="Left Hand Site">LHS</abbr> of <code>in</code> should be <strong>SAME</strong> as the list's <em>element</em> on <abbr title="Right Hand Site">RHS</abbr> of <code>in</code>.</p>
+</div>
+<h2 id="foreach"><code>foreach</code> statement</h2>
+<p>Iterates over the list's <em>element</em>s.
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">intList</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="n">intVal</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">intList</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w">                   </span><span class="c1">//  intVal: 0 -&gt; 6</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></p>
 <hr />
 <h2 id="size">function int <code>size()</code></h2>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w">        </span><span class="c1">//  intVal: 0 -&gt; 3</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="clear">function void <code>clear()</code></h2>
+<p>Returns the number of <em>element</em>s in the list.
 <div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
-<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w">                    </span><span class="c1">//  intList: {1, 2, 3} -&gt; {}</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="delete">function &lt;data_type&gt; <code>delete(index)</code></h2>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">     </span><span class="c1">//  intVal: 0 -&gt; 2; intList: {1, 2, 3} -&gt; {1, 3}</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="insert">function void <code>insert(index, element)</code></h2>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
-<span class="normal"><a href="#__codelineno-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w">               </span><span class="c1">//  intList: {1, 2, 3} -&gt; {1, 6, 2, 3}</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="pop_front">function &lt;data_type&gt; <code>pop_front()</code></h2>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span><span class="w">   </span><span class="c1">//  intVal: 0 -&gt; 1; intList: {1, 2, 3} -&gt; {2, 3}</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="push_front">function void <code>push_front(element)</code></h2>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
-<span class="normal"><a href="#__codelineno-15-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w">              </span><span class="c1">//  intList: {1, 2, 3} -&gt; {4, 1, 2, 3}</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="pop_back">function &lt;data_type&gt; <code>pop_back()</code></h2>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
-<span class="normal"><a href="#__codelineno-16-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span><span class="w">    </span><span class="c1">//  intVal: 0 -&gt; 3; intList: {1, 2, 3} -&gt; {1, 2}</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="push_back">function void <code>push_back(element)</code></h2>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
-<span class="normal"><a href="#__codelineno-17-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w">               </span><span class="c1">//  intList: {1, 2, 3} -&gt; {1, 2, 3, 4}</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="to_set">function set&lt;data_type&gt; <code>to_set()</code></h2>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
-<span class="normal"><a href="#__codelineno-18-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">to_set</span><span class="p">();</span><span class="w"> </span><span class="c1">//  intSet: {} -&gt; {1, 2}</span>
-</span></code></pre></div></td></tr></table></div>
-<h2 id="shuffle">function void <code>shuffle()</code></h2>
-<p><a href="../../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a>
-<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
-<span class="normal"><a href="#__codelineno-19-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="n">intList</span><span class="p">.</span><span class="n">shuffle</span><span class="p">();</span><span class="w">                  </span><span class="c1">//  intList: {1, 2} -&gt; {1, 2} or {2, 1}</span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w">        </span><span class="c1">//  intVal: 0 -&gt; 3</span>
 </span></code></pre></div></td></tr></table></div></p>
+<h2 id="clear">function void <code>clear()</code></h2>
+<p>Removes all <em>element</em>s from the list.
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">intList</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="w">                    </span><span class="c1">//  intList: {1, 2, 3} -&gt; {}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
+<h2 id="delete">function &lt;data_type&gt; <code>delete(index)</code></h2>
+<p>Moves out the <em>element</em> at the specified <em>index</em>, which must be a positive integer.
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">     </span><span class="c1">//  intVal: 0 -&gt; 2; intList: {1, 2, 3} -&gt; {1, 3}</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">     </span><span class="c1">//  ILLEGAL (1)</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>The <em>index</em> is out of bounds.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <em>index</em> must be smaller than <code>size()</code> of the list.</p>
+</div>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
+<h2 id="insert">function void <code>insert(index, element)</code></h2>
+<p>Adds the <em>element</em> to the specified <em>index</em>, and all <em>element</em>s at and beyond the <em>index</em> are moved by one.
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="n">intList</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">);</span><span class="w">               </span><span class="c1">//  intList: {1, 2, 3} -&gt; {1, 6, 2, 3}</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="n">intList</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">);</span><span class="w">               </span><span class="c1">//  intList: {1, 6, 2, 3} -&gt; {1, 6, 2, 3, 7}</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="n">intList</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span><span class="w">               </span><span class="c1">//  ILLEGAL (1)</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="n">intList</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">);</span><span class="w">             </span><span class="c1">//  ILLEGAL (2)</span>
+</span></code></pre></div></td></tr></table></div></p>
+<ol>
+<li>The <em>index</em> is larger than <code>size()</code> of the list.</li>
+<li>The <em>data_type</em> of <em>element</em>s are not the same.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <em>index</em> should <strong>NOT</strong> larger than <code>size()</code> of the list.</p>
+</div>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
+<h2 id="pop_front">function &lt;data_type&gt; <code>pop_front()</code></h2>
+<p>Moves out the first <em>element</em> from the list. Same as <code>delete(0)</code>.
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span><span class="w">   </span><span class="c1">//  intVal: 0 -&gt; 1; intList: {1, 2, 3} -&gt; {2, 3}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
+<h2 id="push_front">function void <code>push_front(element)</code></h2>
+<p>Adds the <em>element</em> to the beginning of the list. Same as <code>insert(0, element)</code>.
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="n">intList</span><span class="p">.</span><span class="n">push_front</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w">              </span><span class="c1">//  intList: {1, 2, 3} -&gt; {4, 1, 2, 3}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
+<h2 id="pop_back">function &lt;data_type&gt; <code>pop_back()</code></h2>
+<p>Moves out the last <em>element</em> from the list. Same as <code>delete(size()-1)</code>.
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">intVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span><span class="w">    </span><span class="c1">//  intVal: 0 -&gt; 3; intList: {1, 2, 3} -&gt; {1, 2}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
+<h2 id="push_back">function void <code>push_back(element)</code></h2>
+<p>Adds the <em>element</em> to the end of the list. Same as <code>insert(size()-1, element)</code>.
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="n">intList</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w">               </span><span class="c1">//  intList: {1, 2, 3} -&gt; {1, 2, 3, 4}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
+<h2 id="to_set">function set&lt;data_type&gt; <code>to_set()</code></h2>
+<p>Returns all <em>element</em>s to a <code>set</code>-type.
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
+<span class="normal"><a href="#__codelineno-19-2">2</a></span>
+<span class="normal"><a href="#__codelineno-19-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">intList</span><span class="p">.</span><span class="n">to_set</span><span class="p">();</span><span class="w"> </span><span class="c1">//  intSet: {} -&gt; {1, 2}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h2 id="shuffle">function void <code>shuffle()</code></h2>
+<p><a href="../../#reference" title="LRM minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 10h8v8h-5l-2-2H7v-5m0-7v2h3v2H7l-2 2v3H3v-3H1v8h2v-3h2v3h3l2 2h8v-4h2v3h3V9h-3v3h-2V8h-6V6h3V4H7Z"/></svg></span> v2.1</a></p>
+<p>Randomizes orders of <em>element</em>s.
+<div class="language-sv highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
+<span class="normal"><a href="#__codelineno-20-2">2</a></span>
+<span class="normal"><a href="#__codelineno-20-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="n">list</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">intList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2"></a>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="n">intList</span><span class="p">.</span><span class="n">shuffle</span><span class="p">();</span><span class="w">                  </span><span class="c1">//  intList: {1, 2} -&gt; {1, 2} or {2, 1}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<details class="note" open="open">
+<summary>Note</summary>
+<p>Method that modify contents can only be used within <code>exec</code> block or native <code>function</code>.</p>
+</details>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-19T03:49:47+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-20T08:02:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-20</span>
       
         <br>
         Created:
