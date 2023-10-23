@@ -4,6 +4,9 @@ description: PSSv2.1/7.9.3 Lists
 ---
 
 # List {#list}
+<span class="mdx-badge">
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
+</span>
 
 ## Properties
 - Ordered by *index*.
@@ -41,7 +44,13 @@ struct sSTR2NUM {
 ```
 
 ## Declare list by `rand` keyword
-[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")
+<span class="mdx-badge">
+<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span>
+</span>
+<span class="mdx-badge">
+<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span>
+</span>
+
 ```sv linenums="1"
 rand list<int    > intList   ;
 rand list<bit [8]> byteList  ;
@@ -58,8 +67,8 @@ list<string > stringList = {"1"  , "2"  };  //  stringList: {"1"  , "2"  }
 ```
 
 ## List Operators
-| Operator                                                  | Description                                                                                                           |
-| :-------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| Operator  | Description   |
+| :-------- | :------------ |
 | [`[]`](Lists.md#index "Index operator `[]`")              | Used to access a specific *element* of a list by given *index*, which must be a positive integer.                     |
 | [`=`](Lists.md#assignment "Assignment operator `=`")      | Create a copy of the `list`-type expression on the RHS and assigns it to the list on the LHS.                         |
 | [`==`](Lists.md#equality "Equality operator `==`")        | Evaluates to **true** if both *size*s are equal and all *element*s with corresponding *index*es are equal.            |
@@ -68,18 +77,18 @@ list<string > stringList = {"1"  , "2"  };  //  stringList: {"1"  , "2"  }
 | [`foreach`](Lists.md#foreach "`foreach` statement")       | Iterates over the list's *element*s.                                                                                  |
 
 ## List Methods
-| Method                                                                                                                                        | Description                                                                                                   |
-| :-------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------ |
-| [int `size()`](Lists.md#size "function int `size()`")                                                                                         | Returns the number of *element*s in the list.                                                                 |
-| [`clear()`](Lists.md#clear "function void `clear()`")                                                                                         | Removes all *element*s from the list.                                                                         |
-| [&lt;data_type&gt; `delete(int index)`](Lists.md#delete "function &lt;data_type&gt; `delete(intindex)`")                                      | Moves out the *element* at the specified *index*, which must be a positive integer.                           |
-| [`insert(int index, data_type element)`](Lists.md#insert "function void `insert(int index, data_type element)`")                              | Adds the *element* to the specified *index*, and all *element*s at and beyond the *index* are moved by one.   |
-| [&lt;data_type&gt; `pop_front()`](Lists.md#pop_front "function &lt;data_type&gt; `pop_front()`")                                              | Moves out the first *element* from the list. Same as `delete(0)`.                                             |
-| [`push_front(data_type element)`](Lists.md#push_front "function void `push_front(data_type element)`")                                        | Adds the *element* to the beginning of the list. Same as `insert(0, element)`.                                |
-| [&lt;data_type&gt; `pop_back()`](Lists.md#pop_back "function &lt;data_type&gt; `pop_back()`")                                                 | Moves out the last *element* from the list. Same as `delete(size()-1)`.                                       |
-| [`push_back(data_typeelement)`](Lists.md#push_back "function void `push_back(data_type element)`")                                            | Adds the *element* to the end of the list. Same as `insert(size()-1, element)`.                               |
-| [set&lt;data_type&gt; `to_set()`](Lists.md#to_set "function set&lt;data_type&gt; `to_set()`")                                                 | Returns all *element*s to a `set`-type.                                                                       |
-| [`shuffle()`](Lists.md#shuffle "function void `shuffle()`")<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")  | Randomizes orders of *element*s.                                                                              |
+| Method    | Description   |
+| :-------- | :------------ |
+| [int `size()`](Lists.md#size "function int `size()`")                                                             | Returns the number of *element*s in the list.                                                                 |
+| [`clear()`](Lists.md#clear "function void `clear()`")                                                             | Removes all *element*s from the list.                                                                         |
+| [&lt;data_type&gt; `delete(int index)`](Lists.md#delete "function &lt;data_type&gt; `delete(intindex)`")          | Moves out the *element* at the specified *index*, which must be a positive integer.                           |
+| [`insert(int index, data_type element)`](Lists.md#insert "function void `insert(int index, data_type element)`")  | Adds the *element* to the specified *index*, and all *element*s at and beyond the *index* are moved by one.   |
+| [&lt;data_type&gt; `pop_front()`](Lists.md#pop_front "function &lt;data_type&gt; `pop_front()`")                  | Moves out the first *element* from the list. Same as `delete(0)`.                                             |
+| [`push_front(data_type element)`](Lists.md#push_front "function void `push_front(data_type element)`")            | Adds the *element* to the beginning of the list. Same as `insert(0, element)`.                                |
+| [&lt;data_type&gt; `pop_back()`](Lists.md#pop_back "function &lt;data_type&gt; `pop_back()`")                     | Moves out the last *element* from the list. Same as `delete(size()-1)`.                                       |
+| [`push_back(data_type element)`](Lists.md#push_back "function void `push_back(data_type element)`")               | Adds the *element* to the end of the list. Same as `insert(size()-1, element)`.                               |
+| [set&lt;data_type&gt; `to_set()`](Lists.md#to_set "function set&lt;data_type&gt; `to_set()`")                     | Returns all *element*s to a `set`-type.                                                                       |
+| [`shuffle()`](Lists.md#shuffle "function void `shuffle()`")<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>    | Randomizes orders of *element*s.                                                                              |
 
 ---
 
@@ -287,7 +296,10 @@ set<int> intSet = intList.to_set(); //  intSet: {} -> {1, 2}
 ```
 
 ## function void `shuffle()` {#shuffle}
-[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")
+<span class="mdx-badge">
+<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
+<span class="mdx-badge">
+<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
 
 Randomizes orders of *element*s.
 ```sv linenums="1"

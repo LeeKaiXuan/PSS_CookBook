@@ -36,6 +36,13 @@ extra:
     Stable: Stable
     WIP: Work-In-Progress
 
+extra_css:
+  - includes/extra.css
+
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - includes/tablesort.js
+
 markdown_extensions:
   - abbr
   - admonition

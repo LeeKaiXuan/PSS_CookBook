@@ -4,6 +4,9 @@ description: PSSv2.1/7.9.4 Maps
 ---
 
 # Map {#map}
+<span class="mdx-badge">
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
+</span>
 
 ## Properties
 - Unordered.

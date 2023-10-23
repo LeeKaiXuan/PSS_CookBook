@@ -4,6 +4,9 @@ description: PSSv2.1/7.9.2 Arrays
 ---
 
 # Array {#array}
+<span class="mdx-badge">
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span>
+</span>
 
 ## Properties
 - Ordered by *index*.
@@ -43,6 +46,10 @@ Array has 2 declaration formats:
     Array is a **fixed-size** collection, which's *size* **must** be assigned by a non-zero integer, and cannot be changed after declared.
 
 ## Declare array by `rand` keyword
+<span class="mdx-badge">
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
+</span>
+
 === "Template"
     ```sv linenums="1"
     rand array<int, 3> intArray;    //  declare integer array with 3 random elements
@@ -74,8 +81,8 @@ Array can be assigned at declaration; otherwise, each elements will be initializ
     1. `square` format **NOT** support for declare nested array
 
 ## Array Operators
-| Operator                                                  | Description                                                                                                           |
-| :-------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| Operator  | Description   |
+| :-------- | :------------ |
 | [`[]`](Arrays.md#index "Index operator `[]`")             | Used to access a specific *element* of an array by given *index*, which must be a positive integer.                   |
 | [`=`](Arrays.md#assignment "Assignment operator `=`")     | Creates a copy of the `array`-type expression on the RHS and assigns it to the array on the LHS.                      |
 | [`==`](Arrays.md#equality "Equality operator `==`")       | Evaluates to **true** if both *size*s are equal and all *element*s with corresponding *index*es are equal.            |
@@ -84,13 +91,13 @@ Array can be assigned at declaration; otherwise, each elements will be initializ
 | [`foreach`](Arrays.md#foreach "`foreach` statement")      | Iterates over the array's *element*s.                                                                                 |
 
 ## Array Methods
-| Method                                                                                                                                                | Description                                                                                               |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| [int `size()`](Arrays.md#size "function int `size()`")                                                                                                | Returns the number of *element*s in the array.                                                            |
-| [int `sum()`](Arrays.md#sum_int "function int `sum()`")                                                                                               | Returns the sum of all *element*s in the array, when *data_type* of *element* is `bit` or `int`.          |
-| [float64 `sum()`](Arrays.md#sum_float "function float64 `sum()`")<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")    | Returns the sum of all *element*s in the array, when *data_type* of *element* is `float32` or `float64`.  |
-| [list&lt;data_type&gt; `to_list()`](Arrays.md#to_list "function list&lt;data_type&gt; `to_list()`")                                                   | Returns all *element*s to a `list`-type.                                                                  |
-| [set&lt;data_type&gt; `to_set()`:](Arrays.md#to_set "function set&lt;data_type&gt; `to_set()`")                                                       | Returns all *element*s to a `set`-type.                                                                   |
+| Method    | Description   |
+| :-------- | :------------ |
+| [int `size()`](Arrays.md#size "function int `size()`")                                                | Returns the number of *element*s in the array.                                                    |
+| [int `sum()`](Arrays.md#sum_int "function int `sum()`")                                               | Returns the sum of all *element*s in the array, when *data_type* of *element* is `bit` or `int`.  |
+| [float64 `sum()`](Arrays.md#sum_float "function float64 `sum()`")<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span> | Returns the sum of all *element*s in the array, when *data_type* of *element* is `float32` or `float64`.  |
+| [list&lt;data_type&gt; `to_list()`](Arrays.md#to_list "function list&lt;data_type&gt; `to_list()`")   | Returns all *element*s to a `list`-type.                                                          |
+| [set&lt;data_type&gt; `to_set()`:](Arrays.md#to_set "function set&lt;data_type&gt; `to_set()`")       | Returns all *element*s to a `set`-type.                                                           |
 
 ---
 
@@ -328,7 +335,10 @@ Returns the sum of all *element*s in the array, when *data_type* of *element* is
         ```
 
 ## function float64 `sum()` {#sum_float}
-[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")
+<span class="mdx-badge">
+<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
+<span class="mdx-badge">
+<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
 
 Returns the sum of all *element*s in the array, when *data_type* of *element* is `float32` or `float64`.
 === "Template"

@@ -6,25 +6,25 @@ description: PSSv2.1/7. Data types
 # Data Types
 
 ## *Scalar* Type {#datatypes_scalar}
-| Scalar Type                                                                                   | Randomizable          |
-| :-------------------------------------------------------------------------------------------- | :-------------------: |
-| [`bit`](IntegerTypes.md#datatypes_integertypes_bit "bit")                                     | :white_check_mark:    |
-| [`int`](IntegerTypes.md#datatypes_integertypes_integer "integer")                             | :white_check_mark:    |
-| `bool`                                                                                        | :white_check_mark:    |
-| `enum`                                                                                        | :white_check_mark:    |
-| `string`                                                                                      | :white_check_mark:    |
-| `float32`<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")    |                       |
-| `float64`<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")    |                       |
-| `chandle`                                                                                     |                       |
+| Scalar Type   | Randomizable  |
+| :------------ | :-----------: |
+| [`bit`](IntegerTypes.md#datatypes_integertypes_bit "bit")<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span></span>          | :white_check_mark: Randomizable   |
+| [`int`](IntegerTypes.md#datatypes_integertypes_integer "integer")<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span></span>  | :white_check_mark: Randomizable   |
+| `bool`<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>                                                     | :white_check_mark: Randomizable   |
+| `enum`<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span></span>                                                             | :white_check_mark: Randomizable   |
+| `string`<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span></span>                                                           | :white_check_mark: Randomizable   |
+| `float32`<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>  |                                   |
+| `float64`<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>  |                                   |
+| `chandle`<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>                                                  |                                   |
 
 ## *Aggregate* {#datatypes_aggregate}
-| Aggregate Type                            | Randomizable                                                                                                                                          |
-| :---------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`array`](../Collections/Arrays.md#array) | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`                                                                                    |
-| [`list`](../Collections/Lists.md#list)    | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`<br>[:material-engine-outline: v2.1](../index.md#reference "LRM minimum version")   |
-| [`map`](../Collections/Maps.md#map)       |                                                                                                                                                       |
-| [`set`](../Collections/Sets.md#set)       |                                                                                                                                                       |
-| `struct`                                  | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`                                                                                    |
+| Aggregate Type    | Randomizable  |
+| :---------------- | :------------ |
+| [`array`](../Collections/Arrays.md#array)<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>  | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`    |
+| [`list`](../Collections/Lists.md#list)<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>     | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span> |
+| [`map`](../Collections/Maps.md#map)<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>        |                                                                       |
+| [`set`](../Collections/Sets.md#set)<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>        |                                                                       |
+| `struct`<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span></span>                                   | :white_check_mark: Only for `bit`, `int`, `bool`, `enum`, `string`    |
 
 !!! Note "*Aggregate* may be nested."
 
