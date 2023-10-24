@@ -4,9 +4,7 @@ description: PSSv2.1/7.9.4 Maps
 ---
 
 # Map {#map}
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
-</span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
 
 ## Properties
 - Unordered.
@@ -16,6 +14,12 @@ description: PSSv2.1/7.9.4 Maps
 - Can be nested by any collection types (e.g., `array`, `list`, `map` or `set`).
 
 ## Declarations
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, `bool`, `enum`, `string`, and `sturct` as *key* and *element*.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `float32`, `float64`, and `chandle` as *key* or *element*.
+
 Map can be declared by following syntax:<br>
 > map&lt;*data_type*, *data_type*&gt; *identifier*
 
@@ -36,6 +40,12 @@ enum eSTR2NUM {
 ```
 
 ## Initialization Assignment
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *key* and *element* in initialization assignment.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *key* or *element* in initialization assignment.
+
 Map can be assigned at declaration; otherwise, it will be initialized to empty aggregate literal (`{}`).
 ```sv linenums="1"
 map<bit [4] , int    > nibble2int   = {4'b1110:3      , 4'b0110:2     };
@@ -76,6 +86,12 @@ enum eSTR2NUM {
 ---
 
 ## Index operator `[]` {#index}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *key* and *element* for index operator `[]`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *key* or *element* for index operator `[]`.
+
 Used to access a specific *element* of a map by given *key*.
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
@@ -101,8 +117,13 @@ int intVal = string2int[ 1 ];   //  ILLEGAL (2)
 ???+ Note
     Operator that modify contents can only be used within `exec` block or native `function`.
 
-
 ## Assignment operator `=` {#assignment}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *key* and *element* for assignment operator `=`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *key* or *element* for assignment operator `=`.
+
 Creates a copy of the `map`-type expression on the RHS and assigns it to the map on the LHS.
 Last *element* will be used if there have multiple *element*s with same *key* in the expression.
 ```sv linenums="1"
@@ -118,6 +139,8 @@ string2int = {3:"3", 4:"4"};    //  ILLEGAL (1)
     Operator that modify contents can only be used within `exec` block or native `function`.
 
 ## Equality operator `==` {#equality}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Evaluates to **true** if both *size*s are equal and all *element*s with corresponding *key*s are equal.
 ```sv linenums="1"
 map<string, int   > map_0 = {"1":1  , "2":2  };
@@ -147,6 +170,8 @@ if (map_0 == map_5) bitVal_5 = 1;   //  ILLEGAL (6)
     Different *data_type* of *key* or *element* of two maps should **NOT** be compared.
 
 ## Inequality operator `!=` {#inequality}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Evaluates to **true** whether both *size*s are not equal or if any *element* with corresponding *key* is not equal.
 ```sv linenums="1"
 map<string, int   > map_0 = {"1":1  , "2":2  };
@@ -176,6 +201,8 @@ if (map_0 != map_5) bitVal_5 = 1;   //  ILLEGAL (6)
     Different *data_type* of *key* or *element* of two maps should **NOT** be compared.
 
 ## `foreach` statement {#foreach}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Iterates over the map's *element*s.
 
 Look at [Procedural/`foreach`](../Procedural/index.md#foreach) for more information.
@@ -195,6 +222,12 @@ foreach (i : string2int[j]) {
 ---
 
 ## function int `size()` {#size}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, `bool`, `enum`, `string`, and `struct` as *key* and *element* for `size()` method.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `float32`, `float64`, and `chandle` as *key* or *element* for `size()` method.
+
 Returns the number of *element*s in the map.
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
@@ -203,7 +236,13 @@ int intVal = string2int.size(); //  intVal: 0 -> 2
 ```
 
 ## function void `clear()` {#clear}
-Removes all *element"s from the map.
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, `bool`, `enum`, `string`, and `struct` as *key* and *element* for `clear()` method.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `float32`, `float64`, and `chandle` as *key* or *element* for `clear()` method.
+
+Removes all *element*s from the map.
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
 
@@ -214,6 +253,12 @@ string2int.clear(); //  string2int: {"1":1, "2":2} -> {}
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function &lt;data_type&gt; `delete(data_type key)` {#delete}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *key* and *element* for `delete()` method.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *key* or *element* for `delete()` method.
+
 Moves out the *element* by the specified *key*, which must exists in the map.
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
@@ -231,6 +276,12 @@ map.delete("3");    //  ILLEGAL (1)
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function void `insert(data_type key, data_type element)` {#insert}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *key* and *element* in initialization assignment.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *key* or *element* in initialization assignment.
+
 Adds the *element* with the specified *key*.
 The *element* will be replaced if the *key* already exists.
 ```sv linenums="1"
@@ -252,6 +303,12 @@ string2int.insert(5  , 5  );    //  ILLEGAL (2)
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function set&lt;data_type&gt; `keys()` {#keys}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, `bool`, `enum`, `string`, and `struct` as *key* and *element* for `keys()` method.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `float32`, `float64`, and `chandle` as *key* or *element* for `keys()` method.
+
 Returns all *key*s to a `set`-type.
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2, "2.5":2};
@@ -260,6 +317,12 @@ set<string> stringSet = string2int.keys();  //  stringSet: {} -> {"1", "2", "2.5
 ```
 
 ## function list&lt;data_type&gt; `values()` {#values}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, `bool`, `enum`, `string`, and `struct` as *key* and *element* for `values()` method.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `float32`, `float64`, and `chandle` as *key* or *element* for `values()` method.
+
 Returns all *element*s to a `list`-type.
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2, "2.5":2};
