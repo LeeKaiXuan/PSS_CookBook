@@ -5,7 +5,7 @@ description: PSSv2.1/7.9.4 Maps
 
 # Map {#map}
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
 </span>
 
 ## Properties
@@ -177,12 +177,18 @@ if (map_0 != map_5) bitVal_5 = 1;   //  ILLEGAL (6)
 
 ## `foreach` statement {#foreach}
 Iterates over the map's *element*s.
+
+Look at [Procedural/`foreach`](../Procedural/index.md#foreach) for more information.
 ```sv linenums="1"
 map<string, int> string2int = {"1":1, "2":2};
+int    intVal_0 = 0;
+string intVal_1 = "";
+int    intVal_2 = 0;
 
-int intVal = 0;
-foreach (string2int[i]) {
-   intVal += string2int[i];         //  intVal: 0 -> 3
+foreach (i : string2int[j]) {
+    intVal_0 = i;               //  intVal_0: 0  ->  1  ->  2
+    intVal_1 = j;               //  intVal_1: "" -> "1" -> "2"
+    intVal_2 = string2int[j];   //  intVal_2: 0  ->  1  ->  2
 }
 ```
 

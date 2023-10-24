@@ -90,6 +90,8 @@ nav:
     - List: 'Collections/Lists.md'
     - Map: 'Collections/Maps.md'
     - Set: 'Collections/Sets.md'
+  - Procedural:
+    - Procedural/index.md
   - Traversal:
     - Traversal/index.md
 

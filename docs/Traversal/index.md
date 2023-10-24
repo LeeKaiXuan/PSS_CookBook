@@ -14,7 +14,7 @@ description: PSSv2.1/12.3.2 Action handle array traversal
 | [`sequence`](index.md#traversal_sequence) | All array elements are scheduled for traversal in sequence from `0` to `N-1`. |
 
 ## `parallel` {#traversal_parallel}
-*Work in Progress*
+*WIP*
 
 ## `schedule` {#traversal_schedule}
 Both actions (i.e., sub with "Hello" and "World") in `schedule` block will be traversed in random order.
@@ -77,4 +77,4 @@ There have two possible results:
     ```
 
 ## `sequence` {#traversal_sequence}
-*Work in Progress*
+*WIP*

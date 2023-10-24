@@ -5,7 +5,7 @@ description: PSSv2.1/7.9.2 Arrays
 
 # Array {#array}
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span>
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span>
 </span>
 
 ## Properties
@@ -47,7 +47,7 @@ Array has 2 declaration formats:
 
 ## Declare array by `rand` keyword
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
 </span>
 
 === "Template"
@@ -95,7 +95,7 @@ Array can be assigned at declaration; otherwise, each elements will be initializ
 | :-------- | :------------ |
 | [int `size()`](Arrays.md#size "function int `size()`")                                                | Returns the number of *element*s in the array.                                                    |
 | [int `sum()`](Arrays.md#sum_int "function int `sum()`")                                               | Returns the sum of all *element*s in the array, when *data_type* of *element* is `bit` or `int`.  |
-| [float64 `sum()`](Arrays.md#sum_float "function float64 `sum()`")<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span> | Returns the sum of all *element*s in the array, when *data_type* of *element* is `float32` or `float64`.  |
+| [float64 `sum()`](Arrays.md#sum_float "function float64 `sum()`")<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span> | Returns the sum of all *element*s in the array, when *data_type* of *element* is `float32` or `float64`.  |
 | [list&lt;data_type&gt; `to_list()`](Arrays.md#to_list "function list&lt;data_type&gt; `to_list()`")   | Returns all *element*s to a `list`-type.                                                          |
 | [set&lt;data_type&gt; `to_set()`:](Arrays.md#to_set "function set&lt;data_type&gt; `to_set()`")       | Returns all *element*s to a `set`-type.                                                           |
 
@@ -241,23 +241,33 @@ Evaluates to **true** if *element* on LHS of `in` is exists in the array.
 
 ## `foreach` statement {#foreach}
 Iterates over the array's *element*s.
+
+Look at [Procedural/`foreach`](../Procedural/index.md#foreach) for more information.
 === "Template"
     ```sv linenums="1"
-    array<int, 3> intArray = {1, 2, 3};
+    array<int, 3> intArray = {4, 5, 6};
+    int intVal_0 = 0;
+    int intVal_1 = 0;
+    int intVal_2 = 0;
 
-    int intVal = 0;
-    foreach (intArray[i]) {
-        intVal += intArray[i];                      //  intVal: 0 -> 6
+    foreach (i : intArray[j]) {
+        intVal_0 = i;               //  intVal_0: 0 -> 4 -> 5 -> 6
+        intVal_1 = j;               //  intVal_1: 0 -> 0 -> 1 -> 2
+        intVal_2 = intArray[j];     //  intVal_2: 0 -> 4 -> 5 -> 6
     }
     ```
 
 === "Square"
     ```sv linenums="1"
     int intArray [3] = {1, 2, 3};
+    int intVal_0 = 0;
+    int intVal_1 = 0;
+    int intVal_2 = 0;
 
-    int intVal = 0;
-    foreach (intArray[i]) {
-        intVal += intArray[i];                      //  intVal: 0 -> 6
+    foreach (i : intArray[j]) {
+        intVal_0 = i;               //  intVal_0: 0 -> 4 -> 5 -> 6
+        intVal_1 = j;               //  intVal_1: 0 -> 0 -> 1 -> 2
+        intVal_2 = intArray[j];     //  intVal_2: 0 -> 4 -> 5 -> 6
     }
     ```
 
@@ -336,9 +346,9 @@ Returns the sum of all *element*s in the array, when *data_type* of *element* is
 
 ## function float64 `sum()` {#sum_float}
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
+<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
+<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
 
 Returns the sum of all *element*s in the array, when *data_type* of *element* is `float32` or `float64`.
 === "Template"

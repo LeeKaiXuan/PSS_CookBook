@@ -5,7 +5,7 @@ description: PSSv2.1/7.9.5 Sets
 
 # Set {#set}
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
 </span>
 
 ## Properties
@@ -152,12 +152,14 @@ if ("1" in intSet) bitVal_2 = 1;    //  ILLEGAL (1)
 
 ## `foreach` statement {#foreach}
 Iterates over the set's *element*s.
-```sv linenums="1"
-set<int> intSet = {1, 2};
 
+Look at [Procedural/`foreach`](../Procedural/index.md#foreach) for more information.
+```sv linenums="1"
+set<int> intSet = {3, 4};
 int intVal = 0;
-foreach (i:intSet) {
-    intVal += i;                    //  intVal: 0 -> 3
+
+foreach (i : intSet) {
+    intVal = i;     //  intVal: 0 -> 3 -> 4 or 0 -> 4 -> 3
 }
 ```
 

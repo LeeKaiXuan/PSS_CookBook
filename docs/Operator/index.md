@@ -6,7 +6,7 @@ description: PSSv2.1/8 Operators and expressions
 # Operators and Expressions
 
 ## Assignment Operators
-*Work in Progress*
+*WIP*
 
 ## Expression operators and data types
 | Operator token                                                                            | Operator name                         | Operator data types                   | Result data type              |

@@ -7,7 +7,7 @@ description: PSSv2.1/7.2 Integer types
 
 ## Bit {#datatypes_integertypes_bit}
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span>
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span>
 </span>
 
 `bit` is a integer data type with default properties: **unsigned**, **1-bit** width, **{0, 1}** domain.
@@ -35,7 +35,7 @@ Possible values specified by bit width are **{0..(2^width^-1)}**
 
 ### Declared with specified value domain
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span>
+<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span>
 </span>
 
 Values of variable are within intersection of possible values by width and value domain.
@@ -64,7 +64,7 @@ bit [8] in [5, ..2, 6..8, 254..] singleByte;    //  value domain: {0, 1, 2, 5, 6
 
 ## Integer {#datatypes_integertypes_integer}
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span>
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span>
 </span>
 
 `int` is a integer data type with default properties: **signed**, **32-bits** width, **{-2^31^..(2^31^-1)}** domain.
@@ -92,7 +92,7 @@ Possible values specified by bit width are **{-2^width-1^..(2^width-1^-1)}**
 
 ### Declared with specified value domain
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span>
+<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span>
 </span>
 
 Values of variable are within intersection of possible values by width and value domain.

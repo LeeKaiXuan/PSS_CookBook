@@ -5,7 +5,7 @@ description: PSSv2.1/7.9.3 Lists
 
 # List {#list}
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbols-symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
+<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
 </span>
 
 ## Properties
@@ -45,10 +45,10 @@ struct sSTR2NUM {
 
 ## Declare list by `rand` keyword
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span>
+<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span>
 </span>
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span>
+<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span>
 </span>
 
 ```sv linenums="1"
@@ -88,7 +88,7 @@ list<string > stringList = {"1"  , "2"  };  //  stringList: {"1"  , "2"  }
 | [&lt;data_type&gt; `pop_back()`](Lists.md#pop_back "function &lt;data_type&gt; `pop_back()`")                     | Moves out the last *element* from the list. Same as `delete(size()-1)`.                                       |
 | [`push_back(data_type element)`](Lists.md#push_back "function void `push_back(data_type element)`")               | Adds the *element* to the end of the list. Same as `insert(size()-1, element)`.                               |
 | [set&lt;data_type&gt; `to_set()`](Lists.md#to_set "function set&lt;data_type&gt; `to_set()`")                     | Returns all *element*s to a `set`-type.                                                                       |
-| [`shuffle()`](Lists.md#shuffle "function void `shuffle()`")<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>    | Randomizes orders of *element*s.                                                                              |
+| [`shuffle()`](Lists.md#shuffle "function void `shuffle()`")<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>    | Randomizes orders of *element*s.                                                                              |
 
 ---
 
@@ -175,12 +175,18 @@ if ("1" in intList) bitVal_2 = 1;           //  ILLEGAL (1)
 
 ## `foreach` statement {#foreach}
 Iterates over the list's *element*s.
-```sv linenums="1"
-list<int> intList = {1, 2, 3};
 
-int intVal = 0;
-foreach (intList[i]) {
-    intVal += intList[i];                   //  intVal: 0 -> 6
+Look at [Procedural/`foreach`](../Procedural/index.md#foreach) for more information.
+```sv linenums="1"
+list<int> intList = {4, 5, 6};
+int intVal_0 = 0;
+int intVal_1 = 0;
+int intVal_2 = 0;
+
+foreach (i : intList[j]) {
+    intVal_0 = i;           //  intVal_0: 0 -> 4 -> 5 -> 6
+    intVal_1 = j;           //  intVal_1: 0 -> 0 -> 1 -> 2
+    intVal_2 = intList[j];  //  intVal_2: 0 -> 4 -> 5 -> 6
 }
 ```
 
@@ -297,9 +303,9 @@ set<int> intSet = intList.to_set(); //  intSet: {} -> {1, 2}
 
 ## function void `shuffle()` {#shuffle}
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbols-symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
+<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
 <span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbols-symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
+<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
 
 Randomizes orders of *element*s.
 ```sv linenums="1"
