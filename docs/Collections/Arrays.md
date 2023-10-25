@@ -4,9 +4,7 @@ description: PSSv2.1/7.9.2 Arrays
 ---
 
 # Array {#array}
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span>
-</span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span></span>
 
 ## Properties
 - Ordered by *index*.
@@ -17,6 +15,11 @@ description: PSSv2.1/7.9.2 Arrays
 - Can be nested by any collection types (e.g., `array`, `list`, `map` or `set`).
 
 ## Declarations
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `float32`, `float64`, and `chandle` as *data_type*.
+
 Array has 2 declaration formats:
 
 | Format        | Syntax                                        |
@@ -46,9 +49,7 @@ Array has 2 declaration formats:
     Array is a **fixed-size** collection, which's *size* **must** be assigned by a non-zero integer, and cannot be changed after declared.
 
 ## Declare array by `rand` keyword
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
-</span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
 
 === "Template"
     ```sv linenums="1"
@@ -61,6 +62,12 @@ Array has 2 declaration formats:
     ```
 
 ## Initialization Assignment
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* in initialization assignment.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* in initialization assignment.
+
 Array can be assigned at declaration; otherwise, each elements will be initialized to default initial value.
 === "Template"
     ```sv linenums="1"
@@ -102,6 +109,12 @@ Array can be assigned at declaration; otherwise, each elements will be initializ
 ---
 
 ## Index operator `[]` {#index}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* for index operator `[]`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* for index operator `[]`.
+
 Used to access a specific *element* of an array by given *index*, which must be a non-negative integer.
 === "Template"
     ```sv linenums="1"
@@ -118,6 +131,12 @@ Used to access a specific *element* of an array by given *index*, which must be 
     ```
 
 ## Assignment operator `=` {#assignment}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* for assignment operator `=`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* for assignment operator `=`.
+
 Creates a copy of the `array`-type expression on the RHS and assigns it to the array on the LHS.
 === "Template"
     ```sv linenums="1"
@@ -137,6 +156,8 @@ Creates a copy of the `array`-type expression on the RHS and assigns it to the a
     Operator that modify contents can only be used within `exec` block or native `function`.
 
 ## Equality operator `==` {#equality}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Evaluates to **true** if both *size*s are equal and all *element*s with corresponding *index*es are equal.
 === "Template"
     ```sv linenums="1"
@@ -174,6 +195,8 @@ Evaluates to **true** if both *size*s are equal and all *element*s with correspo
     Different *data_type* of *element* of two arrays should **NOT** be compared.
 
 ## Inequality operator `!=` {#inequality}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Evaluates to **true** whether both *size*s are not equal or if any *element* with corresponding *index* is not equal.
 === "Template"
     ```sv linenums="1"
@@ -211,6 +234,8 @@ Evaluates to **true** whether both *size*s are not equal or if any *element* wit
     Different *data_type* of *element* of two arrays should **NOT** be compared.
 
 ## Set membership operator `in` {#in}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Evaluates to **true** if *element* on LHS of `in` is exists in the array.
 === "Template"
     ```sv linenums="1"
@@ -240,6 +265,8 @@ Evaluates to **true** if *element* on LHS of `in` is exists in the array.
     *Data_type* of *element* on LHS of `in` should be **SAME** as the array's *element* on RHS of `in`.
 
 ## `foreach` statement {#foreach}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Iterates over the array's *element*s.
 
 Look at [Procedural/`foreach`](../Procedural/index.md#foreach) for more information.
@@ -274,6 +301,8 @@ Look at [Procedural/`foreach`](../Procedural/index.md#foreach) for more informat
 ---
 
 ## function int `size()` {#size}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Returns the number of *element*s in the array.
 === "Template"
     ```sv linenums="1"
@@ -293,6 +322,8 @@ Returns the number of *element*s in the array.
     Considered as a **constant** expression.
 
 ## function int `sum()` {#sum_int}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Returns the sum of all *element*s in the array, when *data_type* of *element* is `bit` or `int`.
 === "Template"
     ```sv linenums="1"
@@ -345,10 +376,8 @@ Returns the sum of all *element*s in the array, when *data_type* of *element* is
         ```
 
 ## function float64 `sum()` {#sum_float}
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
 
 Returns the sum of all *element*s in the array, when *data_type* of *element* is `float32` or `float64`.
 === "Template"
@@ -381,6 +410,8 @@ Returns the sum of all *element*s in the array, when *data_type* of *element* is
     The `data-type` of `element` should be floating-point types (e.g., `float32` or `float64`).
 
 ## function list&lt;data_type&gt; `to_list()` {#to_list}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Returns all *element*s to a `list`-type.
 === "Template"
     ```sv linenums="1"
@@ -401,6 +432,8 @@ Returns all *element*s to a `list`-type.
     ```
 
 ## function set&lt;data_type&gt; `to_set()` {#to_set}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Returns all *element*s to a `set`-type.
 === "Template"
     ```sv linenums="1"
