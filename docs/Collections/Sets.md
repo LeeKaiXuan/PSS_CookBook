@@ -4,9 +4,7 @@ description: PSSv2.1/7.9.5 Sets
 ---
 
 # Set {#set}
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
-</span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
 
 ## Properties
 - Unordered.
@@ -16,6 +14,11 @@ description: PSSv2.1/7.9.5 Sets
 - Can be nested by any collection types (e.g., `array`, `list`, `map` or `set`).
 
 ## Declarations
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `chandle` as *element*.
+
 Set can be declared by following syntax:<br>
 > set&lt;*data_type*&gt; *identifier*
 
@@ -36,6 +39,12 @@ enum eSTR2NUM {
 ```
 
 ## Initialization Assignment
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* in initialization assignment.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* in initialization assignment.
+
 Set can be assigned at declaration; otherwise, it will be initialized to empty aggregate literal (`{}`).
 ```sv linenums="1"
 set<bit [4] > nibbleSet = {4'b0001, 4'b0010};
@@ -74,6 +83,12 @@ enum eSTR2NUM {
 ---
 
 ## Assignment operator `=` {#assignment}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* for assignment operator `=`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* for assignment operator `=`.
+
 Create a copy of the `set`-type expression on the RHS and assigns it to the set on the LHS.
 Same *element*s in the RHS will be merged automatically and appear only once in the set.
 ```sv linenums="1"
@@ -89,6 +104,8 @@ intSet = {3, 3, 4}; //  intSet: {1, 2} -> {3, 4} (1)
     Operator that modify contents can only be used within `exec` block or native `function`.
 
 ## Equality operator `==` {#equality}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Evaluetes to **true** if both *size*s are equal and have exactly same *element*s.
 ```sv linenums="1"
 set<int   > set_0 = { 1 ,  2      };
@@ -112,6 +129,8 @@ if (set_0 == set_3) bitVal_3 = 1;   //  ILLEGAL (4)
     Different *data_type* of two sets should **NOT** be compared.
 
 ## Inequality operator `!=` {#inequality}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Evaluetes to **true** whether both *size*s are not equal or do not have exactly same *element*s.
 ```sv linenums="1"
 set<int   > set_0 = { 1 ,  2      };
@@ -135,6 +154,11 @@ if (set_0 != set_3) bitVal_3 = 1;   //  bitVal_3: 0 -> 1 (4)
     Different *data_type* of two sets should **NOT** be compared.
 
 ## Set membership operator `in` {#in}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `float32`, `float64`, and `chandle` as *element*.
+
 Evaluetes to **true** if *element* on LHS of `in` is exists in the set.
 ```sv linenums="1"
 set<int> intSet = {1, 2};
@@ -151,6 +175,8 @@ if ("1" in intSet) bitVal_2 = 1;    //  ILLEGAL (1)
     *Data_type* of *element* on LHS of `in` should be **SAME** as the set's *element* on RHS of `in`.
 
 ## `foreach` statement {#foreach}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Iterates over the set's *element*s.
 
 Look at [Procedural/`foreach`](../Procedural/index.md#foreach) for more information.
@@ -172,6 +198,8 @@ foreach (i : intSet) {
 ---
 
 ## function int `size()` {#size}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Returns the number of *element*s in the set.
 ```sv linenums="1"
 set<int> intSet = {1, 2};
@@ -180,6 +208,8 @@ int intVal = intSet.size(); //  intVal: 0 -> 2
 ```
 
 ## function void `clear()` {#clear}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Removes all *element*s from the set.
 ```sv linenums="1"
 set<int> intSet = {1, 2};
@@ -191,6 +221,8 @@ intSet.clear(); // intSet: {1, 2} -> {}
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function void `delete(data_type element)` {#delete}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Removes the *element*s from the set.
 ```sv linenums="1"
 set<int> intSet = {1, 2};
@@ -213,6 +245,12 @@ intSet.delete("1"); //  ILLEGAL (2)
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function void `insert(data_type element)` {#insert}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* for assignment operator `=`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* for assignment operator `=`.
+
 Adds the *element* to the set.
 ```sv linenums="1"
 set<int> intSet = {1, 2};
@@ -228,6 +266,8 @@ intSet.insert("4"); //  ILLEGAL (1)
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function list&lt;data_type&gt; `to_list()` {#to_list}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Returns all *element*s to a `list`-type.
 ```sv linenums="1"
 set<int> intSet = {1, 2};
