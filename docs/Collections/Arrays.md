@@ -12,7 +12,7 @@ description: PSSv2.1/7.9.2 Arrays
 - Ordered by *index*.
 - Randomizable when its *data_type* is randomizable (e.g., randomizable [*scalar*](../DataTypes/index.md#datatypes_scalar "e.g., `bit`, `int`, `bool`, `enum`, `string`") or [*aggregate*](../DataTypes/index.md#datatypes_aggregate "e.g., `array`, `list`, `struct`") of randomizable scalar).
 - *Element* and *data_type* can be any [*scalar*](../DataTypes/index.md#datatypes_scalar "e.g., `bit`, `int`, `bool`, `enum`, `string`, `float32`, `float64`, `chandle`") or [*aggregate*](../DataTypes/index.md#datatypes_aggregate "e.g., `array`, `list`, `map`, `set`, `struct`") of scalar.
-- *Index* must be positive integer.
+- *Index* must be non-negative integer.
 - *Size* must be non-zero integer.
 - Can be nested by any collection types (e.g., `array`, `list`, `map` or `set`).
 
@@ -83,7 +83,7 @@ Array can be assigned at declaration; otherwise, each elements will be initializ
 ## Array Operators
 | Operator  | Description   |
 | :-------- | :------------ |
-| [`[]`](Arrays.md#index "Index operator `[]`")             | Used to access a specific *element* of an array by given *index*, which must be a positive integer.                   |
+| [`[]`](Arrays.md#index "Index operator `[]`")             | Used to access a specific *element* of an array by given *index*, which must be a non-negative integer.                   |
 | [`=`](Arrays.md#assignment "Assignment operator `=`")     | Creates a copy of the `array`-type expression on the RHS and assigns it to the array on the LHS.                      |
 | [`==`](Arrays.md#equality "Equality operator `==`")       | Evaluates to **true** if both *size*s are equal and all *element*s with corresponding *index*es are equal.            |
 | [`!=`](Arrays.md#inequality "Inequality operator `!=`")   | Evaluates to **true** whether both *size*s are not equal or if any *element* with corresponding *index* is not equal. |
@@ -102,7 +102,7 @@ Array can be assigned at declaration; otherwise, each elements will be initializ
 ---
 
 ## Index operator `[]` {#index}
-Used to access a specific *element* of an array by given *index*, which must be a positive integer.
+Used to access a specific *element* of an array by given *index*, which must be a non-negative integer.
 === "Template"
     ```sv linenums="1"
     array<int, 3> intArray = {1, 2, 3};

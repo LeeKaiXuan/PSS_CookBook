@@ -10,7 +10,7 @@ description: PSSv2.1/7.9.3 Lists
 - Ordered by *index*.
 - Randomizable when its *data_type* is randomizable (e.g., randomizable [*scalar*](../DataTypes/index.md#datatypes_scalar "e.g., `bit`, `int`, `bool`, `enum`, `string`") or [*aggregate*](../DataTypes/index.md#datatypes_aggregate "e.g., `array`, `list`, `struct`") of randomizable scalar).
 - *Element* and *data_type* can be any [*scalar*](../DataTypes/index.md#datatypes_scalar "e.g., `bit`, `int`, `bool`, `enum`, `string`, `float32`, `float64`, `chandle`") or [*aggregate*](../DataTypes/index.md#datatypes_aggregate "e.g., `array`, `list`, `map`, `set`, `struct`") of scalar.
-- *Index* must be positive integer.
+- *Index* must be non-negative integer.
 - Can be nested by any collection types (e.g., `array`, `list`, `map` or `set`).
 
 ## Declarations
@@ -74,7 +74,7 @@ list<string > stringList = {"1"  , "2"  };  //  stringList: {"1"  , "2"  }
 ## List Operators
 | Operator  | Description   |
 | :-------- | :------------ |
-| [`[]`](Lists.md#index "Index operator `[]`")              | Used to access a specific *element* of a list by given *index*, which must be a positive integer.                     |
+| [`[]`](Lists.md#index "Index operator `[]`")              | Used to access a specific *element* of a list by given *index*, which must be a non-negative integer.                 |
 | [`=`](Lists.md#assignment "Assignment operator `=`")      | Create a copy of the `list`-type expression on the RHS and assigns it to the list on the LHS.                         |
 | [`==`](Lists.md#equality "Equality operator `==`")        | Evaluates to **true** if both *size*s are equal and all *element*s with corresponding *index*es are equal.            |
 | [`!=`](Lists.md#inequality "Inequality operator `!=`")    | Evaluates to **true** whether both *size*s are not equal or if any *element* with corresponding *index* is not equal. |
@@ -86,7 +86,7 @@ list<string > stringList = {"1"  , "2"  };  //  stringList: {"1"  , "2"  }
 | :-------- | :------------ |
 | [int `size()`](Lists.md#size "function int `size()`")                                                             | Returns the number of *element*s in the list.                                                                 |
 | [`clear()`](Lists.md#clear "function void `clear()`")                                                             | Removes all *element*s from the list.                                                                         |
-| [&lt;data_type&gt; `delete(int index)`](Lists.md#delete "function &lt;data_type&gt; `delete(intindex)`")          | Moves out the *element* at the specified *index*, which must be a positive integer.                           |
+| [&lt;data_type&gt; `delete(int index)`](Lists.md#delete "function &lt;data_type&gt; `delete(intindex)`")          | Moves out the *element* at the specified *index*, which must be a non-negative integer.                       |
 | [`insert(int index, data_type element)`](Lists.md#insert "function void `insert(int index, data_type element)`")  | Adds the *element* to the specified *index*, and all *element*s at and beyond the *index* are moved by one.   |
 | [&lt;data_type&gt; `pop_front()`](Lists.md#pop_front "function &lt;data_type&gt; `pop_front()`")                  | Moves out the first *element* from the list. Same as `delete(0)`.                                             |
 | [`push_front(data_type element)`](Lists.md#push_front "function void `push_front(data_type element)`")            | Adds the *element* to the beginning of the list. Same as `insert(0, element)`.                                |
@@ -104,7 +104,7 @@ list<string > stringList = {"1"  , "2"  };  //  stringList: {"1"  , "2"  }
 !!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
     PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* for index operator `[]`.
 
-Used to access a specific *element* of a list by given *index*, which must be a positive integer.
+Used to access a specific *element* of a list by given *index*, which must be a non-negative integer.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
 
@@ -243,7 +243,7 @@ intList.clear();                    //  intList: {1, 2, 3} -> {}
 ## function &lt;data_type&gt; `delete(index)` {#delete}
 <span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
 
-Moves out the *element* at the specified *index*, which must be a positive integer.
+Moves out the *element* at the specified *index*, which must be a non-negative integer.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
 

@@ -54,7 +54,7 @@ nibbleVal[2] |= nibbleVal[1];   //  nibbleVal: 0b0011 -> 0b0111
     3. The *index* should **NOT** be negative.
 
 !!! Warning
-    The *index* should be a positive integer and should **NOT** access out-of-bounds.
+    The *index* should be a non-negative integer and should **NOT** access out-of-bounds.
 
 ---
 
@@ -103,7 +103,7 @@ nibbleVal[3:2] |= nibbleVal[1:0];   //  nibbleVal: 0b0011 -> 0b1111
     3. LSB of *index* should **NOT** be negative.
 
 !!! Warning
-    The *index*es should be a positive integer and should **NOT** access out-of-bounds.<br>
+    The *index*es should be a non-negative integer and should **NOT** access out-of-bounds.<br>
     The MSB of *index* should larger than LSB of *index*.
 
 ---
