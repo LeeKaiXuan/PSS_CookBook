@@ -4,9 +4,7 @@ description: PSSv2.1/7.9.3 Lists
 ---
 
 # List {#list}
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span>
-</span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
 
 ## Properties
 - Ordered by *index*.
@@ -16,6 +14,11 @@ description: PSSv2.1/7.9.3 Lists
 - Can be nested by any collection types (e.g., `array`, `list`, `map` or `set`).
 
 ## Declarations
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `chandle` as *data_type*.
+
 List can be declared by following syntax:<br>
 > list&lt;*data_type*&gt; *identifier*
 
@@ -44,12 +47,8 @@ struct sSTR2NUM {
 ```
 
 ## Declare list by `rand` keyword
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span>
-</span>
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span>
-</span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
 
 ```sv linenums="1"
 rand list<int    > intList   ;
@@ -58,6 +57,12 @@ rand list<string > stringList;
 ```
 
 ## Initialization Assignment
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* in initialization assignment.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* in initialization assignment.
+
 List can be assigned at declaration; otherwise, it will be initialized to empty aggregate literal (`{}`).
 ```sv linenums="1"
 list<int    > intList    = {1    , 2    };  //  intList   : {1    , 2    }
@@ -93,6 +98,12 @@ list<string > stringList = {"1"  , "2"  };  //  stringList: {"1"  , "2"  }
 ---
 
 ## Index operator `[]` {#index}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* for index operator `[]`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* for index operator `[]`.
+
 Used to access a specific *element* of a list by given *index*, which must be a positive integer.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -107,6 +118,12 @@ int intVal = intList[9];    //  ILLEGAL (1)
     *Index* should smaller than `size()` of the list.
 
 ## Assignment operator `=` {#assignment}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* for assignment operator `=`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* for assignment operator `=`.
+
 Create a copy of the `list`-type expression on the RHS and assigns it to the list on the LHS.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -118,6 +135,8 @@ intList = {2, 3, 4};        //  intList: {1, 2, 3} -> {2, 3, 4}
     Operator that modify contents can only be used within `exec` block or native `function`.
 
 ## Equality operator `==` {#equality}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Evaluates to **true** if both *size*s are equal and all *element*s with corresponding *index*es are equal.
 ```sv linenums="1"
 list<int   > intList_0  = { 1 ,  2 ,  3      };
@@ -138,6 +157,8 @@ if (intList_0 == stringList) bitVal_2 = 1;  //  ILLEGAL (3)
     Different *data_type* of two lists should **NOT** be compared.
 
 ## Inequality operator `!=` {#inequality}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Evaluates to **true** whether both *size*s are not equal or if any *element* with corresponding *index* is not equal.
 ```sv linenums="1"
 list<int   > intList_0  = { 1 ,  2 ,  3      };
@@ -158,6 +179,8 @@ if (intList_0 != stringList) bitVal_2 = 1;  //  ILLEGAL (3)
     Different *data_type* of two lists should **NOT** be compared.
 
 ## Set membership operator `in` {#in}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Evaluates to **true** if *element* on the LHS of `in` is exists in the list.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -174,6 +197,8 @@ if ("1" in intList) bitVal_2 = 1;           //  ILLEGAL (1)
     *Data_type* of *element* on LHS of `in` should be **SAME** as the list's *element* on RHS of `in`.
 
 ## `foreach` statement {#foreach}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Iterates over the list's *element*s.
 
 Look at [Procedural/`foreach`](../Procedural/index.md#foreach) for more information.
@@ -193,6 +218,8 @@ foreach (i : intList[j]) {
 ---
 
 ## function int `size()` {#size}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Returns the number of *element*s in the list.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -201,6 +228,8 @@ int intVal = intList.size();        //  intVal: 0 -> 3
 ```
 
 ## function void `clear()` {#clear}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Removes all *element*s from the list.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -212,6 +241,8 @@ intList.clear();                    //  intList: {1, 2, 3} -> {}
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function &lt;data_type&gt; `delete(index)` {#delete}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Moves out the *element* at the specified *index*, which must be a positive integer.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -229,6 +260,12 @@ int intVal = intList.delete(5);     //  ILLEGAL (1)
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function void `insert(index, element)` {#insert}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* of `insert()`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* of `insert()`.
+
 Adds the *element* to the specified *index*, and all *element*s at and beyond the *index* are moved by one.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -248,8 +285,9 @@ intList.insert(0, "1");             //  ILLEGAL (2)
 ???+ Note
     Method that modify contents can only be used within `exec` block or native `function`.
 
-
 ## function &lt;data_type&gt; `pop_front()` {#pop_front}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Moves out the first *element* from the list. Same as `delete(0)`.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -261,6 +299,12 @@ int intVal = intList.pop_front();   //  intVal: 0 -> 1; intList: {1, 2, 3} -> {2
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function void `push_front(element)` {#push_front}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* of `push_front()`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* of `push_front()`.
+
 Adds the *element* to the beginning of the list. Same as `insert(0, element)`.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -272,6 +316,8 @@ intList.push_front(4);              //  intList: {1, 2, 3} -> {4, 1, 2, 3}
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function &lt;data_type&gt; `pop_back()` {#pop_back}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Moves out the last *element* from the list. Same as `delete(size()-1)`.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -283,6 +329,12 @@ int intVal = intList.pop_back();    //  intVal: 0 -> 3; intList: {1, 2, 3} -> {1
     Method that modify contents can be used within `exec` block or native `function`.
 
 ## function void `push_back(element)` {#push_back}
+!!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
+    PSSGen: Support `bit`, `int`, and `string` as *element* of `push_back()`.
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* of `push_back()`.
+
 Adds the *element* to the end of the list. Same as `insert(size()-1, element)`.
 ```sv linenums="1"
 list<int> intList = {1, 2, 3};
@@ -294,6 +346,8 @@ intList.push_back(4);               //  intList: {1, 2, 3} -> {1, 2, 3, 4}
     Method that modify contents can only be used within `exec` block or native `function`.
 
 ## function set&lt;data_type&gt; `to_set()` {#to_set}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Returns all *element*s to a `set`-type.
 ```sv linenums="1"
 list<int> intList = {1, 2, 1};
@@ -302,10 +356,8 @@ set<int> intSet = intList.to_set(); //  intSet: {} -> {1, 2}
 ```
 
 ## function void `shuffle()` {#shuffle}
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
-<span class="mdx-badge">
-<span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
 
 Randomizes orders of *element*s.
 ```sv linenums="1"
