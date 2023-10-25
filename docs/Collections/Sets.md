@@ -17,7 +17,7 @@ description: PSSv2.1/7.9.5 Sets
 <span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
 
 !!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
-    PSSGen: Not support `chandle` as *element*.
+    PSSGen: Not support `chandle` as *data_type*.
 
 Set can be declared by following syntax:<br>
 > set&lt;*data_type*&gt; *identifier*
@@ -246,10 +246,10 @@ intSet.delete("1"); //  ILLEGAL (2)
 
 ## function void `insert(data_type element)` {#insert}
 !!! Success "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>"
-    PSSGen: Support `bit`, `int`, and `string` as *element* for assignment operator `=`.
+    PSSGen: Support `bit`, `int`, and `string` as *element* of `insert()`.
 
 !!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
-    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* for assignment operator `=`.
+    PSSGen: Not support `bool`, `enum`, `float32`, `float64`, `chandle`, and `struct` as *element* of `insert()`.
 
 Adds the *element* to the set.
 ```sv linenums="1"
