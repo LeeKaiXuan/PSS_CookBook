@@ -368,3 +368,29 @@ intList.shuffle();                  //  intList: {1, 2} -> {1, 2} or {2, 1}
 
 ???+ Note
     Method that modify contents can only be used within `exec` block or native `function`.
+
+???+ Tip "Usage: use `shuffle()` to generate a unique random array"
+    While `unique` become larger, the random solver can't solved within a limit iteration. Using `shuffle()` and `repeat()` can generate unique element for each variable.
+
+    === ":fontawesome-regular-face-frown:{.red} Using `unique`"
+        ```sv linenums="1"
+        array<bit [4], 4> nibbleArray;
+        constraint {
+            unique {nibbleArray[0], nibbleArray[1], nibbleArray[2], nibbleArray[3]};
+        }
+        ...
+        //  do something with solved nibbleArray
+        ```
+
+    === ":fontawesome-regular-face-smile:{.green} Using `shuffle`"
+        ```sv linenums="1"
+        array<bit [4], 4> nibbleArray;
+        list <bit [4]   > element_pool;
+        exec pre_solve {
+            repeat (i : 16) element_pool.push_back(i);  //  element_pool: {} -> {0..15}
+            element_pool.shuffle();
+            foreach(nibbleArray[i]) nibbleArray[i] = element_pool.pop_front();
+        }
+        ...
+        //  do something with solved nibbleArray
+        ```
