@@ -93,7 +93,7 @@ list<string > stringList = {"1"  , "2"  };  //  stringList: {"1"  , "2"  }
 | [&lt;data_type&gt; `pop_back()`](Lists.md#pop_back "function &lt;data_type&gt; `pop_back()`")                     | Moves out the last *element* from the list. Same as `delete(size()-1)`.                                       |
 | [`push_back(data_type element)`](Lists.md#push_back "function void `push_back(data_type element)`")               | Adds the *element* to the end of the list. Same as `insert(size()-1, element)`.                               |
 | [set&lt;data_type&gt; `to_set()`](Lists.md#to_set "function set&lt;data_type&gt; `to_set()`")                     | Returns all *element*s to a `set`-type.                                                                       |
-| [`shuffle()`](Lists.md#shuffle "function void `shuffle()`")<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>    | Randomizes orders of *element*s.                                                                              |
+| [`shuffle()`](Lists.md#shuffle "function void `shuffle()`")<br><span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.3.0</span></span> <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>    | Randomizes orders of *element*s.                                                                              |
 
 ---
 
@@ -356,7 +356,7 @@ set<int> intSet = intList.to_set(); //  intSet: {} -> {1, 2}
 ```
 
 ## function void `shuffle()` {#shuffle}
-<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.3.0</span></span>
 <span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
 
 Randomizes orders of *element*s.
