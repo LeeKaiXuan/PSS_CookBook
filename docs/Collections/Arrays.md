@@ -298,6 +298,34 @@ Look at [Procedural/`foreach`](../Procedural/index.md#foreach) for more informat
     }
     ```
 
+???+ Tip "Usage: Constraint random array by using `foreach()`"
+    For a random array, the `foreach()` method can be used to constraint each *element*'s possible value.
+
+    === ":fontawesome-regular-face-frown:{.red} List *element* one-by-one"
+        ```sv linenums="1"
+        rand array<bit [4], 4> nibbleArray;
+        constraint {
+            nibbleArray[0] in [2..3];
+            nibbleArray[1] in [2..3];
+            nibbleArray[2] in [2..3];
+            nibbleArray[3] in [2..3];
+        }
+        ...
+        //  do something with solved nibbleArray
+        ```
+
+    === ":fontawesome-regular-face-smile:{.green} Using `foreach`"
+        ```sv linenums="1"
+        rand array<bit [4], 4> nibbleArray;
+        constraint {
+            foreach(nibbleArray[i]) nibbleArray[i] in [2..3];   // (1)!
+        }
+        ...
+        //  do something with solved nibbleArray
+        ```
+
+        1. Note that, using *iterator_identifier* format (e.g., `foreach(i : nibbleArray)`) can't constraint the array's *elements*.
+
 ---
 
 ## function int `size()` {#size}
