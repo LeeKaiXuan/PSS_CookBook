@@ -18,6 +18,8 @@ Syntax:
 - *expression* : An **optional** value need for returned to the caller.
 
 ## `repeat` Statement {#repeat}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span></span>
+
 Executes *procedural_stmt* repeatedly by specified the number of *iteration*.
 Syntax:
 > repeat (*index_identifier* : *expression*) *procedural_stmt*
@@ -35,6 +37,8 @@ repeat (i : 3) {
 ```
 
 ## `repeat`-`while` Statement {#repeat_while}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Executes *procedural_stmt* repeatedly as long as the *expression* is **true**.
 Syntax:
 > repeat *procedural_stmt* while (*expression*);
@@ -43,14 +47,16 @@ Syntax:
 - *expression* : Evaluates **true** or **false** everytime after *procedural_stmt*.
 
 ```sv linenums="1"
-int intVal = 0;
+int intVal = 1;
 
 repeat {
-    intVal += 1;    //  intVal: 0 -> 1 -> 2 -> 3
+    intVal += 1;    //  intVal: 1 -> 2
 } while (intVal < 1);
 ```
 
 ## `while` Statement {#while}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Executes *procedural_stmt* repeatedly as long as the *expression* is **true**.
 Syntax:
 > while (*expression*) *procedural_stmt*
@@ -67,6 +73,8 @@ while (intVal < 3) {
 ```
 
 ## `foreach` Statement {#foreach}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
 Executes *procedural_stmt* for each *element* of the *expression*.
 Syntax:
 > foreach (*iterator_identifier* : *expression* [*index_identifier*]) *procedural_stmt*
@@ -98,6 +106,8 @@ foreach (i : intArray[j]) {
 ```
 
 ## `if`-`else` Statement {#if_else}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span></span>
+
 Executes *procedural_stmt_for_true* when *expression* is **true**.
 Syntax:
 > if (*expression*) *procedural_stmt_for_true* else *procedural_stmt_for_false*
@@ -118,7 +128,24 @@ else {
 }
 ```
 
+!!! Bug
+    When `if` statement is used in `constraint` block to constraint random-variable, the `else` statement **SHOULD** be used to prevent incorrect possible values.
+    ```sv linenums="1"
+    rand bit [2] val;
+    constraint {
+        if (true) val in [1, 2];
+        else {} //  (1)!
+    }
+    ```
+
+    1. Even an empty *procedural_stmt_for_false* can prevents incorrect possible values.
+
 ## `match` Statement {#match}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support used in `constraint` block.
+
 Executes *procedural_stmt* when corresponding *range* is match to the *expression*.
 Syntax:
 > match (*expression*) {<br>
@@ -142,15 +169,20 @@ int intVal = 3;
 bit [4] nibbleVal = 0;
 
 match (intVal) {
-    [..-1]       : nibbleVal = 4'b0001;
+    [100..-1]    : nibbleVal = 4'b0001;
     [0..9]       : nibbleVal = 4'b0010;
     [10, 12, 14] : nibbleVal = 4'b0100; //  nibbleVal: 0 -> 4'b0100
-    [100..]      : nibbleVal = 4'b1000;
+    [100..199]   : nibbleVal = 4'b1000;
     default      : nibbleVal = 4'b1111;
 }
 ```
 
 ## `break` Statement {#break}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support used in `constraint` and `activity` block.
+
 Continues execution after enclosing innermost loop construct.
 Syntax:
 > break;
@@ -168,6 +200,11 @@ while (intVal > 0) {
 ```
 
 ## `continue` Statement {#continue}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v2.2.0</span></span>
+
+!!! Failure "<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>"
+    PSSGen: Not support used in `constraint` and `activity` block.
+
 Continues next loop iteration.
 Syntax:
 > continue;
@@ -184,8 +221,34 @@ repeat (i : 3) {
 }
 ```
 
-## `rand` Statement {#rand}
-*WIP*
+## `randomize` Statement {#randomize}
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-remove-outline:{.red}](../index.md#symbol 'PSSGen: Not support yet')</span><span class="mdx-badge__text">Not support yet</span></span>
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-book-check-outline:{.green}](../index.md#symbol 'LRM: Minimum version')</span><span class="mdx-badge__text">v2.1</span></span>
+
+Randomize the specified data attributes or variables.
+
+Syntax:
+> randomize *variable*, .., *variable* with *constraints*
+
+- *variable*: A set variables of plain-data type to randomized together.
+- *constraints*: **Optional** constraint rules.
+
+```sv linenums="1"
+bit [4] nibbleVal_0 = 0;
+bit [4] nibbleVal_1 = 0;
+
+exec post_solve {
+    randomize nibbleVal_0, nibbleVal_1 with {nibbleVal_0 < nibbleVal_1;}
+}
+```
 
 ## `exec` Block {#exec}
-*WIP*
+<span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span></span>
+
+```sv linenums="1"
+int intVal = 0;
+
+exec body {
+    intVal = 2; //  intVal: 0 -> 2
+}
+```
