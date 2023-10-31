@@ -169,7 +169,7 @@ int intVal = 3;
 bit [4] nibbleVal = 0;
 
 match (intVal) {
-    [100..-1]    : nibbleVal = 4'b0001;
+    [-100..-1]   : nibbleVal = 4'b0001;
     [0..9]       : nibbleVal = 4'b0010;
     [10, 12, 14] : nibbleVal = 4'b0100; //  nibbleVal: 0 -> 4'b0100
     [100..199]   : nibbleVal = 4'b1000;
