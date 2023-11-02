@@ -105,6 +105,25 @@ foreach (i : intArray[j]) {
 }
 ```
 
+!!! Tip "Usage: iterating over a sequence without declare collection"
+    When needing to iterate over a sequence of *element*s, the sequence can defined inside `foreach` directly.
+
+    === ":fontawesome-regular-face-frown:{.red} Defined outside"
+    ```sv linenums="1"
+        array<int, 4> sequenceArray = {2, 4, 6, 8};
+        foreach (i : sequenceArray) {
+            (void) printf(i);   //  i: 2 -> 4 -> 6 -> 8
+        }
+    ```
+
+    === ":fontawesome-regular-face-smile:{.green} Defined inside"
+    ```sv linenums="1"
+
+        foreach (i : {2, 4, 6, 8}) {
+            (void) printf(i);   //  i: 2 -> 4 -> 6 -> 8
+        }
+    ```
+
 ## `if`-`else` Statement {#if_else}
 <span class="mdx-badge"><span class="mdx-badge__icon">[:material-tag-check-outline:{.green}](../index.md#symbol 'PSSGen: Minimum version')</span><span class="mdx-badge__text">v1.0.0</span></span>
 
