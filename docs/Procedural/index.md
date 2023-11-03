@@ -107,11 +107,12 @@ foreach (i : intArray[j]) {
 
 !!! Tip "Usage: iterating over a sequence without declare collection"
     When needing to iterate over a sequence of *element*s, the sequence can defined inside `foreach` directly.
+    Even defined a collection inside `foreach` also acceptable.
 
     === ":fontawesome-regular-face-frown:{.red} Defined outside"
         ```sv linenums="1"
         array<int, 4> sequenceArray = {2, 4, 6, 8};
-        foreach (i : sequenceArray) {
+        foreach (i : sequenceArray[j]) {
             (void) printf(i);   //  i: 2 -> 4 -> 6 -> 8
         }
         ```
@@ -119,8 +120,17 @@ foreach (i : intArray[j]) {
     === ":fontawesome-regular-face-smile:{.green} Defined inside"
         ```sv linenums="1"
 
-        foreach (i : {2, 4, 6, 8}) {
+        foreach (i : {2, 4, 6, 8}[j]) {
             (void) printf(i);   //  i: 2 -> 4 -> 6 -> 8
+            (void) printf(j);   //  j: 0 -> 1 -> 2 -> 3
+        }
+        ```
+
+    === ":cloud_tornado: Defined a collection inside"
+        ```sv linenums="1"
+        foreach (i : {"A":10, "B":11, "C":12, "D":13, "E":14, "F":15}[j]) {
+            (void) printf(i);   //  i: 10  -> 11  -> 12  -> 13  -> 14  -> 15
+            (void) printf(j);   //  j: "A" -> "B" -> "C" -> "D" -> "E" -> "F"
         }
         ```
 
